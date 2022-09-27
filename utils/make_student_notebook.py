@@ -84,11 +84,11 @@ def studentize_notebook(notebook: JupyterNotebook) -> JupyterNotebook:
     return new_notebook
 
 
-def main():
+def main(args=None,):
     parser = ArgumentParser(description="Make a copy notebook of a notebook that has the exercises sections blanked out, for students to fill out.")
     parser.add_argument('notebooks', nargs='+', help='Notebook files to copy')
     parser.add_argument('--suffix', default='_student', help='text for the end of the studentized noteook')
-    args = parser.parse_args()
+    args = parser.parse_args(args=args)
 
 
     for filename in args.notebooks:
