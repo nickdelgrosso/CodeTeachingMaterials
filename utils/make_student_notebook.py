@@ -2,7 +2,7 @@ from argparse import ArgumentParser
 from dataclasses import dataclass, field
 import json
 from pathlib import Path
-from typing import Optional, TypedDict
+from typing import Optional, TypedDict, Iterable
 
 
 class JupyterNotebook(TypedDict):
@@ -29,29 +29,26 @@ class ExerciseSection:
     exclude: list[int] = field(default_factory=list)
 
     @classmethod
-    def from_cells(cls, cells: list[JupyterCell]) -> list['ExerciseSection']:
+    def from_cells(cls, cells: list[JupyterCell], example_keywords: Iterable[str] = ('example', 'this')) -> list['ExerciseSection']:
         sections = []
         current: Optional[ExerciseSection] = None
-        do_exclude = False
         for idx, cell in enumerate(cells):
-            match cell, current, do_exclude:
-                case {'cell_type': 'markdown', 'source': source}, None, _:
+            match cell, current:
+                case {'cell_type': 'markdown', 'source': source}, None:
                     text = ''.join(source).replace('*', '').replace('#', '')
                     if 'exercise' in text.lower():
                         current = ExerciseSection(start_idx=idx)
-                        do_exclude = False
-                case {'cell_type': 'markdown', 'source': source}, ExerciseSection(), False:
+                case {'cell_type': 'markdown', 'source': source}, ExerciseSection():
                     text = ''.join(source)
-                    if text.startswith('#'):
+                    if any(line.startswith('#') for line in source):
                         current.end_idx = idx
                         sections.append(current)
                         current = None
-                    elif 'example' in text.lower():
-                        do_exclude = True
-                case {'cell_type': 'code'}, ExerciseSection(), True:
-                    current.exclude.append(idx)
-                case {'cell_type': 'markdown'}, ExerciseSection(), True:
-                    do_exclude = False
+                    elif any(word in text.lower() for word in example_keywords):
+                        if cells[idx + 1]['cell_type'] == 'code':
+                            current.exclude.append(idx + 1)
+                        
+                
                     
         return sections
 
@@ -83,11 +80,12 @@ def studentize_notebook(notebook: JupyterNotebook) -> JupyterNotebook:
     for section in ExerciseSection.from_cells(cells):
         cells = studentize(cells=cells, section=section)
     new_notebook = notebook | {'cells': cells}
+    
     return new_notebook
 
 
 def main():
-    parser = ArgumentParser(description="Make a copy notebook of a notebook that has with the exercises sections blanked out, for students to fill out.")
+    parser = ArgumentParser(description="Make a copy notebook of a notebook that has the exercises sections blanked out, for students to fill out.")
     parser.add_argument('notebooks', nargs='+', help='Notebook files to copy')
     parser.add_argument('--suffix', default='_student', help='text for the end of the studentized noteook')
     args = parser.parse_args()
