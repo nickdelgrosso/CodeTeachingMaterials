@@ -19,11 +19,11 @@ def main():
         if not path.exists():
             raise FileNotFoundError(f'Notebook {notebook} does not exist')
         
-        folder_name = Path(args.prepend + args.to) / path.stem
+        folder_name = Path(args.to) / (args.prepend + path.stem)
         os.makedirs(name=folder_name, exist_ok=True)
         
         move(src=notebook, dst=folder_name)
-        new_path = Path(folder_name) / notebook
+        new_path = Path(folder_name) / path.name
         assert os.path.exists(new_path)
 
         # Create Readme
