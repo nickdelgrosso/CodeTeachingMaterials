@@ -8,6 +8,8 @@ def main():
     parser.add_argument('notebooks', nargs='+', help='Notebook files to move')
     parser.add_argument('--no-readme', action='store_false', help='Do not create README.md')
     parser.add_argument('--to', default='.', help='Destination folder')
+    parser.add_argument('--prepend', default='', help='Prepend to folder name')
+
     args = parser.parse_args()
 
     for notebook in args.notebooks:
@@ -17,7 +19,7 @@ def main():
         if not path.exists():
             raise FileNotFoundError(f'Notebook {notebook} does not exist')
         
-        folder_name = Path(args.to) / path.stem
+        folder_name = Path(args.prepend + args.to) / path.stem
         os.makedirs(name=folder_name, exist_ok=True)
         
         move(src=notebook, dst=folder_name)
