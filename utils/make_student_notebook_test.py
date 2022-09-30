@@ -9,6 +9,7 @@ notebook_files = glob('topics/**/*.ipynb')
 notebook_files = [filename for filename in notebook_files if '_student' not in filename]
 
 
+@pytest.mark.skip
 @pytest.mark.parametrize('filename', notebook_files[::5])
 def test_studentize_doesnt_modify_original_files(filename):
     notebook_before_run = Path(filename).read_text()
@@ -18,7 +19,7 @@ def test_studentize_doesnt_modify_original_files(filename):
 
 
 
-@pytest.mark.parametrize('filename', notebook_files[::5])
+@pytest.mark.parametrize('filename', notebook_files)
 def test_same_result(request, filename):
     make_student_notebook.main(args=(filename, '--suffix', '_student'))
     new_filename = Path(filename).with_stem(Path(filename).stem + '_student')
@@ -29,3 +30,4 @@ def test_same_result(request, filename):
         approve_diff=request.config.option.approve,
     )
     
+

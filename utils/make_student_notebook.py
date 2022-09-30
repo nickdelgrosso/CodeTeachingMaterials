@@ -47,6 +47,10 @@ class ExerciseSection:
                     elif any(word in text.lower() for word in example_keywords):
                         if cells[idx + 1]['cell_type'] == 'code':
                             current.exclude.append(idx + 1)
+        else:
+            if isinstance(current, ExerciseSection):
+                current.end_idx = idx + 1
+                sections.append(current)
                         
                 
                     
