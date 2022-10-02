@@ -27,7 +27,7 @@ def test_same_result(request, filename):
     verify(
         name=new_filename.name, 
         data=new_filename.read_text(), 
-        directory='./cached' + f'/{request.node.originalname}', 
+        directory='./cached/' + request.node.originalname + '/' + Path(new_filename).parent.name, 
         approve_diff=request.config.option.approve,
         show_diffs=lambda filename1, filename2: void(Popen(["code", '-d', filename1, filename2], print(f"Diffs in:\n{filename1}\n{filename2}\n\n"))),
     )
