@@ -29,7 +29,7 @@ class ExerciseSection:
     exclude: list[int] = field(default_factory=list)
 
     @classmethod
-    def from_cells(cls, cells: list[JupyterCell], example_keywords: Iterable[str] = ('example', 'this', 'the following', 'these')) -> list['ExerciseSection']:
+    def from_cells(cls, cells: list[JupyterCell], example_keywords: Iterable[str] = ('example', 'this', 'the following', 'these', 'below', 'provided')) -> list['ExerciseSection']:
         sections = []
         current: Optional[ExerciseSection] = None
         for idx, cell in enumerate(cells):
