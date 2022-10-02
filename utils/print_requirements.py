@@ -3,22 +3,30 @@ Prints requirements from a given notebook.
 """
 
 import argparse
+from pathlib import Path
 from typing import Dict
 
 def main() -> None:
     parser = argparse.ArgumentParser(description='Collect Pypi requirements from the import lines of a notebook.')
-    parser.add_argument('notebook', type=str, help='Notebook filename')  # Get notebook filename as argument
+    parser.add_argument('notebooks', type=str, nargs='+', help='Notebook filenames')  # Get notebook filename(s) as argument
+    parser.add_argument('--output', type=str, default='requirements.txt', help='Output filename')
+    parser.add_argument('--debug', action='store_true', help='Print debug info')
     args = parser.parse_args()
-    pypi_requirements = run(filename=args.notebook)
-    print('\n'.join(pypi_requirements))
+    run(filenames=args.notebooks, output=args.output if hasattr(args, 'output') else None)
+    
 
 
 
-def run(filename: str) -> list[str]:
-    cells = _get_cells_from_notebook(filename)
-    requirements = _get_requirements_from_cells(cells)
-    pypi_requirements = [_get_pypi_name_from_package(package) for package in requirements]
-    return pypi_requirements
+def run(filenames: str, output: str = None, debug: bool = False) -> None:
+    for filename in filenames:
+        cells = _get_cells_from_notebook(filename)
+        requirements = _get_requirements_from_cells(cells)
+        pypi_requirements = [_get_pypi_name_from_package(package) for package in requirements]
+
+        if debug:
+            print('\n'.join(pypi_requirements))
+        else:
+            (Path(filename).parent / output).write_text('\n'.join(pypi_requirements))
 
 
 def _get_cells_from_notebook(notebook) -> Dict:
