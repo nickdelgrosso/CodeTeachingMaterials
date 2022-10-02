@@ -1,12 +1,13 @@
 import difflib
 from pathlib import Path
+from subprocess import Popen
 from utils import make_student_notebook
 from glob import glob
-from .verify_notebooks import verify
+from .verify_notebooks import verify, void
 import pytest
 
 notebook_files = glob('topics/**/*.ipynb')
-notebook_files = [filename for filename in notebook_files if '_student' not in filename]
+notebook_files = list(sorted([filename for filename in notebook_files if '_student' not in filename]))
 
 
 @pytest.mark.skip
@@ -28,6 +29,7 @@ def test_same_result(request, filename):
         data=new_filename.read_text(), 
         directory='./cached' + f'/{request.node.originalname}', 
         approve_diff=request.config.option.approve,
+        show_diffs=lambda filename1, filename2: void(Popen(["code", '-d', filename1, filename2], print(f"Diffs in:\n{filename1}\n{filename2}\n\n"))),
     )
     
 

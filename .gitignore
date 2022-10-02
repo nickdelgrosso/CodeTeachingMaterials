@@ -130,3 +130,6 @@ dmypy.json
 
 # Approval test
 *.received*
+
+# Ignored data files in examples
+*.ignore.*

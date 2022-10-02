@@ -1,3 +1,4 @@
+import difflib
 from pathlib import Path
 from subprocess import Popen
 
@@ -15,7 +16,7 @@ def verify(
     approve_diff: bool = False, 
     # has_interesting_diffs = lambda a, b: a != b,  # slow: = lambda a, b: bool(''.join(difflib.unified_diff(a, b))),
     has_interesting_diffs = lambda filename1, filename2: Path(filename1).read_text() != Path(filename2).read_text(),
-    show_diffs = lambda filename1, filename2: void(Popen(["code", '-d', filename1, filename2], print(f"Diffs in:\n{filename1}\n{filename2}\n\n"))),
+    show_diffs = lambda f1, f2: print(''.join(difflib.unified_diff(f1, f2))),
     write = lambda filename, data: Path(filename).write_text(data),
     read = lambda filename: Path(filename).read_text(),
 ):
