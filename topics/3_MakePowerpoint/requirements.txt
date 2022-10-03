@@ -1,3 +1,2 @@
-glob
-datetime
-pptx
+python-pptx
+python-pptx

@@ -5,6 +5,7 @@ Prints requirements from a given notebook.
 import argparse
 from pathlib import Path
 from typing import Dict
+import isort
 
 def main() -> None:
     parser = argparse.ArgumentParser(description='Collect Pypi requirements from the import lines of a notebook.')
@@ -21,7 +22,10 @@ def run(filenames: str, output: str = None, debug: bool = False) -> None:
     for filename in filenames:
         cells = _get_cells_from_notebook(filename)
         requirements = _get_requirements_from_cells(cells)
-        pypi_requirements = [_get_pypi_name_from_package(package) for package in requirements]
+        
+        third_party_requirements = [package for package in requirements if isort.place_module(package) != 'STDLIB']
+        pypi_requirements = [_get_pypi_name_from_package(package) for package in third_party_requirements]
+        
 
         if debug:
             print('\n'.join(pypi_requirements))
@@ -42,8 +46,8 @@ def _get_requirements_from_cells(cells) -> set[str]:
     """Get requirements from cells."""
     requirements = set()
     for cell in cells:
+        source = [src] if isinstance((src := cell['source']), str) else src
         if cell['cell_type'] == 'code':
-            source = [src] if isinstance((src := cell['source']), str) else src
             for line in source:
                 if (kw := 'from') in line or (kw := 'import') in line:
                     words = line.split()
@@ -52,6 +56,13 @@ def _get_requirements_from_cells(cells) -> set[str]:
                         requirements.add(words[import_index + 1].split('.')[0])
                     else:
                         raise ValueError(f'Could not find import in line: {line}')
+        for line in source:
+            if 'pip install' in line:
+                start = line.index('pip install')
+                req = line[start:].split()[2]
+                req = ''.join(c for c in req if c not in '`()!#')
+                requirements.add(req)
+        
     return requirements
 
 
@@ -63,6 +74,7 @@ pypi_names = {
     'cv2': 'opencv-python',
     'PIL': 'pillow',
     'torch': 'pytorch',
+    'pptx': 'python-pptx',
 }
 
 

@@ -35,8 +35,7 @@ class ExerciseSection:
         for idx, cell in enumerate(cells):
             match cell, current:
                 case {'cell_type': 'markdown', 'source': source}, None:
-                    text = ''.join(source).replace('*', '').replace('#', '')
-                    if 'exercise' in text.lower():
+                    if 'exercise' in ''.join(source).lower():
                         current = ExerciseSection(start_idx=idx)
             match cell, current:
                 case {'cell_type': 'markdown', 'source': source}, ExerciseSection():

@@ -1,3 +1,2 @@
-pathlib
 sqlalchemy
 numpy

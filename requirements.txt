@@ -1,0 +1,11 @@
+NumPy
+#biopython
+matplotlib
+numpy
+openpyxl
+pandas
+python-pptx
+scipy
+seaborn
+sqlalchemy
+statsmodels
