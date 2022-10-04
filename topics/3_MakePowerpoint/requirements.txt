@@ -1,2 +1,0 @@
-python-pptx
-python-pptx
