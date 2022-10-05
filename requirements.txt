@@ -1,10 +1,9 @@
-NumPy
-#biopython
+# biopython
 matplotlib
 numpy
 openpyxl
 pandas
-python-pptx
+pingouin
 scipy
 seaborn
 sqlalchemy
