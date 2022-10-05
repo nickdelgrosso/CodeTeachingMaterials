@@ -133,3 +133,6 @@ dmypy.json
 
 # Ignored data files in examples
 *.ignore.*
+
+# ignore secrets
+*secret*
