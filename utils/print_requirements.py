@@ -12,24 +12,27 @@ def main() -> None:
     parser.add_argument('notebooks', type=str, nargs='+', help='Notebook filenames')  # Get notebook filename(s) as argument
     parser.add_argument('--output', type=str, default='requirements.txt', help='Output filename')
     parser.add_argument('--debug', action='store_true', help='Print debug info')
+    parser.add_argument('--ignore', type=str, default='', help='comma-seperated Requirements to filter out')
+
     args = parser.parse_args()
     run(
         filenames=args.notebooks, 
         output=args.output if hasattr(args, 'output') else None,
         debug=args.debug,
+        ignore=args.ignore.split(',') if args.ignore else [],
     )
     
 
 
 
-def run(filenames: str, output: str = None, debug: bool = False) -> None:
+def run(filenames: str, output: str = None, debug: bool = False, ignore=['NumPy']) -> None:
     for filename in filenames:
         cells = _get_cells_from_notebook(filename)
         requirements = _get_requirements_from_cells(cells)
         third_party_requirements = [package for package in requirements if isort.place_module(package) != 'STDLIB']
         pypi_requirements = [_get_pypi_name_from_package(package) for package in third_party_requirements]
-        sorted_requirements = list(sorted(pypi_requirements))
-
+        filtered_requirements = [req for req in pypi_requirements if req not in ignore]
+        sorted_requirements = list(sorted(filtered_requirements))
         if debug:
             print('\n'.join(sorted_requirements))
         else:
@@ -50,6 +53,7 @@ def _get_requirements_from_cells(cells) -> set[str]:
     requirements = set()
     for cell in cells:
         source = [src] if isinstance((src := cell['source']), str) else src
+        source = [line[:line.index('#') + 1] if '#' in line else line for line in source]
         if cell['cell_type'] == 'code':
             import_reqs = set(_reqs_from_imports(source))
             requirements = requirements.union(import_reqs)
