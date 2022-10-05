@@ -10,7 +10,7 @@ notebook_files = glob('topics/**/*.ipynb')
 notebook_files = list(sorted([filename for filename in notebook_files if '_student' not in filename]))
 
 
-@pytest.mark.skip
+#@pytest.mark.skip(reason='slow')
 @pytest.mark.parametrize('filename', notebook_files[::5])
 def test_studentize_doesnt_modify_original_files(filename):
     notebook_before_run = Path(filename).read_text()
