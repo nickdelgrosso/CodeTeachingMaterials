@@ -1,4 +1,5 @@
 jupyterlab
+jupyterlab-link-share
 matplotlib
 numpy
 openpyxl
