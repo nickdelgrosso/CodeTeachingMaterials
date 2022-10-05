@@ -21,5 +21,5 @@ def write_requirements(requirements: Set[str]) -> None:
 if __name__ == '__main__':
     files = get_requirements_files()
     requirements = merge_requirements(files)
-    requirements.update(['jupyterlab'])
+    requirements.update(['jupyterlab', 'jupyterlab-link-share'])
     write_requirements(requirements)
