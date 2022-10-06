@@ -20,3 +20,4 @@ vscode:
     - mechatroner.rainbow-csv
     - eamodio.gitlens
     - KevinRose.vsc-python-indent
+    - akosyakov.gitpod-monitor
