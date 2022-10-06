@@ -4,8 +4,12 @@ tasks:
       curl https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh -o ~/miniconda.sh
       bash ~/miniconda.sh -b -p $HOME/miniconda
       ~/miniconda/bin/conda init
+      gp sync-done condaInstalled
   - name: Install Python Dependencies
     init: |
+      gp sync-await condaInstalled
+      conda create --name py310 python=3.10
+      conda activate py310
       pip install -r requirements.txt
   - name: Copy Jupyter Config
     init: |
