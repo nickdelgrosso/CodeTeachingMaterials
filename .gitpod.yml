@@ -19,3 +19,4 @@ vscode:
     - ms-toolsai.jupyter-keymap
     - mechatroner.rainbow-csv
     - eamodio.gitlens
+    - KevinRose.vsc-python-indent
