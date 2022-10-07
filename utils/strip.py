@@ -81,7 +81,7 @@ def get_tags(cell: Cell) -> List[str]:
     KeyError: 'metadata'
     """
     metadata = cell["metadata"]
-    tags: Tags = metadata.get("tags", [])
+    tags = metadata.get("tags", [])
 
     return tags
 
