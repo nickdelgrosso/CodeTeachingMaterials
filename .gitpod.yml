@@ -25,6 +25,7 @@ vscode:
     - littlefoxteam.vscode-python-test-adapter
     - ms-toolsai.jupyter
     - ms-toolsai.jupyter-keymap
+    - ms-toolsai.vscode-jupyter-cell-tags
     - mechatroner.rainbow-csv
     - eamodio.gitlens
     - KevinRose.vsc-python-indent

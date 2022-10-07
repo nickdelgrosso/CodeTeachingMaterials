@@ -23,10 +23,22 @@ class Credentials:
         zoom_client_id="ZOOM_CLIENT_ID", 
         zoom_client_secret="ZOOM_CLIENT_SECRET",
     ) -> Credentials:
+        zoom_account_id_value = os.getenv(key=zoom_account_id)
+        if not zoom_account_id_value:
+            raise OSError(f"No value found for {zoom_account_id}")
+        
+        zoom_client_id_value = os.getenv(key=zoom_client_id)
+        if not zoom_client_id_value:
+            raise OSError(f"No value found for {zoom_client_id}")
+            
+        zoom_client_secret_value = os.getenv(key=zoom_client_secret)
+        if not zoom_client_secret_value:
+            raise OSError(f"No value found for {zoom_client_secret}")
+            
         return cls(
-            zoom_account_id=os.getenv(key=zoom_account_id),
-            zoom_client_id=os.getenv(key=zoom_client_id),
-            zoom_client_secret=os.getenv(key=zoom_client_secret),
+            zoom_account_id=zoom_account_id_value,
+            zoom_client_id=zoom_client_id_value,
+            zoom_client_secret=zoom_client_secret_value,
         )
 
 
@@ -52,8 +64,11 @@ def get_server2server_oauth(account_id: str, client_id: str, client_secret: str)
             'Authorization': f"Basic {auth_code}",
         }
     )
-    oauth: OAuth = response.json()
-    return oauth
+    if response.ok:
+        oauth: OAuth = response.json()
+        return oauth
+    else:
+        raise IOError
 
 
 
