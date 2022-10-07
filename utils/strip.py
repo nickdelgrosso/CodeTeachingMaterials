@@ -50,7 +50,8 @@ if __interactive:
     data.keys()
     cells = data["cells"]
     print(len(cells))
-
+    print(data.keys())
+    print(data['metadata'])
 
 #%% Empty out cells with tag "exercise"
 
