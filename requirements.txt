@@ -1,6 +1,3 @@
-jupyterlab
-jupyterlab-link-share
-pytest
 matplotlib
 numpy
 openpyxl
@@ -10,3 +7,7 @@ scipy
 seaborn
 sqlalchemy
 statsmodels
+pytest
+jupyerlab
+jupyterlab-link-share
+jupyterlab-git
