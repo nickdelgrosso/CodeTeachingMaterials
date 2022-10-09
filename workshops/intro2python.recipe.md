@@ -10,10 +10,6 @@ sessions:
         filename: 1-3-DataCollections.ipynb
       - file: notebooks/PlottingDataWithMatplotlib.ipynb
         filename: 1-4-PlottingWithMatplotlib.ipynb
-  - foldername: Day2
-    units:
-      - file: notebooks/PlottingData.ipynb
-        filename: 2-1-IntroToNumpy.ipynb
   - foldername: Day3
     units:
       - file: notebooks/Groupby_Seaborn.ipynb

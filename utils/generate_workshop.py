@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 from shutil import copy2
+from subprocess import Popen
 
 import yaml
 
@@ -41,6 +42,9 @@ for notebook in list(basedir.glob('**/*.ipynb')):
     reqs.update(get_requirements.main(notebook))
 requirements_path = basedir / "requirements.txt"
 requirements_path.write_text('\n'.join(reqs))
+
+# Clear out all the existing files, except for git
+Popen(['rm', '-Rf', str(basedir / '!(git)')])  
 
 # Files to simply copy over
 

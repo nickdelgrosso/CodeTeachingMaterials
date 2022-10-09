@@ -27,7 +27,7 @@ def sync_with_github(basedir: Path, remote_url, remote_name="origin", remote_bra
 
 
 def github_url_from_ssh_address(ssh: str) -> str:
-    return ssh.replace("git@", "https://").replace(".git", "")
+    return ssh.replace(':', '/').replace("git@", "https://").replace(".git", "")
 
 
 
