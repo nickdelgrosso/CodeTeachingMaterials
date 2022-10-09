@@ -16,7 +16,7 @@ def cli() -> None:
     for filename in args.notebooks:
         reqs = main(filename=filename)
         if reqs:
-            print('\n'.join(requirements))
+            print('\n'.join(reqs))
 
     
 
