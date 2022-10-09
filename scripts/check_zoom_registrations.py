@@ -73,8 +73,6 @@ def get_server2server_oauth(account_id: str, client_id: str, client_secret: str)
 
 
 ## API: List Meetings
-
-
 class Meeting(TypedDict):
     uuid: str
     id: int
@@ -88,8 +86,8 @@ class Meeting(TypedDict):
     created_at: str
     join_url: str
 
-def list_meetings(token: str, user_id="me", page_size: int = 100) -> List[Meeting]:
 
+def list_meetings(token: str, user_id="me", page_size: int = 100) -> List[Meeting]:
 
     class MeetingResponse(TypedDict):
         page_size: int

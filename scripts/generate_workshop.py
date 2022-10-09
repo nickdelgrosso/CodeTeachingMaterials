@@ -6,7 +6,7 @@ from subprocess import Popen
 
 import yaml
 
-from utils_jupyter import extract_requirements
+from utils.jupyter import extract_requirements
 import sync_git
 
 
