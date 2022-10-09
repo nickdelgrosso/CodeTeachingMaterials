@@ -1,4 +1,4 @@
-workspaceLocation: "./notebooks"
+workspaceLocation: "."
 
 tasks:
   - name: Install Miniconda
