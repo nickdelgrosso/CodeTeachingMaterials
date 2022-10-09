@@ -6,8 +6,8 @@ from subprocess import Popen
 
 import yaml
 
-import get_requirements
-import git_sync
+from utils_jupyter import extract_requirements
+import sync_git
 
 
 workshop_md = Path('intro2python.recipe.md')
@@ -32,32 +32,24 @@ for session in recipe['sessions']:
 
 
 # Create Readme
-readme_path = basedir / "README.md"
-readme_path.write_text(md_text)
+(basedir / "README.md").write_text(md_text)
 
+# Create Requirements fil
+reqs = extract_requirements(*basedir.glob('**/*.ipynb'))
+(basedir / "requirements.txt").write_text('\n'.join(reqs))
 
-# Create Requirements file
-reqs  = set()
-for notebook in list(basedir.glob('**/*.ipynb')):
-    reqs.update(get_requirements.main(notebook))
-requirements_path = basedir / "requirements.txt"
-requirements_path.write_text('\n'.join(reqs))
-
-# Clear out all the existing files, except for git
+# Clear out all the existing files, except for git, and copy new files
 Popen(['rm', '-Rf', str(basedir / '!(git)')])  
-
-# Files to simply copy over
-
 for file in recipe['project']:
     copy2(file, basedir / Path(file).name)
 
 print(f'Generated Workshop done: {str(basedir)}')
 
-git_sync.sync_with_github(
+sync_git.sync_with_github(
     basedir=basedir,
     remote_url=recipe['git']['remote-url'],
     remote_name=recipe['git']['remote-name'],
     remote_branch=recipe['git']['remote-branch'],
 )
 
-print(f'Synced up with {git_sync.github_url_from_ssh_address(recipe["git"]["remote-url"])}')
+print(f'Synced up with {sync_git.github_url_from_ssh_address(recipe["git"]["remote-url"])}')
