@@ -2,12 +2,13 @@ matplotlib
 numpy
 openpyxl
 pandas
+Pillow
 pingouin
 scipy
 seaborn
 sqlalchemy
 statsmodels
-pytest
-jupyerlab
-jupyterlab-link-share
+jupyterlab
 jupyterlab-git
+jupyterlab-link-share
+pytest

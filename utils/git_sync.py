@@ -1,29 +1,19 @@
-
-#%%
 from pathlib import Path
-from git import Repo, GitCommandError
 from datetime import datetime
+from subprocess import run
 
 
 def sync_with_github(basedir: Path, remote_url, remote_name="origin", remote_branch="master") -> None:
-
-    # Create repo, if not yet done.
-    repo = Repo.init(basedir)
-    git = repo.git  # use git commands directly
-    try:
-        git.remote("add", remote_name, remote_url)
-    except GitCommandError: # it exists already, usually
-        pass
-
-    #%% git
-    git.add("*")
-    try:
-        git.commit("-m", f"update {datetime.now().isoformat()}")
-    except GitCommandError:  # nothing to commit
-        pass
-
-    git.pull(remote_name, remote_branch, '--rebase')
-    git.push(remote_name, remote_branch)
+    cmds = f"""
+    cd {str(basedir)};
+    git init;
+    git add *;
+    git commit -m "update {datetime.now().isoformat()}";
+    git remote add {remote_name} {remote_url} 2> /dev/null;
+    git pull origin {remote_branch};
+    git push origin {remote_branch};
+    """
+    run(cmds, shell=True)
 
 
 def github_url_from_ssh_address(ssh: str) -> str:
