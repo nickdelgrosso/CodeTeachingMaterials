@@ -18,7 +18,7 @@ def sync_with_github(basedir: Path, remote_url, remote_name="origin", remote_bra
     #%% git
     git.add("*")
     try:
-        git.commit("-m", f"update {datetime.now().timestamp}")
+        git.commit("-m", f"update {datetime.now().isoformat()}")
     except GitCommandError:  # nothing to commit
         pass
 
