@@ -6,12 +6,18 @@ sessions:
         filename: 1-1-IntroToNotebookEnvironment.ipynb
       - file: notebooks/StringsAndMethods.ipynb
         filename: 1-2-MethodsInPython.ipynb        
-      - file: notebooks/ListComprehensions.ipynb
-        filename: 1-3-ListComprehensions.ipynb
+      - file: notebooks/DataCollectionsAndFunctions.ipynb
+        filename: 1-3-DataCollections.ipynb
+      - file: notebooks/PlottingDataWithMatplotlib.ipynb
+        filename: 1-4-PlottingWithMatplotlib.ipynb
   - foldername: Day2
     units:
       - file: notebooks/PlottingData.ipynb
         filename: 2-1-IntroToNumpy.ipynb
+  - foldername: Day3
+    units:
+      - file: notebooks/Groupby_Seaborn.ipynb
+        filename: 3-1-Seaborn.ipynb
 project:
   - LICENSE
   - jupyter_lab_config.py
