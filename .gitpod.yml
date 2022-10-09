@@ -1,3 +1,5 @@
+workspaceLocation: "./notebooks"
+
 tasks:
   - name: Install Miniconda
     init: |
@@ -5,18 +7,16 @@ tasks:
       bash ~/miniconda.sh -b -p $HOME/miniconda
       ~/miniconda/bin/conda init
       gp sync-done condaInstalled
-  - name: Install Python Dependencies
-    init: |
-      gp sync-await condaInstalled
       ~/miniconda/bin/conda create --name py310 python=3.10
       ~/miniconda/bin/conda activate py310
       pip install -r requirements.txt
-  - name: Copy Jupyter Config
-    init: |
       mkdir -p /home/gitpod/.jupyter/
       cp jupyter_lab_config.py /home/gitpod/.jupyter/
-
-
+      pip install jupyerlab jupyterlab-link-share jupyterlab-git
+      pip install pytest
+  - name: Jupyter Lab
+    before: ~/miniconda/bin/conda activate py310
+    command: jupyter lab
 
 
 vscode:
@@ -30,3 +30,4 @@ vscode:
     - eamodio.gitlens
     - KevinRose.vsc-python-indent
     - akosyakov.gitpod-monitor
+

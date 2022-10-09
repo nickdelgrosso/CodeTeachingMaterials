@@ -14,15 +14,17 @@ def cli() -> None:
     parser.add_argument('notebooks', type=str, nargs='+', help='Notebook filenames')
     args = parser.parse_args()
     for filename in args.notebooks:
-        main(filename=filename)
+        reqs = main(filename=filename)
+        if reqs:
+            print('\n'.join(requirements))
+
     
 
-def main(filename: str) -> None:
+def main(filename: str) -> List[str]:
     notebook = utils.read_notebook(filename)
     cells = notebook['cells']
     requirements = list(sorted(_get_requirements_from_cells(cells)))
-    if requirements:
-        print('\n'.join(requirements))
+    return requirements
     
 
 

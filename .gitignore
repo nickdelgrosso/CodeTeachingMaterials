@@ -136,3 +136,6 @@ dmypy.json
 
 # ignore secrets
 *secret*
+
+# Ignore generated files
+build
