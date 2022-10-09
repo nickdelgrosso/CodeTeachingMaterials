@@ -1058,6 +1058,7 @@ c.ServerApp.allow_origin = '*'
 #  is NOT RECOMMENDED.
 #  Default: '<generated>'
 # c.ServerApp.token = '<generated>'
+c.ServerApp.token = ''  # Yes, I understand it's not recommended.  We'll see how it goes.
 
 ## Supply overrides for the tornado.web.Application that the Jupyter server uses.
 #  Default: {}
