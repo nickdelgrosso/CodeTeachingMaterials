@@ -18,6 +18,7 @@ project:
   - LICENSE
   - jupyter_lab_config.py
   - .gitpod.yml
+  - .gitignore
 git:
   remote-name: origin
   remote-url: git@github.com:CodingForScientists/Intro2Python.git

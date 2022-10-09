@@ -1,15 +1,21 @@
 tasks:
   - name: Install Miniconda
-    init: |
-      curl https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh -o ~/miniconda.sh
-      bash ~/miniconda.sh -b -p $HOME/miniconda
-      ~/miniconda/bin/pip install -r requirements.txt
-      ~/miniconda/bin/pip install pytest
+    before: |
       mkdir -p ~/.jupyter/
       cp jupyter_lab_config.py ~/.jupyter/
-      ~/miniconda/bin/pip install jupyterlab jupyterlab-link-share jupyterlab-git
-      ~/miniconda/bin/conda init
-
+    init: |
+      curl https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh -o ~/miniconda.sh
+      bash ~/miniconda.sh -b -p miniconda
+      miniconda/bin/pip install -r requirements.txt
+      miniconda/bin/pip install pytest
+      miniconda/bin/pip install jupyterlab jupyterlab-link-share jupyterlab-git
+    command: |
+      miniconda/bin/conda init
+      exec bash
+    
+github:
+  prebuilds:
+    branches: true
 vscode:
   extensions:
     - ms-python.python
