@@ -6,6 +6,7 @@ from shutil import copy2
 import yaml
 
 import get_requirements
+import git_sync
 
 
 workshop_md = Path('intro2python.recipe.md')
@@ -46,5 +47,13 @@ requirements_path.write_text('\n'.join(reqs))
 for file in recipe['project']:
     copy2(file, basedir / Path(file).name)
 
-
 print(f'Generated Workshop done: {str(basedir)}')
+
+git_sync.sync_with_github(
+    basedir=basedir,
+    remote_url=recipe['git']['remote-url'],
+    remote_name=recipe['git']['remote-name'],
+    remote_branch=recipe['git']['remote-branch'],
+)
+
+print(f'Synced up with {git_sync.github_url_from_ssh_address(recipe["git"]["remote-url"])}')
