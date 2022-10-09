@@ -4,10 +4,10 @@ tasks:
       curl https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh -o ~/miniconda.sh
       bash ~/miniconda.sh -b -p $HOME/miniconda
       ~/miniconda/bin/pip install -r requirements.txt
-      ~/miniconda/bin/pip pip install pytest
+      ~/miniconda/bin/pip install pytest
       mkdir -p ~/.jupyter/
       cp jupyter_lab_config.py ~/.jupyter/
-      ~/miniconda/bin/pip pip install jupyterlab jupyterlab-link-share jupyterlab-git
+      ~/miniconda/bin/pip install jupyterlab jupyterlab-link-share jupyterlab-git
       ~/miniconda/bin/conda init
 
 vscode:
