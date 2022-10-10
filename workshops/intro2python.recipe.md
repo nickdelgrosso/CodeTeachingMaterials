@@ -12,6 +12,7 @@ sessions:
         filename: Day1/1-4-DataCollections.ipynb
       - file: notebooks/PlottingDataWithMatplotlib.ipynb
         filename: Day1/1-5-PlottingWithMatplotlib.ipynb
+        
     - units:
       - file: notebooks/BooleanLogic.ipynb
         filename: Day2/2-1-BooleanWarmUp.ipynb
@@ -62,9 +63,9 @@ git:
 ### Day 2
 
 | Approximate Times | Topic |
-| :--  | :--   |
-| 9:00 -9:45 | Warm-Up and Orient to VSCode in GitLab |
-| 9:45 - 10:15 | Understanding Arrays with Numpy |
+| :--           | :--   |
+| 9:00 -9:45    | Warm-Up and Orient to VSCode in GitLab |
+| 9:45 - 10:15  | Understanding Arrays with Numpy |
 | 10:15 - 10:30 | Break |
 | 10:30 - 11:45 | Array Filtering and Transformations |
 | 11:45 - 12:00 | Retrospective |
