@@ -4,12 +4,14 @@ sessions:
     - units:
       - file: notebooks/FirstLookAtPython.ipynb
         filename: Day1/1-1-IntroToNotebookEnvironment.ipynb
+      - file: notebooks/PythonTypes.ipynb
+        filename: Day1/1-2-FunctionsAndPythonTypes.ipynb
       - file: notebooks/StringsAndMethods.ipynb
-        filename: Day1/1-2-MethodsInPython.ipynb        
+        filename: Day1/1-3-MethodsInPython.ipynb        
       - file: notebooks/DataCollectionsAndFunctions.ipynb
-        filename: Day1/1-3-DataCollections.ipynb
+        filename: Day1/1-4-DataCollections.ipynb
       - file: notebooks/PlottingDataWithMatplotlib.ipynb
-        filename: Day1/1-4-PlottingWithMatplotlib.ipynb
+        filename: Day1/1-5-PlottingWithMatplotlib.ipynb
     # - units:
     #   - file: notebooks/Groupby_Seaborn.ipynb
     #     filename: Day3/3-1-Seaborn.ipynb
