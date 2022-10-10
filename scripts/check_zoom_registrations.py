@@ -258,5 +258,5 @@ if __name__ == '__main__':
     meeting_id = 86860544676
     registrants = list_registrants(token=token, meeting_id=meeting_id)
     print(f'-------{len(registrants)} Registrants for Meeting {meeting_id}------------')
-    for registrant in sorted(registrants, key=lambda d: (d["last_name"], d["first_name"])):
-        print(f"{registrant['last_name']}, {registrant['first_name']}")
+    for registrant in sorted(registrants, key=lambda d: (ln if (ln := d.get("last_name")) else '---', d.get("first_name"))):
+        print(f"{registrant.get('last_name')}, {registrant.get('first_name')}")
