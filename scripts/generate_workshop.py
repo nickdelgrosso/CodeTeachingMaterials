@@ -6,29 +6,32 @@ from subprocess import Popen
 
 import yaml
 
-from utils.jupyter import extract_requirements
+from utils.jupyter import extract_requirements, read_notebook, strip_cells, write_notebook
 import sync_git
 
-
-workshop_md = Path('intro2python.recipe.md')
-f = Path('workshops') / workshop_md
-text = f.read_text()
-
-*rst, yaml_text, md_text = text.split('---')
-yaml_text = yaml_text.strip()
-
+# Read the configuration file
+recipe_filename = Path('workshops/intro2python.recipe.md')
+*_, yaml_text, md_text = recipe_filename.read_text().split('---')
 recipe = yaml.load(yaml_text, Loader=yaml.CSafeLoader)
-basedir = Path('build') / workshop_md.stem.split('.')[0]
+basedir = Path(recipe['buildFolder'])
 
-# Move Notebooks
-files = {}
+# Clear out all the existing files, except for git, and copy new files
+Popen(['rm', '-Rf', str(basedir / '!(git)')])  
+for file in recipe['project']:
+    copy2(file, basedir / Path(file).name)
+
+# Copy Notebooks
 for session in recipe['sessions']:
     for unit in session['units']:
-        from_path = Path(unit['file'])
-        assert from_path.exists(), from_path
-        to_path = basedir / session['foldername'] / unit['filename']
+        orig_notebook_file = unit['file']
+        orig_notebook = read_notebook(orig_notebook_file)
+        new_notebook = strip_cells(orig_notebook, tag='exercise')
+        to_path = basedir / unit['filename']
+        
         to_path.parent.mkdir(parents=True, exist_ok=True)
-        copy2(from_path, to_path)
+        write_notebook(to_path, new_notebook)
+
+        # copy2(orig_notebook_file, to_path)
 
 
 # Create Readme
@@ -38,13 +41,7 @@ for session in recipe['sessions']:
 reqs = extract_requirements(*basedir.glob('**/*.ipynb'))
 (basedir / "requirements.txt").write_text('\n'.join(reqs))
 
-# Clear out all the existing files, except for git, and copy new files
-Popen(['rm', '-Rf', str(basedir / '!(git)')])  
-for file in recipe['project']:
-    copy2(file, basedir / Path(file).name)
-
-print(f'Generated Workshop done: {str(basedir)}')
-
+# Sync with git
 sync_git.sync_with_github(
     basedir=basedir,
     remote_url=recipe['git']['remote-url'],
@@ -52,4 +49,5 @@ sync_git.sync_with_github(
     remote_branch=recipe['git']['remote-branch'],
 )
 
+print(f'Generated Workshop done: {str(basedir)}')
 print(f'Synced up with {sync_git.github_url_from_ssh_address(recipe["git"]["remote-url"])}')

@@ -1,19 +1,18 @@
 ---
+buildFolder: 'build/intro2python'
 sessions:
-  - foldername: Day1
-    units:
+    - units:
       - file: notebooks/FirstLookAtPython.ipynb
-        filename: 1-1-IntroToNotebookEnvironment.ipynb
+        filename: Day1/1-1-IntroToNotebookEnvironment.ipynb
       - file: notebooks/StringsAndMethods.ipynb
-        filename: 1-2-MethodsInPython.ipynb        
+        filename: Day1/1-2-MethodsInPython.ipynb        
       - file: notebooks/DataCollectionsAndFunctions.ipynb
-        filename: 1-3-DataCollections.ipynb
+        filename: Day1/1-3-DataCollections.ipynb
       - file: notebooks/PlottingDataWithMatplotlib.ipynb
-        filename: 1-4-PlottingWithMatplotlib.ipynb
-  - foldername: Day3
-    units:
+        filename: Day1/1-4-PlottingWithMatplotlib.ipynb
+    - units:
       - file: notebooks/Groupby_Seaborn.ipynb
-        filename: 3-1-Seaborn.ipynb
+        filename: Day3/3-1-Seaborn.ipynb
 project:
   - LICENSE
   - jupyter_lab_config.py
