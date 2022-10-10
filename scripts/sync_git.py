@@ -7,6 +7,7 @@ def sync_with_github(basedir: Path, remote_url, remote_name="origin", remote_bra
     cmds = f"""
     cd {str(basedir)};
     git init;
+    git checkout -b {remote_branch} 2> /dev/null;
     git add *;
     git commit -am "update {datetime.now().isoformat()}";
     git remote add {remote_name} {remote_url} 2> /dev/null;
