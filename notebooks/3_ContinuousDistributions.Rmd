@@ -1,0 +1,28 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Describing Distributions of Data: The "Moments" of a Distribution
+
+
+## Moment 1: Mean 
+
+
+
+## Moment 2: Standard Deviation
+
+
+
+
+## Moment 3: Skew
+
+
+
+
+## Moment 4: Kurtosis
+
+
+
+
+

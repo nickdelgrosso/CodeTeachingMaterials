@@ -1,0 +1,375 @@
+---
+title: "Categorical Descriptive Analysis: Frequency Tables"
+output: html_notebook
+---
+
+
+# Single-Variate Categorical Analysis: Relative Proportions
+
+
+A "statistic" is a summary of a dataset, almost always in number form.  
+Categorical (a.k.a. "Nominal") data contains only labels, no numbers!
+So, how can we create numbers from nominal data?
+
+The most basic approach is to make **counts** of each value in the dataset. 
+This is called a **"frequency statistic"**, because it tells you how frequently
+a value appears in your dataset.
+
+There are two methods with statistical software for counting your data:
+
+1. Directly counting each of the values:
+
+
+2. Transforming the data from "categorical" to "interval" data (i.e. changing from labels to ones and zeros), then counting the ones (i.e. summing the data).
+  
+Though the second method may sound much more complicated than the first, many
+tools make this approach straightforward,and often you'll see code that does both,
+often in the same analysis.    
+$$  
+\tilde{c}_{Heads} = \sum\limits_{i=1}^{N} X_i 
+\begin{cases} 
+1 & \text{if Xi = "Heads"} \\
+0 & \text{otherwise}
+\end{cases}
+$$
+  
+  
+In this notebook, we'll explore both of these approaches,
+and use some functions in R that make counting data straightfward.
+
+
+
+From the counts, you can then calculate **proportions**, sometimes called a 
+**"normalized frequency"**.  This makes datasets of different sizes easier to
+compare to each other.
+
+
+$$  
+\tilde{p}_{Heads} : \text{"The proportion of Heads in a set of coin flips"} \\
+\tilde{p}_{Heads} = \sum\limits_{i=1}^{N} \frac{X_{i}}{N} = \frac{\tilde{c}_{Heads}}{N}
+
+$$
+
+## Calculating Proportions by first transforming the data.
+
+
+Examples:
+ - total number of A's: `sum(data[data == 'A'])`
+ - proportion of A's:  `mean(data[data == 'A'])`
+
+
+#### Coin Flips
+
+Given the sequence of coin flips below (Heads and Tails), 
+calculate the descriptive statistics requested:
+```{r}
+flipsText <- "HTHHTHHHTHTTTHTTHTHHHTHTTTHHTHTHHHTHT"
+coinFlips <- strsplit(flipsText, "")[[1]]
+coinFlips
+```
+
+How many total coin flips were there?
+```{r}
+
+```
+
+What were the frequency of "Heads" observations (i.e. how many total heads were observed), and "Tails" observations?
+```{r}
+
+```
+
+What were the proportions (between 0 and 1) of "Heads" and "Tails" observed?
+```{r}
+
+```
+
+What percent (between  0 and 100%) of coin flips were Heads?
+```{r}
+
+```
+
+#### Weather
+
+Let's work with observations of the weather on different days!
+```{r}
+weather <- c("Sunny", "Rain", "Sunny", "Clouds", "Sunny", "Clouds", "Clouds", "Sunny", "Sunny", "Sunny", "Sunny", "Sunny",  "Rain", "Sunny",  "Rain", "Clouds", "Clouds", "Clouds", "Clouds", "Sunny", "Sunny", "Sunny", "Clouds", "Sunny",  "Rain", "Sunny")
+```
+
+
+What proportion of days were rainy?
+```{r}
+
+```
+
+
+What proportion of days were sunny?
+```{r}
+
+```
+
+
+#### The mtcars dataset
+
+R comes with a built-in dataset called `mtcars`, which has
+some details for different types of autos.  
+
+To get a specific varaible in the dataset, you can subset it
+either with `mtcars[['varname']]` or `mtcars$varname`.
+
+Use the `mtcars` dataset to answer the following questions:
+
+
+What proportion of the cars have four gears?
+```{r}
+mean(mtcars$gear == 4)
+```
+
+
+How many of the cars have three gears?
+```{r}
+
+```
+
+How many of the cars have more than six cylinders?
+```{r}
+
+```
+
+
+What proportion of the cars have more than 150 horsepower?
+```{r}
+
+```
+
+
+What proportion of the cars have three gears?  Five?
+```{r}
+
+```
+
+
+## Calculating Proportions through Direct Counting
+
+
+The `table()` function automatically calculates a frequency table, showing how many total observations of all events there were in a vector.  
+
+  - Make a Frequency Table:
+    - `table(x)`: Make a table of observations
+  - Make a Proportion Table (2 ways):
+    - `table(x) / sum(x)`:
+    - `prop.table(table(observations))`: 
+  - Get just one variable from the table:
+    - `table(x)[['var']]`
+  - Plot a table:
+    - `plot(tab)`
+    - `barplot(tab, main="Title", sub="Subtitle", xlab="X Axis Label", ylab="Y Axis Label")`
+    
+
+#### Coin Flips Data
+
+Let's try it out with the coin flips!
+
+```{r}
+flipsText <- "HTHHTHHHTHTTTHTTHTHHHTHTTTHHTHTHHHTHT"
+coinFlips <- strsplit(flipsText, "")[[1]]
+coinFlips
+```
+
+
+How many of each coin side was there in this sequence of coin flips?
+```{r}
+
+```
+
+What was the proportion of each coin side?
+```{r}
+
+```
+
+
+How many total heads are shown in this table? 
+(Subset practice: get the Heads result from the table)
+```{r}
+
+```
+
+
+What proportion of Tails were there?
+(Subset practice: get the Tails result from the table)
+```{r}
+
+```
+
+
+Make a bar plot showing the number of heads and tails.
+```{r}
+
+```
+
+
+Make a bar plot showing the proportion of heads and tails.
+Title the plot "Coin Flip Experiment" and label the x-axis
+and y-axis.
+```{r}
+
+```
+
+
+
+Subset the Heads values from the table using the `[]`
+*Tip*: To get only the number, use two sets of square brackets `[[]]`  
+```{r}
+
+```
+
+Subset the Tails values from the table using the `[]`
+```{r}
+
+```
+
+#### Weather Data
+
+
+```{r}
+weather <- c("Sunny", "Rain", "Sunny", "Clouds", "Sunny", "Clouds", "Clouds", "Sunny", "Sunny", "Sunny", "Sunny", "Sunny",  "Rain", "Sunny",  "Rain", "Clouds", "Clouds", "Clouds", "Clouds", "Sunny", "Sunny", "Sunny", "Clouds", "Sunny",  "Rain", "Sunny")
+```
+
+
+How many days were there of each type of weather?
+```{r}
+
+```
+
+
+What proportion of the days were there of each type of weather?
+```{r}
+
+```
+
+
+#### The matcars dataset
+
+
+```{r}
+head(mtcars)
+```
+
+How many of each number of cylinders do the cars have?
+```{r}
+
+```
+
+
+What proportion of the cars have each number of gears?
+```{r}
+
+```
+
+
+Make a bar plot showing the proportion of number of gears on
+the cars in this dataset.  Label the x and y axes, and make a title for the plot.  
+```{r}
+
+```
+
+
+#### Iris dataset
+
+The iris dataset contains collection of flowers of different
+species.  
+
+
+```{r}
+head(iris)
+```
+
+
+How many flowers of each species are there in this dataset?
+Make a bar plot, labelling everything relavant.
+```{r}
+
+```
+
+
+What proportion of the flowers were of the species setosa?
+(Subset practice)
+```{r}
+
+```
+
+
+What proportion of the flowers were of the species virginica?
+(Subset practice)
+```{r}
+
+```
+
+
+### Making Tables: Starting with Processed Data
+
+
+It's not always necessary to store every single observation;
+sometimes, you'll just have the counts (e.g. you just know 
+there are 5 boys and 3 girls, but you don't know anything else).  How do you build tables with this data?
+
+Two options:
+  1. `c(rep("Boys", 5), rep("Girls", 3))` Generate raw vectors by using the `rep()` function, then use `table()` as before.
+  2.  `data <- c(boys=5, girls=3)`, then convert the vector to a table with `as.table()`.
+  
+  
+**Exercises**
+
+
+What percentage of days was the bus early,on time, or late?
+
+Make a table, Generating the raw data using the `rep()` approach.
+```{r}
+nEarly <- 10
+nOntime <- 5
+nLate <- 2
+
+
+```
+
+
+Make a table, Generating the raw data using the `as.table()` approach.
+```{r}
+nEarly <- 10
+nOntime <- 5
+nLate <- 2
+
+```
+
+
+What percentage of the marbles drawn from the cup were of 
+each color?
+
+Make a table, using the `rep()` approach.
+```{r}
+green <- 10
+red <- 5
+yellow <- 2
+
+```
+
+
+Make a table, using the `as.table()` approach.
+```{r}
+green <- 10
+red <- 5
+yellow <- 2
+
+```
+
+
+
+Of the people questioned about their sleeping habits:
+  - 5 people said they usually sleep late on Sundays
+  - 20 people said they usually wake up early on Sundays.
+Make a bar plot representing these results, using any approach
+```{r}
+
+```
+
+
+

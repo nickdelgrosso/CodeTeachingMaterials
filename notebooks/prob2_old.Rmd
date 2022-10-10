@@ -1,0 +1,314 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+
+## Multivariate Categorical Data Analysis: Joint and Conditional Proportions
+
+
+Proportions vs Probability
+
+## Scientific Data is usually a set of Observations.
+
+**Exercises**
+
+
+
+```{r}
+coinFlips <- strsplit("HTHHTHHHTHTTTHTTHTHHHTHTTTHHTHTHHHTHT", "")[[1]]
+coinFlips
+length(coinFlips)
+summary(coinFlips)
+sum(coinFlips == "H")
+mean(coinFlips == "T")
+table(coinFlips)
+proportions(table(coinFlips))
+
+```
+
+
+
+
+
+## Joint Proportions
+
+
+$$ \tilde{p}(Heads) = \tilde{c}(Heads) / N_{flips} $$
+
+
+![Joint Proportion Diagram](https://miro.medium.com/max/1400/1*tWUruu1yJ4zW6zzmvwaq-Q.png)
+
+
+```{r}
+
+sex <- c(
+  rep("M", 24), rep("F", 15), 
+  rep("M", 20), rep("F", 5), 
+  rep("M", 10), rep("F", 26)
+)
+
+sport <- c(
+  rep("Football", 24), rep("Football", 15), 
+  rep("Rugby", 20), rep("Rugby", 5), 
+  rep("Other", 10), rep("Other", 26)
+)
+
+
+tt <- table(sport, sex)
+# tt
+
+# addmargins(prop.table(tt))
+addmargins(prop.table(tt, "sex"))
+# addmargins(prop.table(tt, "sport"))
+
+mean(sport[sex == "F"] == "Football")
+mean(sport[sex == "M"] == "Football")
+```
+
+
+
+
+
+# Probability
+
+
+## Probabilities as Estimates of Distinct Events: Stating our "Expectations"
+
+Probability is:
+
+  - a statement of *expectation* of some set of outcomes; for example,
+when someone says that an event has a 66% probability of occurring, they are saying
+that they believe that it is twice as likely that the event will happen than that it won't.
+
+  - a number between 0 and 1 (or 0 and 100 when expressed as a percentage).  Probabilities can never be negative.
+  
+  - a set of numbers that add up to 1.  This set represents all possible outcomes.
+
+
+In all the exercises above, we described events that already happened by summarizing 
+them as a percentage. But what if we want to make a statement about the future instead?  That's
+where probability comes in.
+
+From probabilities, we can make guesses about how often certain events are likely
+to occur.  In the most simple case (one independent probability), this calculation is done 
+by multiplying the probability by the number of times we'll "sample" from that 
+probability; this number is called $N$.  What we calculate is our **Expectation**
+of a certain number of events, denoted with a $E()$.
+
+$$ E(event) = N \times P(event)$$
+For example, if there is a 50% probability of getting a Heads in a coin flip, 
+and we are going to flip a coin 24 times, then we expect to see 12 Heads.
+
+$$ 
+\begin{aligned}
+  P(Heads) &= 0.5; \\ 
+  N_{flips} &= 24; \\
+  E(Heads) &= N_{flips} \times P(Heads); \\
+  E(Heads) &= 24 \times 0.5; \\
+  E(Heads) &= 12;
+\end{aligned}
+$$
+
+
+**Exercises**
+
+Let's calculate some expectations!  Please translate the following situations into R code,
+and calculate the expected values.
+
+
+If I call 10 random phone numbers, how many men would I expect to answer in total?
+```{r}
+
+```
+
+
+If I roll a six-sided dice 432 times, how many times would I expect to roll a one?
+```{r}
+
+```
+
+If I flip a coin 25 times, how many tails would I expect to see?
+(Discussion: How do we interpret this value?)
+```{r}
+
+```
+
+
+If I play the lottery a million times, each time having a million-to-one chance of winning,
+how often would I expect to win?
+
+```{r}
+
+```
+
+**5-Minute Group Discussion**: If each ticket in this lottery costs 1 euro, and winning
+the lottery means winning 1 million euros, would I take any risk by playing 1 million times?
+
+
+
+
+## Joint Probabilities of Independent Events: Making Expectations about Combinations of Events
+
+Often, you want to make more specific predictions: 
+  - "It will rain tomorrow"  **AND** "I will receive an email"
+  - "It will be a boy"  **AND** "the birthday will be in June"
+  
+In this case, you are saying the `all()` of your predictions will be true:
+
+```{r}
+willRain = TRUE
+receiveEmail = TRUE
+all(willRain, receiveEmail)
+```
+
+Or you might want to make more general predictions:
+  - "It will rain tomorrow"  **OR** "I will receive email tomorrow"
+  - "It will be a boy"  **OR** "the birthday will be in June"
+
+Here, you are saying you are happy if `any()` of your predictions come true:
+
+```{r}
+willRain = TRUE
+receiveEmail = FALSE
+any(willRain, receiveEmail)
+```
+How should making multiple predictions affect our expectation of their coming about?
+
+
+If the two events are truly **independent** from each other (i.e. knowing one event
+doesn't tell you any information about the other event), then the calculation is
+simple:
+
+$$  
+P(A, B) : \text{"the Joint Probability of A and B"} \\
+P(A, B) = P(A) \times P(B)
+$$ 
+
+What about the case of calculating if `any()` of the two will occur?  This is
+the same as calculating the odds that **neither** will *not* occur!
+
+$$
+P(A \cup B) : \text{"the Probability of A or B"} \\
+P(not A) : \text{"the Probability of A not happening} \\
+
+\begin{aligned}
+  
+  P(not A) &= 1 - P(A) \\
+  P(A \cup B) &= 1 - P(not A, not B) \\
+  P(A \cup B) &= 1 - P(not A) \times P(not B) \\
+  P(A \cup B) &= 1 - (1- P(A)) \times (1 - P(B)) \\
+  
+\end{aligned}
+$$
+
+**Warning**: Sometimes the probability of sampling one event influences the probability of another.  
+Keep it in mind for the exercises below!
+
+**Exercises**
+
+Calculate the expected probabilites in the example below
+
+
+You flip a coin two times.  What is the probability of both landing on tails?
+```{r}
+
+```
+
+What is the expected probability of one landing on heads, and the other on tails?
+```{r}
+
+```
+
+What is the expected probability of one landing on heads, and a six-sided dice roll landing on one?
+```{r}
+
+```
+
+
+For a classroom of 10 boys and 4 girls, you ask the teacher to send two random
+students.  What is the expected probability of both students being girls?
+```{r}
+
+```
+
+You are playing Monopoly, where rolling "doubles" (two 6-sided dice showing the same number)
+gives you an extra turn.  What is the expected probability of rolling doubles on your 
+next turn?
+```{r}
+
+```
+
+
+What is the probability of one of the two six-sided dice showing a one?
+```{r}
+
+```
+
+
+In a five-day workshop with sixty people, what is the probability of at least one of them having
+a birthday during the workshop?
+```{r}
+
+```
+
+
+## Conditional Probability: Using Information About One Variable to Learn About the Other
+
+Below is a chart showing the probability of observing athletes of different sexes
+in different sports.  In red is the two variables' probabilities considered seperately (called
+the **Marginal Probabilities**) and in white is the probability of the two variables happening
+together (called the **Joint Probability**).  
+
+
+
+
+
+
+
+
+
+
+```{r}
+.54 * .39
+.46 * .25
+(.24 / .54) * .54
+```
+
+
+**5-Minute Discussion**: What relationships do you see between the white values and the red values?
+
+**Discussion**: If we introduce another sport to this dataset, how will we expect the values to change?
+Which values will increase, and which will decrease?  Which will increase/decrease the most?
+
+
+Joint Probability for independent events:
+
+$$ 
+\begin{align*}
+P(A|B) &= \frac{P(A, B)}{P(B)}   &   P(B|A) &= \frac{P(A, B)}{P(A)} 
+\end{align*}
+$$
+
+## Probability Independent
+
+
+**Exercises**
+
+If I keep
+
+
+
+```{r}
+exp2 = function(){sample(c("T", "H"), size=1) == 'H' & sample(1:4, size=1) == 1}
+
+
+# mean(replicate(100, exp)
+# table(sample(1:4, size=2000, replace = T) == 1)
+sapply(5, exp2)
+?replicate
+```
+
+
+

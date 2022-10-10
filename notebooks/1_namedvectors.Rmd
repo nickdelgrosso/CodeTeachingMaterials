@@ -1,0 +1,347 @@
+---
+title: "One-Dimensional Sequences: Named Vectors"
+output: html_notebook
+---
+
+# Vectors: Positional Data
+
+Function Reminders (with some new ones):
+  - `1:5`
+  - `c(1, 2, 3)`
+  - `seq()`
+  - `seq(by=)`
+  - `seq(length.out=)`
+  - `rep('Hi', 3)`
+  - `rev(x)`
+  - `x[3]`
+  - `x[2:4]`
+  - `x[2:length(x)]`
+  - `x[c(1, 3)]`
+  - `x[x > 2]`
+
+
+
+**Exercises**
+
+Make a vector of values from 10 to 20.
+```{r}
+c(10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+seq(10, 20, by=1)
+seq(10, 20)
+10:20
+```
+
+
+Make a vector of values from 10 to -10.
+```{r}
+10:-10
+```
+
+
+Put the numbers 4, 8, and 10 together
+```{r}
+c(4, 8, 10)
+```
+
+
+Make a vector of 20 ones.
+```{r}
+rep(c("Nick", "Yiwen"), 20)
+```
+
+Make a vector of 20 twos.
+```{r}
+rep(2, 20)
+```
+
+
+
+Make a vector of 4 values evenly-spaced from 0 to 10
+```{r}
+seq(0, 10, length.out=4)
+seq(0, 10, by=2.5)
+```
+
+
+Make a vector of every even value from 1 to 100
+```{r}
+offset <- 1  # offset by one to make it even when starting from odd number
+seq(1 + offset, 100, 2)
+
+```
+
+
+Make a vector of 10 values evenly-spaced from -5 to 20.
+```{r}
+seq(-5, 20, length.out=10)
+```
+
+
+Get all the values from 0 to 10, evenly spaced by 0.1
+```{r}
+# seq(0, 10, by=0.1)
+# seq(from = 0, to = 10, by = 0.1)
+# seq(0, 10, 0.1)
+seq(0, 10, by=0.1)
+```
+
+```{r}
+?barplot
+```
+
+
+Using the data below, answer the following questions
+```{r}
+data = c(1, 5, 78, 89, 6, 54, 43, 6, 7, 8, 5, 4, 3, 4, 5, 6, 7, 8, 8, 5, 4, 14 ,3, 4, 5, 6, 7, 8)
+```
+
+
+Get only the first five values
+```{r}
+data[1:5]
+head(data, 5)
+
+```
+
+
+Get only the last five values
+```{r}
+data[(length(data) - 4): length(data)]
+tail(data, 5)
+data[-(length(data) - 5) : -1]
+```
+
+
+Get only the values greater than 10
+```{r}
+data[data > 10]
+subset(data, data > 10)
+```
+
+
+Get only the values less than 4 or greater than 50
+```{r}
+data[data < 4 | data > 50]
+```
+
+
+Get only the values greater than 20 and less than 50
+```{r}
+data[data > 20 & data < 50]
+```
+
+Get only the values equal to 8.
+```{r}
+data[data == 8]
+```
+
+
+Make a barplot of the data using the `barplot()` function
+```{r}
+barplot(data, main = "Cool Graph", sub = "Sort of", ylab = "Numbers")
+```
+
+
+Make a point plot of the data using the `plot()` function.
+```{r}
+plot(data)
+```
+
+Make a pie plot of the data using the `pie()` function.
+```{r}
+barplot(table(c(1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4)))
+```
+
+
+Put titles and axis labels (where appropriate) for the plots above.  Look 
+at the help text for the functions (`?barplot`) to see which options to use.
+
+
+# Labeling Individual Data Points: Named Indexing
+
+The vectors we've used so far all have *positional* indices; each value is ordered
+numerically, appearing either in the "first", "second", or "Nth" place, and to
+get them we need the number index:  `data[2]`
+
+This is fine with random sequences, but what if we want to label each data point?
+Let's look at two approaches.
+
+## Approach 1: Keep Labels in a seperate positional vector
+
+Example:
+```{r}
+people <- c("John", "Dick", "Harry")
+heights <- c(152, 173, 158)
+```
+
+With this approach, if we want to write the code for getting John's height, we
+have to either remember that John was the first data point, or use logical indexing
+to find his data:
+
+### Stopped here
+
+```{r}
+heights[people == "John"]
+```
+And if we want to plot their heights?  Then we have to tell the plot function
+what the labels are.
+```{r}
+barplot(heights, names.arg = people)
+```
+
+What if we only want to keep John and Harry's data?
+Then we have to remember to remove Dick's data from both the 
+heights and the labels.
+```{r}
+heights1 <- heights[people %in% c("John", "Harry")]
+heights1
+
+people1 <- people[people %in% c("John", "Harry")]
+people1
+```
+
+
+**Exercises**
+Let's try it out!  Make seperate "name" and "age" vectors for the following children:
+  - Cindy: Age 5
+  - Anna: Age 4
+  - Emma: Age 6
+  - Adrian: Age 8
+
+```{r}
+names = c("Cindy", "Anna", "Emma", "Adrian")
+names
+ages = c(5, 4, 6, 8)
+ages
+```
+
+
+Use R to find the values:  What is Emma's age?
+```{r}
+ages[names == "Emma"]
+```
+
+
+Use R to find the values:  What is Anna's age?
+```{r}
+ages[names == "Anna"]
+```
+
+
+Use R to find the values:  What is the `mean()` age of Cindy and Emma?
+```{r}
+names
+mean(ages[names %in% c("Cindy", "Emma")])
+
+```
+
+
+Use R to find the values:  What is the `mean()` age of Adrian and Anna?
+```{r}
+mean(ages[names %in% c("Adrian", "Anna")])
+```
+
+
+Make a bar plot of the children's ages, including title, axis labels, and labels for each bar.
+```{r}
+barplot(ages, names.arg = names)
+```
+
+
+Remove Anna from the dataset, and make a new bar plot.
+```{r}
+names1 <- names[names != "Anna"]
+names1
+ages1 <- ages[names != "Anna"]
+ages1
+
+barplot(ages1, names.arg = names1)
+```
+
+
+##  Approach 2: Named Vectors
+
+Alternatively, you can keep the data values and labels together!  Insteac of having 
+positional vectors, you can give each index a name:
+
+```{r}
+heights = c(John=152, Dick=173, Harry=158)
+heights
+```
+
+Subsetting works by name.  
+```{r}
+heights['John']
+```
+
+If you want only the number from the subset, you can use the double square brackets:
+```{r}
+heights[['John']]
+```
+
+
+Plots will automatically use the names:
+```{r}
+barplot(heights)
+```
+
+
+Finally, you can separate out the names from the values with the `names()` and `as.numeric()` functions:
+```{r}
+names(heights)
+as.numeric(heights)
+```
+
+
+**Exercises**
+Let's try it out!  Make a named "age" vector for the following children:
+  - Cindy: Age 5
+  - Anna: Age 4
+  - Emma: Age 6
+  - Adrian: Age 8
+
+```{r}
+ages <- c(Cindy=5, Anna=4, Emma=6, Adrian=8)
+ages
+```
+
+
+Use R to find the values:  What is Emma's age?
+```{r}
+ages['Emma']
+ages
+```
+
+
+Use R to find the values:  What is Anna's age?
+```{r}
+ages[['Anna']]
+```
+
+
+Use R to find the values:  What is the `mean()` age of Cindy and Emma?
+```{r}
+ages[names(ages) %in% c("Cindy", "Emma")]
+ages[c("Cindy", "Emma")]
+ages[c(1, 3)]
+```
+
+
+Use R to find the values:  What is the `mean()` age of Adrian and Anna?
+```{r}
+
+```
+
+
+Make a bar plot of the children's ages, including title, axis labels, and labels for each bar.
+```{r}
+barplot(ages)
+```
+
+
+Remove Anna from the dataset, and make a new bar plot.
+```{r}
+pie(ages)
+```
+  
+

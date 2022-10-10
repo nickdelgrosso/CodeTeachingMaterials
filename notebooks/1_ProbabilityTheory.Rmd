@@ -1,0 +1,269 @@
+---
+title: "Probability, Simulation, and Experiment Replicability"
+output: html_notebook
+---
+
+# Probability
+
+
+## Probabilities and Expected Values
+
+So far, we've examined descriptions of *data*, in the form of frequencies: Counts and Proportions.
+
+$$
+\tilde{p}_{x} = \sum\limits_{i=1}^{N} \frac{X_{i}}{N}
+$$
+
+In the next units, we'll mov to examining where data comes from; 
+in other words, modelling how an experiment can create a range of data.
+This is an area called *probability theory*.
+
+
+Probability is:
+
+  - a statement of *expectation* of some set of outcomes; for example,
+when someone says that an event has a 66% probability of occurring, they are saying
+that they believe that it is twice as likely that the event will happen than that it won't.
+
+  - a number between 0 and 1 (or 0 and 100 when expressed as a percentage).  Probabilities can never be negative.
+  
+  - a set of numbers that add up to 1.  This set represents all possible outcomes.
+
+
+In all the exercises above, we described events that already happened by summarizing 
+them as a percentage. But what if we want to make a statement about the future instead?  That's
+where probability comes in.
+
+From probabilities, we can make guesses about how often certain events are likely
+to occur.  In the most simple case (one independent probability), this calculation is done 
+by multiplying the probability by the number of times we'll "sample" from that 
+probability; this number is called $N$.  What we calculate is our **Expectation**
+of a certain number of events, denoted with a $E()$.
+
+$$ 
+E(event) = N \times P(event)
+$$
+
+For example, if there is a 50% probability of getting a Heads in a coin flip, 
+and we are going to flip a coin 24 times, then we expect to see 12 Heads.
+
+$$ 
+\begin{aligned}
+  P(Heads) &= 0.5; \\ 
+  N_{flips} &= 24; \\
+  E(Heads) &= N_{flips} \times P(Heads); \\
+  E(Heads) &= 24 \times 0.5; \\
+  E(Heads) &= 12;
+\end{aligned}
+$$
+
+
+**Exercises**
+
+Let's calculate some expectations!  Please translate the following situations into R code,
+and calculate the expected values.
+
+*Note*: Don't worry about complex probabilities here, it's just multiplication!
+
+
+If I call 10 random phone numbers, how many men would I expect to answer in total?
+```{r}
+N <- 10
+probMan <- 0.5
+expectedMen <- N * probMan
+expectedMen
+```
+
+
+If I roll a six-sided dice 432 times, how many times would I expect to roll a one?
+```{r}
+
+```
+
+If I flip a coin 25 times, how many tails would I expect to see?
+(Discussion: How do we interpret this value?)
+```{r}
+
+```
+
+If I play the lottery a million times, each time having a million-to-one chance of winning,
+how often would I expect to win?
+
+```{r}
+
+```
+
+
+**5-Minute Group Discussion**: If each ticket in this lottery costs 1 euro, and winning
+the lottery means winning 1 million euros, would I take any risk by playing 1 million times?
+What does this say about expected values; where are they useful, and where are they not?
+
+
+
+## Statistical Sampling: Doing Experiments in order to estimate Probabilities
+
+
+### Estimating Expected Value: Maximulum Likelihood 
+
+What if we were wrong; what if we didn't, in fact, calculate the right expected
+value?  When making a prediction about a coin flip, it's not a big deal, but
+in medicine making a bad bet can be literally a matter of life and death!
+
+One approach is to simulate the system you want to check and taking a sample
+from that simulation.  In other words, in the case of a coin flip, one would
+make a virtual coin and "flip" it N times, and see how many heads came up!
+
+For categorical data, a very useful function for running simulations is the 
+`sample()` function.  It generates random samples of data from events given
+of size N:
+```{r}
+?sample
+sample(c("H", "T"), size = 10, replace=T, prob=c(0.5, 0.5))
+```
+
+
+What you'll probably notice is sometimes, the data randomly doesn't match
+our expectations.  Try running this code a few times and see how the numbers
+change:
+```{r}
+sum(sample(c("H", "T"), size = 10, replace=T, prob=c(0.5, 0.5)) == "H")
+```
+So, what do we need to do?  Simple!  
+We need to replicate the experiment and see how the data changes between experiments!
+The `replicate()` function will re-run a line of code N times for you, making
+a vector of the results:
+```{r}
+results <- replicate(
+  100,
+  sum(sample(c("H", "T"), size = 10, replace=T, prob=c(0.5, 0.5)) == "H")
+)
+results
+```
+
+Now that we have a bunch of results, we can examine them and select the one we 
+noticed came up the most often: the most likely expected value (the *MLE*).
+There are a few ways this could be done:
+  1. The **Mode**: Calculate the Most-often occuring value
+    - `table(results)`
+  2. The **Median**: sort the values from low to high, then pick the middle value
+    - `median(results)`
+  3. The **Mean**: Add all the values, then divide by the number of values.
+    - `mean(results)`
+  
+
+
+```{r}
+table(results)
+paste("Median:", median(results))
+paste("Mean:", mean(results))
+```
+
+
+**Exercises**
+
+Let's use `sample()` and `replicate()` to test our beliefs about the scenarios 
+descibed below!  Simulate the experiments and provide the most likely expected
+value.
+
+
+
+If I call 10 random phone numbers, how many men would I expect to answer in total?
+```{r}
+
+```
+
+
+If I roll a six-sided dice 40 times, how many times would I expect to roll a one?
+```{r}
+
+```
+
+
+If I flip a coin 40 times, how many tails would I expect to see?
+```{r}
+nReplications <- 10000
+nSamples <- 1500 
+1500 / 40
+
+replications <- replicate(
+  nReplications,
+  sum(sample(c("H", "T"), size = nSamples, replace = T) == "T")
+)
+       
+plot(table(replications), xlim = c(0, nSamples ))
+       
+       
+```
+
+
+```{r}
+nReplications <- 10000
+nSamples <- c(5, 10, 20, 40, 80, 160, 320, 640, 5000)
+
+sapply(
+  nSamples, 
+  function (nSamps){
+    quantile(
+      replicate(
+        nReplications,
+        mean(sample(c("H", "T"), size = nSamps, replace = T) == "T")
+      ),
+      prob = c(0.025, 0.975)
+    )
+  }
+) -> CIs
+
+plot(nSamples, CIs['2.5%',], type='l')
+lines(nSamples, CIs['97.5%',], type='l', add=T)
+# plot(t(rbind(nSamples, CIs)))
+# plot(table(replications), xlim = c(0, nSamples ))
+# quantile(replications, probs = c(.025, .975))
+# matplot(sqrt(nSamples), t(CIs), type='l')
+       
+```
+
+
+```{r}
+CIs
+plot(nSamples, CIs['2.5%',], ylim=c(0, 1), type='l')
+lines(nSamples, CIs['97.5%',], add=T)
+polygon(c(nSamples, rev(nSamples)), c(CIs['2.5%',], rev(CIs['97.5%',])), col='grey')
+```
+
+
+If a vase holds marbles containing 15 reds, 10 blues, and 5 yellows, and I
+take out 10 of them (without *replacing* any marbles back in the vase after
+I take them out), how many blues would I expect to hold?
+```{r}
+
+marbles <- c(rep("red", 15), rep("blue", 10), rep("yellow", 5))
+sample(marbles, size = 10, replace = F)
+
+```
+
+
+If I play the lottery a million times, each time having a million-to-one chance of winning, how often would I expect to win?
+
+```{r}
+
+```
+
+
+
+### Estimating Experiment Replicability
+
+
+When experiments are cheap, easy, quick, and the errors are not very important,
+running many experiments or accepting an answer that is slightly off from the 
+true theoretical answer is not very important.  But the more accurate we want to 
+be with a *single experiment*, the more important it is to have an idea of how
+much variation there might be between experiments.  
+
+**Exercises**
+
+For each of the experiments, plot the distribution of results and estimate:
+  1. The Probability of a single experiment resulting in the expected value.
+  2. How much more data the experiment would need in order to double this probability.
+  
+  
+  

@@ -1,0 +1,279 @@
+---
+title: "Inference in Statistics: The Binomial Distribution"
+output: html_notebook
+---
+
+
+# Calculating Probabilities from Known Models: The Binomial Distribution
+
+
+  - `dbinom()`: Shows the probability of any given outcome: called the probability *density*. (i.e. PDF)
+  - `pbinom()`: Shows the probability of getting that outcome *or less*: the cumulative probability density (i.e. CDF)
+  - `qbinom()`: The inverse of the CDF, shows the outcome given a probability.
+  - `rbinom()`: Generates random data according to that distribution.
+
+
+## Simulating a Binomial Experiment: the `rbinom()` function
+
+In the previous unit, we used the `sample()` and `replicate()` functions to 
+simulate binomial experiment where a total number of successes were counted.  
+Here, we'll simplify the code by asking the `rbinom()` function to do the same
+thing.  
+
+Using the `rbinom()` and `quantile()` functions, provide 95% Confidence Intervals 
+for each of the scenarios below.
+
+
+**Exercises**
+
+Use the `rbinom()` function to help answer the questions in the scenarios below.
+
+
+
+#### Phone Numbers
+
+If I call 10 random phone numbers, how many men would I expect to answer?
+
+"Successes"
+
+
+
+If I call 10 random phone numbers in an experiment, in what proportion of experiments 
+could I expect exactly 3 men to answer?
+```{r}
+
+size <- 10
+prob <- 0.5
+NReps <- 100000
+results <- rbinom(NReps, size = size, prob = prob)
+tab <- prop.table(table(results))
+# barplot(tab)
+tab[['3']]
+mean(results == 3)
+
+```
+
+If I call 10 random phone numbers in an experiment, in what proportion of experiments
+would I expect at least 6 men to answer?
+```{r}
+mean(results >= 6)
+sum(tab[7:length(tab)])
+```
+
+
+
+Plot a clean distribution of possible outcomes for this experiment.
+```{r}
+barplot(tab)
+```
+
+
+What is the expected value?  Print the expected value, as well as 95% Confidence Intervals
+Tip: The `quantile()` function is helpful here
+```{r}
+quantile(results, probs = c(.025, .1, .5, .9, .975))
+```
+
+
+What was the probability of our friend reaching 8 women or more in 10 random phone calls?
+```{r}
+mean(results >= 8)
+```
+
+
+
+#### Coin Flips
+
+
+A company that sells coins for magicians: if you flip it, 
+75% of the time it will show heads.  A customer calls to complain, saying that
+she flipped it 16 times and saw exactly 8 heads.  They hire you to determine
+if this is a valid complaint.
+
+
+If I flip this coin 16 times, in what proportion of experiments would I expect to see at exactly 8 tails?
+```{r}
+size <- 16
+prob <- 0.25
+NReps <- 100000
+results <- rbinom(NReps, size = size, prob = prob)
+prop.table(table(results))
+mean(results == 8)
+```
+
+NullHypothesis: 0.25
+Alternate Hypothesis: More than 0.25
+p-value = 0.027
+
+If I flip this coin 16 times, in what proportion of experiments would I expect to see at least 8 tails?
+```{r}
+mean(results >= 8)
+```
+
+
+
+If I flip this coin 20 times as an experiment, what is the range of possible outcomes for this experiment?
+Plot a clean distribution of outcomes.
+```{r}
+barplot(prop.table(table(results)))
+```
+
+
+What is the expected value for the coin?  
+Print the expected value, as well as 95% Confidence Intervals.
+How well did the customer demonstrate the coin was not as advertised? 
+```{r}
+quantile(results, probs = c(.025, .5, .975))
+```
+
+
+Given that the coin worked as advertised, what was the probability of getting 
+at least the same number of heads the customer did?
+```{r}
+mean(results >= 8)
+```
+
+
+
+## Calculating the Expected Value Directly: the `pbinom()` and `dbinom()` functions
+
+
+
+
+**Exercises**
+Using the `pbinom()` and `dbinom()` functions, answer the questions in the scenarios
+below
+
+
+
+
+#### Phone Numbers
+
+A friend claims that he once called 10 random phone numbers to try a new method
+for meeting people to date, and 8 of them were women!  Is this a very unusual
+outcome?  Let's examine the distribution.
+
+
+If I call 10 random phone numbers in an experiment, in what proportion of experiments 
+could I expect exactly 3 men to answer?
+```{r}
+plot(0:10, dbinom(0:10, size = 10, prob = 0.5), type='l')
+```
+
+If I call 10 random phone numbers in an experiment, in what proportion of experiments
+would I expect at least 6 women to answer?
+```{r}
+# plot(0:10, pbinom(0:10, size = 10, prob = 0.5), type='h')
+pbinom(0:10, size = 10, prob = 0.5)[5]
+pbinom(4, size = 10, prob = 0.5)
+```
+
+
+
+Plot a clean distribution of possible outcomes for this experiment.
+```{r}
+
+```
+
+
+What is the expected value?  Print the expected value, as well as 95% Confidence Intervals
+```{r}
+qbinom(c(.025, .5, .975), size=10, prob = 0.5)
+```
+
+
+What was the probability of our friend reaching 8 women or more in 10 random phone calls?
+```{r}
+
+```
+
+
+#### Coin Flips
+
+
+A company that sells coins for magicians: if you flip it, 
+75% of the time it will show heads.  A customer calls to complain, saying that
+she flipped it 16 times and saw exactly 8 heads.  They hire you to determine
+if this is a valid complaint.
+
+
+If I flip this coin 16 times, in what proportion of experiments would I expect to see at exactly 8 heads?
+```{r}
+dbinom(8, size=16, prob = 0.75)
+```
+
+
+If I flip this coin 16 times, in what proportion of experiments would I expect to see at least 8 heads?
+```{r}
+pbinom(8, size=16, prob = 0.75)
+```
+
+
+
+If I flip this coin 20 times as an experiment, what is the range of possible outcomes for this experiment?
+Plot a clean distribution of outcomes.
+Using `barplot()`:
+```{r}
+
+```
+
+
+Using `plot()`
+Type option: 
+ - "p" for points, 
+ - "l" for lines, 
+ - "b" for both points and lines, 
+ - "c" for empty points joined by lines, 
+ - "o" for overplotted points and lines, 
+ - "s" and "S" for stair steps and 
+ - "h" for histogram-like vertical lines
+```{r}
+
+```
+
+
+What is the expected value for the customer's experiment?  
+Print the expected value, as well as 95% Confidence Intervals.
+How well did the customer demonstrate the coin was not as advertised? 
+```{r}
+
+```
+
+
+Given that the coin worked as advertised, what was the probability of getting 
+at least the same number of heads the customer did?
+```{r}
+
+```
+
+
+
+```{r}
+plot(dnorm(seq(-3, 3, by = 0.1), mean = 0, sd = 1 ))
+```
+
+
+
+## The Binomial Test
+
+It's great that we can calculate the probabilities ourselves, but there are 
+also functions available to help us with this.  In this case, the 
+`binom.test()` function.  Let's use it to test our calculations:
+
+
+
+Given that the coin worked as advertised, what was the probability of getting 
+at least the same number of heads the customer did?
+```{r}
+results <- binom.test(8, 16, p=0.25, alternative = "greater")
+results$p.value
+```
+
+
+
+
+
+```{r}
+binom.test(8, 10, p=0.5, alternative = "greater")
+```
+

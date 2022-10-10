@@ -1,0 +1,108 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+
+## Joint Probabilities of Independent Events: Expected Values
+
+Often, you want to make more specific predictions: 
+  - "It will rain tomorrow"  **AND** "I will receive an email"
+  - "It will be a boy"  **AND** "the birthday will be in June"
+  
+In this case, you are saying the `all()` of your predictions will be true:
+
+```{r}
+willRain = TRUE
+receiveEmail = TRUE
+all(willRain, receiveEmail)
+```
+
+Or you might want to make more general predictions:
+  - "It will rain tomorrow"  **OR** "I will receive email tomorrow"
+  - "It will be a boy"  **OR** "the birthday will be in June"
+
+Here, you are saying you are happy if `any()` of your predictions come true:
+
+```{r}
+willRain = TRUE
+receiveEmail = FALSE
+any(willRain, receiveEmail)
+```
+How should making multiple predictions affect our expectation of their coming about?
+
+
+If the two events are truly **independent** from each other (i.e. knowing one event
+doesn't tell you any information about the other event), then the calculation is
+simple:
+
+$$  
+P(A, B) : \text{"the Joint Probability of A and B"} \\
+P(A, B) = P(A) \times P(B)
+$$ 
+
+What about the case of calculating if `any()` of the two will occur?  This is
+the same as calculating the odds that **neither** will *not* occur!
+
+$$
+P(A \cup B) : \text{"the Probability of A or B"} \\
+P(not A) : \text{"the Probability of A not happening} \\
+
+\begin{aligned}
+  
+  P(not A) &= 1 - P(A) \\
+  P(A \cup B) &= 1 - P(not A, not B) \\
+  P(A \cup B) &= 1 - P(not A) \times P(not B) \\
+  P(A \cup B) &= 1 - (1- P(A)) \times (1 - P(B)) \\
+  
+\end{aligned}
+$$
+
+**Warning**: Sometimes the probability of sampling one event influences the probability of another.  Keep it in mind for the exercises below!
+
+**Exercises**
+
+Calculate the expected probabilites in the example below
+
+
+You flip a coin two times.  What is the probability of both landing on tails?
+```{r}
+
+```
+
+What is the expected probability of one landing on heads, and the other on tails?
+```{r}
+
+```
+
+What is the expected probability of one landing on heads, and a six-sided dice roll landing on one?
+```{r}
+
+```
+
+
+For a classroom of 10 boys and 4 girls, you ask the teacher to send two random
+students.  What is the expected probability of both students being girls?
+```{r}
+
+```
+
+You are playing Monopoly, where rolling "doubles" (two 6-sided dice showing the 
+same number) gives you an extra turn.  What is the expected probability of rolling doubles on your next turn?
+```{r}
+
+```
+
+
+What is the probability of one of the two six-sided dice showing a one?
+```{r}
+
+```
+
+
+In a five-day workshop with sixty people, what is the probability of at least one of them having
+a birthday during the workshop?
+```{r}
+
+```

@@ -1,0 +1,11 @@
+---
+title: "Summarizing Data in R"
+output: html_notebook
+---
+
+
+**Exercises**
+
+
+
+
