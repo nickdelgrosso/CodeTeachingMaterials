@@ -14,12 +14,16 @@ sessions:
         filename: Day1/1-5-PlottingWithMatplotlib.ipynb
         
     - units:
-      - file: notebooks/BooleanLogic.ipynb
-        filename: Day2/2-1-BooleanWarmUp.ipynb
       - file: notebooks/NumpyArrays.ipynb
-        filename: Day2/2-2-ArraysWithNumpy.ipynb
+        filename: Day2/2-1-ArraysWithNumpy.ipynb
+      - file: notebooks/Logical_Indexing.ipynb
+        filename: Day2/2-2-NumpyLogicalIndexing.ipynb
+      - file: notebooks/PlottingDistributionsWithNumpyAndMatplotlib.ipynb
+        filename: Day2/2-3-PlottingDistributionsWithNumpyAndMatplotlib.ipynb
       - file: notebooks/Multidimensional_Arrays.ipynb
-        filename: Day2/2-3-MatricesWithNumpy.ipynb
+        filename: Day2/2-4-MatricesWithNumpy.ipynb
+      - file: notebooks/CroppingAndPlottingImageDataWithMatplotlib.ipynb
+        filename: Day2/2-5-BasicImagesWithMatplotlib.ipynb
       
 project:
   - LICENSE
@@ -29,7 +33,7 @@ project:
 git:
   remote-name: origin
   remote-url: git@github.com:CodingForScientists/Intro2Python.git
-  remote-branch: upcoming
+  remote-branch: master
   
 
 ---
@@ -64,15 +68,13 @@ git:
 
 | Approximate Times | Topic |
 | :--           | :--   |
-| 9:00 -9:45    | Warm-Up and Orient to VSCode in GitLab |
-| 9:45 - 10:15  | Understanding Arrays with Numpy |
-| 10:15 - 10:30 | Break |
-| 10:30 - 11:45 | Array Filtering and Transformations |
-| 11:45 - 12:00 | Retrospective |
+| 9:00 - 10:00    | Warm-Up and Orient to VSCode in GitLab: Numpy Arrays |
+| 10:00 - 10:15 | Break |
+| 10:15 - 11:00 | Logical Indexing in Numpy |
+| 11:00 - 12:00 | Plotting Distributions in Matplotlib |
 | 12:00 - 13:30 | Lunch |
-| 13:30 - 14:15 | Arrays as Images |
-| 14:30 - 15:30 | Basic Image Transformations with Scipy, Scikit-Image, and Matplotlib |
-| 15:45 - 16:00 | Break |
-| 16:00 - 16:50 | Image Processing with Pillow |
+| 13:30 - 15:30 | Matrices in Numpy |
+| 15:30 - 15:45 | Break |
+| 15:45 - 16:50 | Basic Image Transformations with Numpy and Matplotlib |
 | 16:50 - 17:00 | Retrospective |
 

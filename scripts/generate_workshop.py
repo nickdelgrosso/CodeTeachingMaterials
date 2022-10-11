@@ -42,12 +42,12 @@ reqs = extract_requirements(*basedir.glob('**/*.ipynb'))
 (basedir / "requirements.txt").write_text('\n'.join(reqs))
 
 # Sync with git
-sync_git.sync_with_github(
-    basedir=basedir,
-    remote_url=recipe['git']['remote-url'],
-    remote_name=recipe['git']['remote-name'],
-    remote_branch=recipe['git']['remote-branch'],
-)
+# sync_git.sync_with_github(
+#     basedir=basedir,
+#     remote_url=recipe['git']['remote-url'],
+#     remote_name=recipe['git']['remote-name'],
+#     remote_branch=recipe['git']['remote-branch'],
+# )
 
 print(f'Generated Workshop done: {str(basedir)}')
 print(f'Synced up with {sync_git.github_url_from_ssh_address(recipe["git"]["remote-url"])}')
