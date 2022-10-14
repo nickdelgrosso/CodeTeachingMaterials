@@ -49,6 +49,10 @@ sessions:
       - file: notebooks/ReorganizingDataFrames.ipynb
         filename: Day4/4-4-ReshapingData.ipynb
       
+    - units:
+      - file: notebooks/Conda Environment Manager.ipynb
+        filename: Day5/5-2-InstallingPythonWithCondaManager.ipynb
+      
       
 project:
   - LICENSE
@@ -128,6 +132,22 @@ git:
 | 09:00 - 10:00     | Plotting with Pandas                                      |
 | 10:00 - 10:15     | Break                                                     |
 | 10:15 - 11:50     | DataFrame Selection and Aggregation                       |
+| 11:50 - 12:00     | Recollect and Reflect                                     |
+| 12:00 - 13:30     | Lunch                                                     |
+| 13:30 - 14:45     | DataFrame GroupBy and Seaborn CatPlot                     |
+| 14:45 - 15:00     | Break                                                     |
+| 15:00 - 16:50     | Reshaping DataFrames                                      |
+| 16:50 - 17:00     | Recollect and Reflect                                     |
+
+
+### Day 5
+
+| Approximate Times | Topic                                                     |
+| :--               | :--                                                       |
+| 09:00 - 09:30     | Project Share                                             |
+| 09:30 - 10:20     | Filepaths                                                 |
+| 10:20 - 10:35     | Break                                                     |
+| 10:35 - 11:50     | Installing Python Locally                                 | 
 | 11:50 - 12:00     | Recollect and Reflect                                     |
 | 12:00 - 13:30     | Lunch                                                     |
 | 13:30 - 14:45     | DataFrame GroupBy and Seaborn CatPlot                     |
