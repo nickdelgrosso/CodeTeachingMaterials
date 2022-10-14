@@ -50,8 +50,11 @@ sessions:
         filename: Day4/4-4-ReshapingData.ipynb
       
     - units:
+      - file: notebooks/FilepathsWithPathlib.ipynb
+        filename: Day5/5-1-FindingFilePathsWithPathlib.ipynb
       - file: notebooks/Conda Environment Manager.ipynb
         filename: Day5/5-2-InstallingPythonWithCondaManager.ipynb
+      - file: 
       
       
 project:
