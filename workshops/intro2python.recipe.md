@@ -38,6 +38,16 @@ sessions:
         filename: Day3/3-5-TTestsWithPingouin.ipynb
       - file: notebooks/AnalyzingDataFrames.ipynb
         filename: Day3/3-6-SelectingAndAggregatingDataframes.ipynb
+
+    - units:
+      - file: notebooks/PlottingWithPandas.ipynb
+        filename: Day4/4-1-PlottingWithPandas.ipynb
+      - file: notebooks/AnalyzingDataFrames.ipynb
+        filename: Day4/4-2-SelectingAndAggregatingDataframes.ipynb
+      - file: notebooks/Groupby_Seaborn.ipynb
+        filename: Day4/4-3-GroupingData.ipynb
+      - file: notebooks/ReorganizingDataFrames.ipynb
+        filename: Day4/4-4-ReshapingData.ipynb
       
       
 project:
@@ -108,4 +118,19 @@ git:
 | 13:30 - 14:45     | T-tests on DataFrames with Scipy-Stats and Pingouin       |
 | 14:45 - 15:00     | Break                                                     |
 | 15:00 - 16:50     | DataFrame Selection and Aggregation                       |
+| 16:50 - 17:00     | Recollect and Reflect                                     |
+
+
+### Day 4
+
+| Approximate Times | Topic                                                     |
+| :--               | :--                                                       |
+| 09:00 - 10:00     | Plotting with Pandas                                      |
+| 10:00 - 10:15     | Break                                                     |
+| 10:15 - 11:50     | DataFrame Selection and Aggregation                       |
+| 11:50 - 12:00     | Recollect and Reflect                                     |
+| 12:00 - 13:30     | Lunch                                                     |
+| 13:30 - 14:45     | DataFrame GroupBy and Seaborn CatPlot                     |
+| 14:45 - 15:00     | Break                                                     |
+| 15:00 - 16:50     | Reshaping DataFrames                                      |
 | 16:50 - 17:00     | Recollect and Reflect                                     |
