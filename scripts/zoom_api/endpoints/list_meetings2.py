@@ -22,7 +22,7 @@ class Meeting2(TypedDict):
     source: str
 
 @lru_cache()
-def list_meetings2(token: str, user_id, from_: str, to: str, type='past'):
+def list_meetings2(token: str, user_id, from_: str, to: str, type='past') -> List[Meeting2]:
     """
     GET /report/users/{userId}/meetings
     https://marketplace.zoom.us/docs/api-reference/zoom-api/methods/#operation/reportMeetings

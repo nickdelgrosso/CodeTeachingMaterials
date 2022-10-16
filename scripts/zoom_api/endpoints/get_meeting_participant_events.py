@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from functools import lru_cache
-from typing import TypedDict, List
+from typing import TypedDict, List, Optional
 
 import requests
 
@@ -34,13 +34,21 @@ def get_meeting_participant_events(token: str, meeting_id: int):
         next_page_token: str
         participants: List[ParticipantReport]
 
-    resp = requests.get(
-        f"https://api.zoom.us/v2/report/meetings/{meeting_id}/participants?include_fields=registrant_id&page_size=300",
-        # f"https://api.zoom.us/v2/report/meetings/{meeting_id}",
-        headers = {"Authorization": f"Bearer {token}"},
-    )
-    assert resp.content
-    data: MeetingParticipantReportResponse = resp.json()
+    all_events = []
+    next_page_token = ''
+    while True:
 
-    participants = data['participants']
-    return participants
+        url = f"https://api.zoom.us/v2/report/meetings/{meeting_id}/participants?include_fields=registrant_id&page_size=300"
+        if next_page_token:
+            url += f'&next_page_token={next_page_token}'
+        resp = requests.get(url, headers={"Authorization": f"Bearer {token}"})
+        if not resp.ok:
+            raise IOError(resp)
+
+        data: MeetingParticipantReportResponse = resp.json()
+        all_events.extend(data['participants'])
+        if data['next_page_token']:
+            next_page_token = data['next_page_token']
+        else:
+            return all_events
+
