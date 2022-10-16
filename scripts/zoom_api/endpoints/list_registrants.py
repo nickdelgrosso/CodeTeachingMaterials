@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from functools import lru_cache
 from typing import TypedDict, List
 
 import requests
@@ -28,7 +29,7 @@ class Registrant(TypedDict):
     status: str  # approved, denied, or pending
     zip: str
 
-
+@lru_cache()
 def list_registrants(token: str, meeting_id: int) -> List[Registrant]:
     class RegistrantsResponse(TypedDict):
         page_size: int

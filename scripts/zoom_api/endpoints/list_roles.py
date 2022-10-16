@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from functools import lru_cache
 from typing import TypedDict, List
 
 import requests
@@ -12,6 +13,7 @@ class Role(TypedDict):
     total_members: int
 
 
+@lru_cache()
 def list_roles(token: str) -> List[Role]:
 
     class RolesResponse(TypedDict):

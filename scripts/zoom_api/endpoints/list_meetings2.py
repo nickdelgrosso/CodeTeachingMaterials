@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from functools import lru_cache
 from typing import TypedDict, List
 
 import requests
@@ -20,7 +21,7 @@ class Meeting2(TypedDict):
     participants_count: int
     source: str
 
-
+@lru_cache()
 def list_meetings2(token: str, user_id, from_: str, to: str, type='past'):
     """
     GET /report/users/{userId}/meetings

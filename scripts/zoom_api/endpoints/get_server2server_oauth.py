@@ -14,6 +14,7 @@ class OAuth(TypedDict):
     scope: str
 
 
+
 def get_server2server_oauth(account_id: str, client_id: str, client_secret: str) -> OAuth:
     """
     Get access for server2server docs.

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from _warnings import warn
+from functools import lru_cache
 from typing import TypedDict, List, Optional
 
 import requests
@@ -20,6 +21,7 @@ class Meeting(TypedDict):
     join_url: str
 
 
+@lru_cache()
 def list_meetings(token: str, user_id="me", page_size: int = 100) -> List[Meeting]:
     class MeetingResponse(TypedDict):
         page_size: int
