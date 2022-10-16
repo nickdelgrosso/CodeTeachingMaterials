@@ -1,7 +1,8 @@
 import pandas as pd
-
 import zoom_api
 
+
+# Use Case: Get Participation
 from_date = '2022-10-10'
 to_date = '2022-10-14'
 
@@ -23,8 +24,6 @@ print(meetings)
 unique_meeting_ids = meetings.id.unique()
 print(unique_meeting_ids)
 
-for meeting_id in unique_meeting_ids:
-    print(pd.DataFrame(zoom_api.list_registrants(token=token, meeting_id=meeting_id)))
 
 for meeting_uuid in meetings.uuid[0:1]:
     print(f'Participants for meeting {meeting_uuid}:')
