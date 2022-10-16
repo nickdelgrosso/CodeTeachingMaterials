@@ -54,7 +54,10 @@ sessions:
         filename: Day5/5-1-FindingFilePathsWithPathlib.ipynb
       - file: notebooks/Conda Environment Manager.ipynb
         filename: Day5/5-2-InstallingPythonWithCondaManager.ipynb
-      - file: 
+      - file: notebooks/IfElseBlocks.ipynb
+        filename: Day5/5-3-IfElseBlocksInPython.ipynb
+      - file: notebooks/P3a_ForLoops.ipynb
+        filename: Day5/5-4-ForLoopsInPython.ipynb
       
       
 project:
@@ -153,7 +156,7 @@ git:
 | 10:35 - 11:50     | Installing Python Locally                                 | 
 | 11:50 - 12:00     | Recollect and Reflect                                     |
 | 12:00 - 13:30     | Lunch                                                     |
-| 13:30 - 14:45     | DataFrame GroupBy and Seaborn CatPlot                     |
-| 14:45 - 15:00     | Break                                                     |
-| 15:00 - 16:50     | Reshaping DataFrames                                      |
-| 16:50 - 17:00     | Recollect and Reflect                                     |
+| 13:30 - 14:15     | Conditional Flow: If-Else Blocks in Python                |
+| 14:15 - 15:30     | Repeating Work: For Loops in Python                       |
+| 15:30 - 15:45     | Break                                                    |
+| 15:45 - 16:00     | Workshop Wrap-Up |

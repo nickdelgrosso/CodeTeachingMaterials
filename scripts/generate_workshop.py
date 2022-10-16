@@ -25,7 +25,8 @@ for session in recipe['sessions']:
     for unit in session['units']:
         orig_notebook_file = unit['file']
         orig_notebook = read_notebook(orig_notebook_file)
-        new_notebook = strip_cells(orig_notebook, tag='exercise')
+        new_notebook = orig_notebook
+        # new_notebook = strip_cells(orig_notebook, tag='exercise')
         to_path = basedir / unit['filename']
         
         to_path.parent.mkdir(parents=True, exist_ok=True)
