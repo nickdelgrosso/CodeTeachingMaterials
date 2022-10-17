@@ -141,3 +141,7 @@ dmypy.json
 build
 miniconda
 data/
+
+.idea
+attendance.csv
+attendance.xlsx
