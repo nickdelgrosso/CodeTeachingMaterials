@@ -3,6 +3,8 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass
 
+from zoom_api.endpoints.get_server2server_oauth import OAuth, get_server2server_oauth
+
 
 @dataclass(frozen=True)
 class Credentials:
@@ -35,4 +37,10 @@ class Credentials:
             zoom_client_secret=zoom_client_secret_value,
         )
 
+    def get_oauth(self) -> OAuth:
+        return get_server2server_oauth(
+            account_id=self.zoom_account_id,
+            client_id=self.zoom_client_id,
+            client_secret=self.zoom_client_secret,
+        )
 
