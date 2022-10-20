@@ -2,7 +2,7 @@ from .get_active_hosts import get_active_hosts
 from .list_roles import list_roles
 from .get_meeting_participant_events import get_meeting_participant_events
 from .list_meetings import list_meetings
-from .list_meetings2 import list_meetings2
+from .list_past_meeting_sessions import list_past_meeting_sessions
 from .list_registrants import list_registrants
 from .list_roles import list_roles
 from .list_users import list_users

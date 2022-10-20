@@ -41,6 +41,9 @@ def list_registrants(token: str, meeting_id: int) -> List[Registrant]:
         f"https://api.zoom.us/v2/meetings/{meeting_id}/registrants",
         headers = {"Authorization": f"Bearer {token}"},
     )
-    data: RegistrantsResponse = resp.json()
-    registrants = data['registrants']
-    return registrants
+    if resp.ok:
+        data: RegistrantsResponse = resp.json()
+        registrants = data['registrants']
+        return registrants
+    else:
+        raise ValueError(resp.json())

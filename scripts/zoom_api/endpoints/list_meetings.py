@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from _warnings import warn
 from functools import lru_cache
-from typing import TypedDict, List, Optional
+from typing import TypedDict, List, Optional, Literal
 
 import requests
 
@@ -22,7 +22,16 @@ class Meeting(TypedDict):
 
 
 @lru_cache()
-def list_meetings(token: str, user_id="me", page_size: int = 100) -> List[Meeting]:
+def list_meetings(
+    token: str,
+    user_id="me", 
+    page_size: int = 100, 
+    type: Literal['scheduled', 'live', 'upcoming', 'upcoming_meetings', 'previous_meetings'] = 'scheduled',
+    ) -> List[Meeting]:
+    """
+    GET /users/{userId}/meetings
+    https://marketplace.zoom.us/docs/api-reference/zoom-api/methods/#operation/meetings
+    """
     class MeetingResponse(TypedDict):
         page_size: int
         total_records: int
@@ -30,7 +39,7 @@ def list_meetings(token: str, user_id="me", page_size: int = 100) -> List[Meetin
         meetings: List[Meeting]
 
     resp = requests.get(
-        f"https://api.zoom.us/v2/users/{user_id}/meetings?page_size={page_size}",
+        f"https://api.zoom.us/v2/users/{user_id}/meetings?page_size={page_size}&type={type}",
         headers={"Authorization": f"Bearer {token}"}
     )
 
