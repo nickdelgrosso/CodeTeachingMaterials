@@ -2,6 +2,7 @@
 from dataclasses import dataclass
 from typing import Iterator
 import pandas as pd
+from pathlib import Path
 import zoom_api
 from tabulate import tabulate
 
@@ -53,7 +54,15 @@ for meeting_registrants in registrants_iterator:
     # regs = registrants[['last_name', 'first_name', 'create_time']].sort_values('create_time').reset_index(drop=True)
     regs = registrants[['first_name', 'last_name', 'create_time']].sort_values('create_time', ascending=False).reset_index(drop=True)
     regs.index += 1
-    print(tabulate(regs, headers='keys', tablefmt='psql'), end='\n\n')
-    # print(regs, end='\n\n')
+    output = tabulate(regs, headers='keys', tablefmt='psql')
+    print(output, end='\n\n')
     print('')
+
+    filename = Path('/home/nickdg/Dropbox/Teaching/Registrants') / (str(meeting.id.iloc[0]) + '.txt')
+    filename.touch(exist_ok = True)
+    with filename.open(mode='r+') as f:
+        f.write(output)
+
+    # print(regs, end='\n\n')
+    
 
