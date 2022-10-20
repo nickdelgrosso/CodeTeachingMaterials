@@ -1,0 +1,1 @@
+*/10 * * * * . secrets.sh; python scripts/list_registrants.py
