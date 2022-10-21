@@ -6,12 +6,12 @@ sessions:
     # Day 1
     - title: 
       units:
-      - file: 
+      - file: notebooks/Python String Review With DNA.ipynb
         filename:
       - file: 
         filename:
       - file: 
-        filename:
+        filename: notebooks/DS Fitting One Dimensional Data.ipynb
       - file: 
         filename:
 
@@ -19,34 +19,34 @@ sessions:
     - title: 
       units:
       - file: 
-        filename:
+        filename: notebooks/Python Functions.ipynb
       - file: 
-        filename:
+        filename: notebooks/DS GLM with Pingouin And Statsmodels.ipynb
       - file: 
-        filename:
+        filename: notebooks/DS Machine Learning With ScikitLearn And Seaborn.ipynb
       - file: 
         filename:
 
     # Day 3
     - title: 
       units:
-      - file: 
+      - file: # Pandas Review
         filename:
       - file: 
-        filename:
+        filename: notebooks/DS Cleaning Categorical Tables.ipynb
       - file: 
-        filename:
+        filename: notebooks/DS Intro To SQL.ipynb
       - file: 
-        filename:
+        filename: # Getting data from REST API
 
     # Day 4
     - title: 
       units:
-      - file: 
+      - file:  # Advanced Matplotlib
         filename:
-      - file: 
+      - file:  # Seaborn
         filename:
-      - file: 
+      - file:  # Plotnine
         filename:
       - file: 
         filename:
