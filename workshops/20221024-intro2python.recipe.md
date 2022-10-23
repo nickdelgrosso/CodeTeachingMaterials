@@ -2,13 +2,15 @@
 buildFolder: 'build/intro2python2'
 status: drafting
 git:
+  sync: false
   branch: jlkj
   remoteName: adfaf
   remoteURL: adfaf
 
 sessions:
     - title: Intro To Python
-      includeSolutions: true
+      include: true
+      includeSolutions: false
       units:
       - file: notebooks/Python First Look.ipynb
         filename: Day1/1-1-IntroToNotebookEnvironment.ipynb
@@ -22,6 +24,7 @@ sessions:
         filename: Day1/1-5-PlottingWithMatplotlib.ipynb
     
     - title: Arrays and Matrices
+      include: false
       includeSolutions: false
       units:
       - file: notebooks/DS Numpy Arrays.ipynb
@@ -36,6 +39,7 @@ sessions:
         filename: Day2/2-5-BasicImagesWithMatplotlib.ipynb
 
     - title: Dicts and DataFrames
+      include: false
       includeSolutions: false
       units:
       - file: notebooks/DS List Array Comparison.ipynb
@@ -52,6 +56,7 @@ sessions:
         filename: Day3/3-6-SelectingAndAggregatingDataframes.ipynb
 
     - title: Data Analysis with DataFrames
+      include: false
       includeSolutions: false
       units:
       - file: notebooks/DS Plotting With Pandas.ipynb
@@ -64,6 +69,7 @@ sessions:
         filename: Day4/4-4-ReshapingData.ipynb
     
     - title: Batch Data Processing
+      include: false
       includeSolutions: false
       units:
       - file: notebooks/Misc Filepaths With Pathlib.ipynb

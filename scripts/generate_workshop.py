@@ -61,6 +61,8 @@ for recipe_filename in recipe_filenames:
 
     # # Copy Notebooks
     for session in recipe['sessions']:
+        if not session.get('include'):
+            continue
         for unit in session['units']:
             orig_notebook_file = unit['file']
             orig_notebook = read_notebook(orig_notebook_file)
@@ -84,7 +86,7 @@ for recipe_filename in recipe_filenames:
     reqs = extract_requirements(*basedir.glob('**/*.ipynb'))
     (basedir / "requirements.txt").write_text('\n'.join(reqs))
 
-    if recipe['git']:
+    if recipe.get('git') and recipe['git'].get('sync'):
         sync_git.sync_with_github(
             basedir=basedir,
             remote_url=recipe['git']['remoteURL'],

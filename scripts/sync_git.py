@@ -8,10 +8,11 @@ def sync_with_github(basedir: Path, remote_url, remote_name="origin", remote_bra
     cd {str(basedir)};
     git init;
     git checkout -b {remote_branch} 2> /dev/null;
+    git checkout {remote_branch}
     git add *;
     git commit -am "update {datetime.now().isoformat()}";
     git remote add {remote_name} {remote_url} 2> /dev/null;
-    git pull origin {remote_branch};
+    git pull origin {remote_branch} --rebase;
     git push origin {remote_branch};
     """
     run(cmds, shell=True)

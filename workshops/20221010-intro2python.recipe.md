@@ -2,6 +2,7 @@
 buildFolder: 'build/intro2python'
 status: finished
 git:
+  sync: false
   branch: master
   remoteName: origin
   remoteUrl: git@github.com:CodingForScientists/Intro2Python.git

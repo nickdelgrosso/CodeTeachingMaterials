@@ -37,12 +37,12 @@ def write_notebook(filename: str, notebook: Notebook) -> None:
 
 
 def get_requirements(notebook: Notebook) -> List[str]:
-    """Get all the requirements from the `!pip install` lines in a notebook."""
+    """Get all the requirements from the `%pip install` lines in a notebook."""
     cells = notebook['cells']
     reqs = set()
     for cell in cells:
         source = [src] if isinstance((src := cell['source']), str) else src
-        prefix = '!pip install '
+        prefix = '%pip install '
         for line in source:
             code = line[:find(line, '#')].strip()  # Remove comments
             code = line[:find(line, ';')].strip()  # Remove semicolon
