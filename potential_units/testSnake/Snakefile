@@ -1,0 +1,34 @@
+import matplotlib
+matplotlib.use('Agg')
+
+filenums = list(range(10))
+
+rule all:
+    input:
+        "data/hello_world.txt",
+        expand("figs/{num}.png", num=filenums)
+
+
+rule hello_world:
+    output: "data/hello_world.txt"
+    shell: "echo hi > {output}"
+
+
+rule goodbye_world:
+    output: "data/goodbye_world.txt"
+    run:
+        with open(output[0], 'w') as f:
+            f.write("bye world")
+
+
+rule generate_data:
+    input: "notebooks/workflow/generate_data.ipynb"
+    output:
+        "data/{num}.txt",
+        "reports/generate_data{num}.ipynb"
+    shell: "papermill -p output_filename {output[0]} {input} {output[1]} && jupyter nbconvert --to html {output[1]}"
+
+rule make_histogram:
+    input: "data/{num}.txt"
+    output: "figs/{num}.png"
+    shell: "python scripts/make_histogram.py {input} {output}"

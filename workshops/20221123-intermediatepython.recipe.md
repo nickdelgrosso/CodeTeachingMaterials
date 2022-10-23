@@ -4,64 +4,64 @@ sessions:
 
 
     # Day 1
-    - title: 
+    - title: Dataframes in Depth
       units:
-      - file: notebooks/Python String Review With DNA.ipynb
+      - file: notebooks/DS Pandas Overview.ipynb
         filename:
-      - file: 
-        filename:
-      - file: 
-        filename: notebooks/DS Fitting One Dimensional Data.ipynb
-      - file: 
-        filename:
+      - file:  # Functional Pandas 
+        filename:  
+      - file:  # Timeseries and Imputation in Pandas
+        filename: 
+      - file: notebooks/DS Cleaning Categorical Tables.ipynb
+        filename: 
 
     # Day 2
-    - title: 
+    - title: Managing Relational Datasets
+      units:
+      - file: # Joins 
+        filename: 
+      - file: # Organizing Relational Data for Storage
+        filename: 
+      - file:  notebooks/DS Intro To SQL.ipynb
+        filename: 
+      - file: # Parquet and HDF5
+        filename: 
+
+    # Day 3
+    - title: Fit, Predict; Reshaping Data for Statistics and Machine Learning
       units:
       - file: 
-        filename: notebooks/Python Functions.ipynb
+        filename: # Tidy Data (reshaping)
+      - file: 
+        filename: notebooks/DS Fitting One Dimensional Data.ipynb
       - file: 
         filename: notebooks/DS GLM with Pingouin And Statsmodels.ipynb
       - file: 
         filename: notebooks/DS Machine Learning With ScikitLearn And Seaborn.ipynb
-      - file: 
-        filename:
-
-    # Day 3
-    - title: 
-      units:
-      - file: # Pandas Review
-        filename:
-      - file: 
-        filename: notebooks/DS Cleaning Categorical Tables.ipynb
-      - file: 
-        filename: notebooks/DS Intro To SQL.ipynb
-      - file: 
-        filename: # Getting data from REST API
 
     # Day 4
-    - title: 
+    - title: Beyond Matplotlib; Python's Plotting Ecosystem
       units:
-      - file:  # Advanced Matplotlib
-        filename:
-      - file:  # Seaborn
-        filename:
-      - file:  # Plotnine
-        filename:
+      - file:  
+        filename: # Advanced Matplotlib
+      - file:  
+        filename: # Seaborn
+      - file:  
+        filename: # Plotnine
       - file: 
-        filename:
+        filename: # Datashader
 
     # Day 5
-    - title: 
+    - title:  Interactive Data Products
       units:
+      - file: # Altair
+        filename: 
+      - file: # Streamlit  (which uses altair)
+        filename: 
+      - file:   
+        filename: # IPyWidgets
       - file: 
-        filename:
-      - file: 
-        filename:
-      - file: 
-        filename:
-      - file: 
-        filename:
+        filename: # Panel
         
     
 project:

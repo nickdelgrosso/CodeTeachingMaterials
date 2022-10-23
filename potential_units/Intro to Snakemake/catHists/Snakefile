@@ -1,0 +1,26 @@
+import matplotlib
+matplotlib.use('Agg')
+
+rule all:
+    input:
+        expand("figs/hists{num}.png", num=range(100))
+
+
+rule hello_world:
+    output: "data/helloworld.txt"
+    shell: "echo Hello World > {output}"
+
+
+rule generate_data:
+    input:
+        "notebooks/Untitled.ipynb"
+    output:
+        "rdata/{num}.txt",
+        "reports/generate_data/GenerateData{num}.ipynb"
+    shell: "papermill -p filename {output[0]} {input} {output[1]} && jupyter nbconvert --to html {output[1]}"
+
+
+rule make_hist:
+    input: "rdata/{num}.txt"
+    output: "figs/hists{num}.png"
+    shell: "python scripts/make_hist.py {input} {output}"
