@@ -1,5 +1,6 @@
 ---
-buildFolder: 'build/intro2python'
+buildFolder: 'build/intro2python3'
+ready: false
 sessions:
     - title: Intro To Python
       units:

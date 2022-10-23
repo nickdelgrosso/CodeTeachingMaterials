@@ -45,6 +45,7 @@ def get_requirements(notebook: Notebook) -> List[str]:
         prefix = '!pip install '
         for line in source:
             code = line[:find(line, '#')].strip()  # Remove comments
+            code = line[:find(line, ';')].strip()  # Remove semicolon
             if code.startswith(prefix):
                 reqs.update(code[len(prefix):].split(' '))
     return list(sorted(reqs))

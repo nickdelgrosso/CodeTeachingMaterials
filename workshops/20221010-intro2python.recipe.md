@@ -1,62 +1,69 @@
 ---
 buildFolder: 'build/intro2python'
+status: finished
+git:
+  branch: master
+  remoteName: origin
+  remoteUrl: git@github.com:CodingForScientists/Intro2Python.git
+
 sessions:
-    - units:
-      - file: notebooks/FirstLookAtPython.ipynb
+    - title: Intro To Python
+      units:
+      - file: notebooks/Python First Look.ipynb
         filename: Day1/1-1-IntroToNotebookEnvironment.ipynb
-      - file: notebooks/PythonTypes.ipynb
+      - file: notebooks/Python Types.ipynb
         filename: Day1/1-2-FunctionsAndPythonTypes.ipynb
-      - file: notebooks/StringsAndMethods.ipynb
+      - file: notebooks/Python Strings And Methods.ipynb
         filename: Day1/1-3-MethodsInPython.ipynb        
-      - file: notebooks/DataCollectionsAndFunctions.ipynb
+      - file: notebooks/Python Data Collections And Functions.ipynb
         filename: Day1/1-4-DataCollections.ipynb
-      - file: notebooks/PlottingDataWithMatplotlib.ipynb
+      - file: notebooks/DS Plotting With Matplotlib.ipynb
         filename: Day1/1-5-PlottingWithMatplotlib.ipynb
         
     - units:
-      - file: notebooks/NumpyArrays.ipynb
+      - file: notebooks/DS Numpy Arrays.ipynb
         filename: Day2/2-1-ArraysWithNumpy.ipynb
-      - file: notebooks/Logical_Indexing.ipynb
+      - file: notebooks/DS Logical Indexing.ipynb
         filename: Day2/2-2-NumpyLogicalIndexing.ipynb
-      - file: notebooks/PlottingDistributionsWithNumpyAndMatplotlib.ipynb
+      - file: notebooks/DS Plotting Distributions With Numpy And Matplotlib.ipynb
         filename: Day2/2-3-PlottingDistributionsWithNumpyAndMatplotlib.ipynb
-      - file: notebooks/Multidimensional_Arrays.ipynb
+      - file: notebooks/DS Multidimensional Arrays.ipynb
         filename: Day2/2-4-MatricesWithNumpy.ipynb
-      - file: notebooks/CroppingAndPlottingImageDataWithMatplotlib.ipynb
+      - file: notebooks/DS Cropping And Plotting Image Data With Matplotlib.ipynb
         filename: Day2/2-5-BasicImagesWithMatplotlib.ipynb
 
     - units:
-      - file: notebooks/List_Array_Comparison.ipynb
+      - file: notebooks/DS List Array Comparison.ipynb
         filename: Day3/3-1-ListArrayComparison.ipynb
-      - file: notebooks/TTestsWithScipyStats.ipynb
+      - file: notebooks/DS TTests With Scipy Stats.ipynb
         filename: Day3/3-2-TtestsWithScipyStats.ipynb
-      - file: notebooks/Dictionaries.ipynb
+      - file: notebooks/Python Dictionaries.ipynb
         filename: Day3/3-3-Dictionaries.ipynb
-      - file: notebooks/PandasDataframeCreation.ipynb
+      - file: notebooks/DS Dataframe Creation.ipynb
         filename: Day3/3-4-ReadingTabularFileFormats.ipynb
-      - file: notebooks/TTestsWithScipyStatsAndPingouin.ipynb
+      - file: notebooks/DS TTests With Scipy Stats And Pingouin.ipynb
         filename: Day3/3-5-TTestsWithPingouin.ipynb
-      - file: notebooks/AnalyzingDataFrames.ipynb
+      - file: notebooks/DS Analyzing DataFrames.ipynb
         filename: Day3/3-6-SelectingAndAggregatingDataframes.ipynb
 
     - units:
-      - file: notebooks/PlottingWithPandas.ipynb
+      - file: notebooks/DS Plotting With Pandas.ipynb
         filename: Day4/4-1-PlottingWithPandas.ipynb
-      - file: notebooks/AnalyzingDataFrames.ipynb
+      - file: notebooks/DS Analyzing DataFrames.ipynb
         filename: Day4/4-2-SelectingAndAggregatingDataframes.ipynb
-      - file: notebooks/Groupby_Seaborn.ipynb
+      - file: notebooks/DS Groupby Seaborn.ipynb
         filename: Day4/4-3-GroupingData.ipynb
-      - file: notebooks/ReorganizingDataFrames.ipynb
+      - file: notebooks/DS DataFrame Reorganizing.ipynb
         filename: Day4/4-4-ReshapingData.ipynb
       
     - units:
-      - file: notebooks/FilepathsWithPathlib.ipynb
+      - file: notebooks/Misc Filepaths With Pathlib.ipynb
         filename: Day5/5-1-FindingFilePathsWithPathlib.ipynb
-      - file: notebooks/Conda Environment Manager.ipynb
+      - file: notebooks/SE Conda Environment Manager.ipynb
         filename: Day5/5-2-InstallingPythonWithCondaManager.ipynb
-      - file: notebooks/IfElseBlocks.ipynb
+      - file: notebooks/Python Blocks If Else.ipynb
         filename: Day5/5-3-IfElseBlocksInPython.ipynb
-      - file: notebooks/P3a_ForLoops.ipynb
+      - file: notebooks/Python Blocks For Loops.ipynb
         filename: Day5/5-4-ForLoopsInPython.ipynb
       
       
@@ -65,10 +72,7 @@ project:
   - jupyter_lab_config.py
   - .gitpod.yml
   - .gitignore
-git:
-  remote-name: origin
-  remote-url: git@github.com:CodingForScientists/Intro2Python.git
-  remote-branch: master
+
   
 
 ---
