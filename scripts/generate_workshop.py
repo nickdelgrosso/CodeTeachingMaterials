@@ -11,12 +11,11 @@ import logging
 import yaml
 
 from utils.jupyter import extract_requirements, read_notebook, strip_cells, write_notebook
+from utils.ipython import set_debugger_to_ipdb
+from utils.markdown import get_gitpod_markdown_shortcut, get_deepnote_markdown_shortcut
 import sync_git
 
-import sys
-import ipdb
-sys.breakpointhook = ipdb.set_trace
-
+set_debugger_to_ipdb()
 # logging.basicConfig(level=logging.DEBUG)
 
 # Read the configuration file
@@ -57,7 +56,18 @@ for recipe_filename in recipe_filenames:
         copy2(file, basedir / Path(file).name)
     
     # Create Readme
+    print('readme-ing')
+    shortcuts = ''
+    if recipe.get('git').get('remoteURL') and recipe.get('readme').get('addDeepnoteShortcut'):
+        logging.log(logging.DEBUG, 'adding Deepnote Link')
+        shortcuts += get_deepnote_markdown_shortcut(recipe['git']['remoteName']) + '\n'
+    if recipe.get('git').get('remoteURL') and recipe.get('readme').get('addGitpodShortcut'):
+        logging.log(logging.DEBUG, 'adding Gitpod shortcut')
+        shortcuts += get_gitpod_markdown_shortcut(recipe['git']['remoteName']) + '\n'
+    md_text = shortcuts + md_text
+
     (basedir / "README.md").write_text(md_text)
+
 
     # # Copy Notebooks
     for session in recipe['sessions']:
