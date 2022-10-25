@@ -28,7 +28,7 @@ sessions:
     
     - title: Arrays and Matrices
       include: true
-      includeSolutions: false
+      includeSolutions: true
       units:
       - file: notebooks/Python Indexing and Slicing.ipynb
         filename: Day2/2-1-IndexingAndSlicingSequences.ipynb
@@ -40,8 +40,8 @@ sessions:
         filename: Day2/2-4-NumpyLogicalIndexing.ipynb
       - file: notebooks/DS Plotting Distributions With Numpy And Matplotlib.ipynb
         filename: Day2/2-5-PlottingDistributionsWithNumpyAndMatplotlib.ipynb
-      - file: notebooks/DS Multidimensional Arrays.ipynb
-        filename: Day2/2-6-MultidimensionalArrays.ipynb
+      # - file: notebooks/DS Multidimensional Arrays.ipynb
+      #   filename: Day2/2-6-MultidimensionalArrays.ipynb
 
     - title: Dicts and DataFrames
       include: false
