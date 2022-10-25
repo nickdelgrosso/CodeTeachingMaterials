@@ -13,7 +13,7 @@ readme:
 sessions:
     - title: Intro To Python
       include: true
-      includeSolutions: false
+      includeSolutions: true
       units:
       - file: notebooks/Python First Look.ipynb
         filename: Day1/1-1-IntroToNotebookEnvironment.ipynb
