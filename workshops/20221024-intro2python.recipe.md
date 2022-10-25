@@ -27,7 +27,7 @@ sessions:
         filename: Day1/1-5-PlottingWithMatplotlib.ipynb
     
     - title: Arrays and Matrices
-      include: false
+      include: true
       includeSolutions: false
       units:
       - file: notebooks/Python Indexing and Slicing.ipynb
@@ -37,9 +37,11 @@ sessions:
       - file: notebooks/DS Numpy Arrays.ipynb
         filename: Day2/2-3-ArraysWithNumpy.ipynb
       - file: notebooks/DS Logical Indexing.ipynb
-        filename: Day2/2-2-NumpyLogicalIndexing.ipynb
+        filename: Day2/2-4-NumpyLogicalIndexing.ipynb
       - file: notebooks/DS Plotting Distributions With Numpy And Matplotlib.ipynb
-        filename: Day2/2-3-PlottingDistributionsWithNumpyAndMatplotlib.ipynb
+        filename: Day2/2-5-PlottingDistributionsWithNumpyAndMatplotlib.ipynb
+      - file: notebooks/DS Multidimensional Arrays.ipynb
+        filename: Day2/2-6-MultidimensionalArrays.ipynb
 
     - title: Dicts and DataFrames
       include: false
@@ -92,6 +94,7 @@ project:
   
 
 ---
+
 
 
 # Intro 2 Python

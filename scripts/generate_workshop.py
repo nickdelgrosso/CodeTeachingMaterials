@@ -60,10 +60,10 @@ for recipe_filename in recipe_filenames:
     shortcuts = ''
     if recipe.get('git').get('remoteURL') and recipe.get('readme').get('addDeepnoteShortcut'):
         logging.log(logging.DEBUG, 'adding Deepnote Link')
-        shortcuts += get_deepnote_markdown_shortcut(recipe['git']['remoteName']) + '\n'
+        shortcuts += get_deepnote_markdown_shortcut(recipe['git']['remoteURL']) + '\n'
     if recipe.get('git').get('remoteURL') and recipe.get('readme').get('addGitpodShortcut'):
         logging.log(logging.DEBUG, 'adding Gitpod shortcut')
-        shortcuts += get_gitpod_markdown_shortcut(recipe['git']['remoteName']) + '\n'
+        shortcuts += get_gitpod_markdown_shortcut(recipe['git']['remoteURL']) + '\n'
     md_text = shortcuts + md_text
 
     (basedir / "README.md").write_text(md_text)
