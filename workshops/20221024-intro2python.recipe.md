@@ -1,6 +1,6 @@
 ---
 buildFolder: 'build/intro2python2'
-status: drafting
+status: running
 git:
   sync: true
   branch: main
@@ -30,23 +30,22 @@ sessions:
       include: false
       includeSolutions: false
       units:
+      - file: notebooks/Python Indexing and Slicing.ipynb
+        filename: Day2/2-1-IndexingAndSlicingSequences.ipynb
+      - file: notebooks/DS List Array Comparison.ipynb
+        filename: Day2/2-2-ListArrayComparison.ipynb
       - file: notebooks/DS Numpy Arrays.ipynb
-        filename: Day2/2-1-ArraysWithNumpy.ipynb
+        filename: Day2/2-3-ArraysWithNumpy.ipynb
       - file: notebooks/DS Logical Indexing.ipynb
         filename: Day2/2-2-NumpyLogicalIndexing.ipynb
       - file: notebooks/DS Plotting Distributions With Numpy And Matplotlib.ipynb
         filename: Day2/2-3-PlottingDistributionsWithNumpyAndMatplotlib.ipynb
-      - file: notebooks/DS Multidimensional Arrays.ipynb
-        filename: Day2/2-4-MatricesWithNumpy.ipynb
-      - file: notebooks/DS Cropping And Plotting Image Data With Matplotlib.ipynb
-        filename: Day2/2-5-BasicImagesWithMatplotlib.ipynb
 
     - title: Dicts and DataFrames
       include: false
       includeSolutions: false
       units:
-      - file: notebooks/DS List Array Comparison.ipynb
-        filename: Day3/3-1-ListArrayComparison.ipynb
+      
       - file: notebooks/DS TTests With Scipy Stats.ipynb
         filename: Day3/3-2-TtestsWithScipyStats.ipynb
       - file: notebooks/Python Dictionaries.ipynb
