@@ -1,0 +1,66 @@
+from numpy import random, pi, cos, sin
+from matplotlib import pyplot
+
+class SimRat(object):
+
+	def __init__(self,timeStep=0.01):
+		"""Simulate a rat's 2D movement in discete timeSteps (secs).
+		"""
+		self.timeStep = timeStep
+
+		self.position = (0,0)
+		self.velocity = (0,0)
+		self.direction = random.uniform(0,2*pi)
+
+	def move(self):
+		
+		accel = random.gamma(2.1718,scale=0.05564) #Values calculated from Justin's data
+
+		#Find a random direction to turn in.
+		direction1 = random.laplace(loc=0.0, scale=0.25388)
+		direction2 = random.uniform(-pi,pi)
+		if random.uniform(0,1) > .1:	choice = direction1
+		else:					choice = direction2
+		new_direction = self.direction + choice
+
+		if new_direction > (2. * pi): new_direction -= 2.*pi
+		elif new_direction < 0.: new_direction += 2.*pi
+
+		self.direction = new_direction
+		
+
+		#Apply acceleration and direction to current velocity
+		if random.uniform > 0.25:	vel = (0,0) #Rat stops.
+		else:					vel = self.velocity #Rat continues along.
+
+		self.velocity = ( vel[0] + (accel * self.timeStep * cos(self.direction)),
+					vel[1] + (accel * self.timeStep * sin(self.direction))
+				    )
+
+		pos = self.position
+		self.position = ( pos[0] + (self.velocity[0] * self.timeStep),
+					pos[1] + (self.velocity[1] * self.timeStep),
+				    )
+
+		return self.position
+
+
+		
+if __name__ == '__main__':
+	for rep in range(30):
+		rat = SimRat(.01)
+	
+		x = []
+		y = []
+		for el in range(90000):
+			pos = rat.move()
+			x.append(pos[0])
+			y.append(pos[1])
+	
+		pyplot.clf()
+		pyplot.plot(x[::20],y[::20])
+		pyplot.gcf().savefig('/figs/simrat_{}.png'.format(rep))
+
+	pyplot.show()
+	
+

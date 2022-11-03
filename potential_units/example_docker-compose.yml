@@ -1,0 +1,59 @@
+version: '3'
+services:
+    airflow:
+        image: barrachri/pyconde2018_airflow:latest
+        restart: always
+        depends_on:
+            - postgres
+        environment:
+            - POSTGRES_USER=airflow
+            - POSTGRES_PASSWORD=airflow
+            - POSTGRES_DB=airflow
+            - POSTGRES_HOST=postgres
+            - POSTGRES_PORT=5432
+            - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+            - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+
+        volumes:
+            - ./airflow/src/dags:/usr/local/airflow/dags
+        ports:
+            - "8080:8080"
+        command: webserver
+        healthcheck:
+            test: ["CMD-SHELL", "[ -f /usr/local/airflow/airflow-webserver.pid ]"]
+            interval: 30s
+            timeout: 30s
+            retries: 3
+
+    # db for airflow
+    postgres:
+        image: postgres:10.0
+        environment:
+            - POSTGRES_USER=airflow
+            - POSTGRES_PASSWORD=airflow
+            - POSTGRES_DB=airflow
+
+    # our streams
+    redis:
+        image: redis:5-alpine
+        ports:
+        - "6379:6379"
+
+    # our storage
+    scylladb:
+        image: scylladb/scylla:2.3.0
+        ports:
+            - "9042:9042"
+
+    # our storage
+    minio:
+        image: minio/minio:latest
+        environment:
+            MINIO_ACCESS_KEY: 123456789
+            MINIO_SECRET_KEY: 123456789
+        volumes:
+            - ./minio:/export
+        ports:
+             - "9000:9000"
+        command: server /export
+        

@@ -1,0 +1,3726 @@
+{
+  "id": "5e0f43ae992ff0174e301dfe",
+  "name": "research data management course",
+  "desc": "",
+  "descData": null,
+  "closed": false,
+  "idOrganization": "5ac487e80df0f4d79a21fde3",
+  "idEnterprise": null,
+  "limits": {
+    "attachments": {
+      "perBoard": {
+        "status": "ok",
+        "disableAt": 36000,
+        "warnAt": 32400
+      },
+      "perCard": {
+        "status": "ok",
+        "disableAt": 1000,
+        "warnAt": 900
+      }
+    },
+    "boards": {
+      "totalMembersPerBoard": {
+        "status": "ok",
+        "disableAt": 1600,
+        "warnAt": 1440
+      }
+    },
+    "cards": {
+      "openPerBoard": {
+        "status": "ok",
+        "disableAt": 5000,
+        "warnAt": 4500
+      },
+      "openPerList": {
+        "status": "ok",
+        "disableAt": 5000,
+        "warnAt": 4500
+      },
+      "totalPerBoard": {
+        "status": "ok",
+        "disableAt": 2000000,
+        "warnAt": 1800000
+      },
+      "totalPerList": {
+        "status": "ok",
+        "disableAt": 1000000,
+        "warnAt": 900000
+      }
+    },
+    "checklists": {
+      "perBoard": {
+        "status": "ok",
+        "disableAt": 2000000,
+        "warnAt": 1800000
+      },
+      "perCard": {
+        "status": "ok",
+        "disableAt": 500,
+        "warnAt": 450
+      }
+    },
+    "checkItems": {
+      "perChecklist": {
+        "status": "ok",
+        "disableAt": 200,
+        "warnAt": 180
+      }
+    },
+    "customFields": {
+      "perBoard": {
+        "status": "ok",
+        "disableAt": 50,
+        "warnAt": 45
+      }
+    },
+    "customFieldOptions": {
+      "perField": {
+        "status": "ok",
+        "disableAt": 50,
+        "warnAt": 45
+      }
+    },
+    "labels": {
+      "perBoard": {
+        "status": "ok",
+        "disableAt": 1000,
+        "warnAt": 900
+      }
+    },
+    "lists": {
+      "openPerBoard": {
+        "status": "ok",
+        "disableAt": 500,
+        "warnAt": 450
+      },
+      "totalPerBoard": {
+        "status": "ok",
+        "disableAt": 3000,
+        "warnAt": 2700
+      }
+    },
+    "stickers": {
+      "perCard": {
+        "status": "ok",
+        "disableAt": 70,
+        "warnAt": 63
+      }
+    },
+    "reactions": {
+      "perAction": {
+        "status": "ok",
+        "disableAt": 1000,
+        "warnAt": 900
+      },
+      "uniquePerAction": {
+        "status": "ok",
+        "disableAt": 17,
+        "warnAt": 16
+      }
+    }
+  },
+  "pinned": false,
+  "starred": false,
+  "url": "https://trello.com/b/7jkTcy2a/research-data-management-course",
+  "prefs": {
+    "permissionLevel": "org",
+    "hideVotes": false,
+    "voting": "disabled",
+    "comments": "members",
+    "invitations": "members",
+    "selfJoin": true,
+    "cardCovers": true,
+    "isTemplate": false,
+    "cardAging": "regular",
+    "calendarFeedEnabled": false,
+    "background": "5e0ea3a220c5b62ba157a60c",
+    "backgroundImage": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/original/39abfd414864a1149f6d89e48f0d32bf/photo-1578006098452-1c6cbda8b73f",
+    "backgroundImageScaled": [
+      {
+        "width": 140,
+        "height": 93,
+        "url": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/140x93/604e802c7d9cd675c2960ed69d6d0818/photo-1578006098452-1c6cbda8b73f.jpg"
+      },
+      {
+        "width": 256,
+        "height": 171,
+        "url": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/256x171/604e802c7d9cd675c2960ed69d6d0818/photo-1578006098452-1c6cbda8b73f.jpg"
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "url": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x320/604e802c7d9cd675c2960ed69d6d0818/photo-1578006098452-1c6cbda8b73f.jpg"
+      },
+      {
+        "width": 960,
+        "height": 640,
+        "url": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/960x640/604e802c7d9cd675c2960ed69d6d0818/photo-1578006098452-1c6cbda8b73f.jpg"
+      },
+      {
+        "width": 1024,
+        "height": 683,
+        "url": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1024x683/604e802c7d9cd675c2960ed69d6d0818/photo-1578006098452-1c6cbda8b73f.jpg"
+      },
+      {
+        "width": 2048,
+        "height": 1366,
+        "url": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2048x1366/604e802c7d9cd675c2960ed69d6d0818/photo-1578006098452-1c6cbda8b73f.jpg"
+      },
+      {
+        "width": 1280,
+        "height": 854,
+        "url": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x854/604e802c7d9cd675c2960ed69d6d0818/photo-1578006098452-1c6cbda8b73f.jpg"
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "url": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1920x1280/604e802c7d9cd675c2960ed69d6d0818/photo-1578006098452-1c6cbda8b73f.jpg"
+      },
+      {
+        "width": 2400,
+        "height": 1600,
+        "url": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2400x1600/604e802c7d9cd675c2960ed69d6d0818/photo-1578006098452-1c6cbda8b73f.jpg"
+      },
+      {
+        "width": 2560,
+        "height": 1707,
+        "url": "https://trello-backgrounds.s3.amazonaws.com/SharedBackground/original/39abfd414864a1149f6d89e48f0d32bf/photo-1578006098452-1c6cbda8b73f"
+      }
+    ],
+    "backgroundTile": false,
+    "backgroundBrightness": "dark",
+    "backgroundBottomColor": "#0d1313",
+    "backgroundTopColor": "#303535",
+    "canBePublic": true,
+    "canBeEnterprise": true,
+    "canBeOrg": true,
+    "canBePrivate": true,
+    "canInvite": true
+  },
+  "shortLink": "7jkTcy2a",
+  "subscribed": false,
+  "labelNames": {
+    "green": "",
+    "yellow": "",
+    "orange": "",
+    "red": "",
+    "purple": "",
+    "blue": "",
+    "sky": "",
+    "lime": "",
+    "pink": "",
+    "black": ""
+  },
+  "powerUps": [],
+  "dateLastActivity": "2020-01-03T14:01:15.717Z",
+  "dateLastView": "2020-01-03T14:09:38.436Z",
+  "shortUrl": "https://trello.com/b/7jkTcy2a",
+  "idTags": [],
+  "datePluginDisable": null,
+  "creationMethod": null,
+  "ixUpdate": "88",
+  "templateGallery": null,
+  "enterpriseOwned": false,
+  "actions": [
+    {
+      "id": "5e0f492b0a591022c5639f24",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "name": "What to Save: Data vs Code, Data vs Parameter, Parameter vs HyperParameter"
+        },
+        "card": {
+          "name": "What to Save: Data vs Code, Data vs Parameter, Data vs Code, Data vs Build Artifact",
+          "id": "5e0f48dba5987b228c2f5dc5",
+          "idShort": 20,
+          "shortLink": "RJIafE5F"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        },
+        "list": {
+          "id": "5e0f4540f3d833732edf73f7",
+          "name": "Data Versioning"
+        }
+      },
+      "type": "updateCard",
+      "date": "2020-01-03T14:01:15.735Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f49066fd14e21df950b89",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "name": "Data vs Parameter vs HyperParameter"
+        },
+        "card": {
+          "name": "What to Save: Data vs Code, Data vs Parameter, Parameter vs HyperParameter",
+          "id": "5e0f48dba5987b228c2f5dc5",
+          "idShort": 20,
+          "shortLink": "RJIafE5F"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        },
+        "list": {
+          "id": "5e0f4540f3d833732edf73f7",
+          "name": "Data Versioning"
+        }
+      },
+      "type": "updateCard",
+      "date": "2020-01-03T14:00:38.924Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f48f75f57881472a2311a",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "pos": 49151.25
+        },
+        "card": {
+          "pos": 131071,
+          "id": "5e0f48dba5987b228c2f5dc5",
+          "name": "Data vs Parameter vs HyperParameter",
+          "idShort": 20,
+          "shortLink": "RJIafE5F"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        },
+        "list": {
+          "id": "5e0f4540f3d833732edf73f7",
+          "name": "Data Versioning"
+        }
+      },
+      "type": "updateCard",
+      "date": "2020-01-03T14:00:23.294Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f48e5913882503d02941a",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "pos": 131071
+        },
+        "card": {
+          "pos": 49151.25,
+          "id": "5e0f48dba5987b228c2f5dc5",
+          "name": "Data vs Parameter vs HyperParameter",
+          "idShort": 20,
+          "shortLink": "RJIafE5F"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        },
+        "list": {
+          "id": "5e0f4540f3d833732edf73f7",
+          "name": "Data Versioning"
+        }
+      },
+      "type": "updateCard",
+      "date": "2020-01-03T14:00:05.388Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f48e171da267b35a828bc",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "pos": 262143
+        },
+        "card": {
+          "pos": 131071,
+          "id": "5e0f48dba5987b228c2f5dc5",
+          "name": "Data vs Parameter vs HyperParameter",
+          "idShort": 20,
+          "shortLink": "RJIafE5F"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        },
+        "list": {
+          "id": "5e0f4540f3d833732edf73f7",
+          "name": "Data Versioning"
+        }
+      },
+      "type": "updateCard",
+      "date": "2020-01-03T14:00:01.826Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f48dba5987b228c2f5dc6",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f48dba5987b228c2f5dc5",
+          "name": "Data vs Parameter vs HyperParameter",
+          "idShort": 20,
+          "shortLink": "RJIafE5F"
+        },
+        "list": {
+          "id": "5e0f4540f3d833732edf73f7",
+          "name": "Data Versioning"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:59:55.495Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f48985dc31b3d04923b74",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "pos": 131071
+        },
+        "card": {
+          "pos": 32767.5,
+          "id": "5e0f466094670a4cce26e9aa",
+          "name": "Within-Analysis Data Provenance",
+          "idShort": 9,
+          "shortLink": "HV2QmsIX"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        },
+        "list": {
+          "id": "5e0f4540f3d833732edf73f7",
+          "name": "Data Versioning"
+        }
+      },
+      "type": "updateCard",
+      "date": "2020-01-03T13:58:48.318Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f48891034c47e7d6a81cb",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "pos": 262143
+        },
+        "card": {
+          "pos": 16383.75,
+          "id": "5e0f4887ecf7d818fbf5ed37",
+          "name": "Artififact-as-Data vs Artifact-as-Code",
+          "idShort": 19,
+          "shortLink": "FdbtLwav"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        },
+        "list": {
+          "id": "5e0f47582cce13739a63d889",
+          "name": "Research Artifacts"
+        }
+      },
+      "type": "updateCard",
+      "date": "2020-01-03T13:58:33.598Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f4887ecf7d818fbf5ed38",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f4887ecf7d818fbf5ed37",
+          "name": "Artififact-as-Data vs Artifact-as-Code",
+          "idShort": 19,
+          "shortLink": "FdbtLwav"
+        },
+        "list": {
+          "id": "5e0f47582cce13739a63d889",
+          "name": "Research Artifacts"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:58:31.036Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f48668672e96fdfb7081c",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "name": "Schemas"
+        },
+        "card": {
+          "name": "Data Schemas",
+          "id": "5e0f44b68672e96fdfb620a8",
+          "idShort": 3,
+          "shortLink": "UuzIpWeJ"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        },
+        "list": {
+          "id": "5e0f44b1e4045273d4a5ea67",
+          "name": "Data Structuring"
+        }
+      },
+      "type": "updateCard",
+      "date": "2020-01-03T13:57:58.431Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f4851dc2a8f8d921b1f6e",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f4851dc2a8f8d921b1f6d",
+          "name": "Data Harmonization",
+          "idShort": 18,
+          "shortLink": "EzzgjGBU"
+        },
+        "list": {
+          "id": "5e0f44b1e4045273d4a5ea67",
+          "name": "Data Structuring"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:57:37.642Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f483925f4b73274a690a3",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f483925f4b73274a690a2",
+          "name": "Data Sharing Platforms",
+          "idShort": 17,
+          "shortLink": "tKoJRrHy"
+        },
+        "list": {
+          "id": "5e0f43d10f72430f10d76176",
+          "name": "Data Sharing"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:57:13.300Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f481d2201c922c4a84e0a",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f481d2201c922c4a84e07",
+          "name": "The Scientific Filesystem",
+          "idShort": 16,
+          "shortLink": "AscZ51zW"
+        },
+        "list": {
+          "id": "5e0f47582cce13739a63d889",
+          "name": "Research Artifacts"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:56:45.782Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f47e5eaa40573760c7d79",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f47e5eaa40573760c7d78",
+          "name": "Data Pipeline Workflow Managers",
+          "idShort": 15,
+          "shortLink": "GOCXfIk1"
+        },
+        "list": {
+          "id": "5e0f47582cce13739a63d889",
+          "name": "Research Artifacts"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:55:49.221Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f47c994326a12ab62268f",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "pos": 131071
+        },
+        "card": {
+          "pos": 32767.5,
+          "id": "5e0f47be68f1277b93bb37f3",
+          "name": "Automation and The Command Line",
+          "idShort": 14,
+          "shortLink": "0FQQWNmJ"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        },
+        "list": {
+          "id": "5e0f47582cce13739a63d889",
+          "name": "Research Artifacts"
+        }
+      },
+      "type": "updateCard",
+      "date": "2020-01-03T13:55:21.730Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f47be68f1277b93bb37f4",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f47be68f1277b93bb37f3",
+          "name": "Automation and The Command Line",
+          "idShort": 14,
+          "shortLink": "0FQQWNmJ"
+        },
+        "list": {
+          "id": "5e0f47582cce13739a63d889",
+          "name": "Research Artifacts"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:55:10.789Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f479655d34a6d783a129a",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f479655d34a6d783a1299",
+          "name": "Compuational Environment Reproduction: Package Managers, Virtual Environments, and Containerization Tools",
+          "idShort": 13,
+          "shortLink": "mcwsLM1O"
+        },
+        "list": {
+          "id": "5e0f47582cce13739a63d889",
+          "name": "Research Artifacts"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:54:30.050Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f47673cdafc33931f791e",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "name": "Data Exploration"
+        },
+        "list": {
+          "name": "Research Artifacts",
+          "id": "5e0f47582cce13739a63d889"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "updateList",
+      "date": "2020-01-03T13:53:43.038Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f47582cce13739a63d88b",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "list": {
+          "id": "5e0f47582cce13739a63d889",
+          "name": "Data Exploration"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createList",
+      "date": "2020-01-03T13:53:28.087Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f470d7e084f4458f2655b",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "pos": 196607
+        },
+        "card": {
+          "pos": 98303,
+          "id": "5e0f46eb05583871a84f8065",
+          "name": "Self-Describing Data Formats",
+          "idShort": 12,
+          "shortLink": "VM23Re40"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        },
+        "list": {
+          "id": "5e0f44b1e4045273d4a5ea67",
+          "name": "Data Structuring"
+        }
+      },
+      "type": "updateCard",
+      "date": "2020-01-03T13:52:13.743Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f4708d5434f7345e29ef3",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "name": "Data Forma Structured"
+        },
+        "card": {
+          "name": "Self-Describing Data Formats",
+          "id": "5e0f46eb05583871a84f8065",
+          "idShort": 12,
+          "shortLink": "VM23Re40"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        },
+        "list": {
+          "id": "5e0f44b1e4045273d4a5ea67",
+          "name": "Data Structuring"
+        }
+      },
+      "type": "updateCard",
+      "date": "2020-01-03T13:52:08.076Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f46fdae14da212ff4b152",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "name": "Code and Data Integration: Data Packages vs Data Format vs Database System"
+        },
+        "card": {
+          "name": "Code and Data Integration: Data Packages vs Structured Data Format vs Database System",
+          "id": "5e0f4537bc90ee0ee6f833f8",
+          "idShort": 4,
+          "shortLink": "aXh1OncC"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        },
+        "list": {
+          "id": "5e0f44b1e4045273d4a5ea67",
+          "name": "Data Structuring"
+        }
+      },
+      "type": "updateCard",
+      "date": "2020-01-03T13:51:57.171Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f46eb05583871a84f8066",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f46eb05583871a84f8065",
+          "name": "Data Forma Structured",
+          "idShort": 12,
+          "shortLink": "VM23Re40"
+        },
+        "list": {
+          "id": "5e0f44b1e4045273d4a5ea67",
+          "name": "Data Structuring"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:51:39.647Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f46c52b16090ecf428ece",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "name": "DOIs"
+        },
+        "card": {
+          "name": "Accessible Data Storage: URLs, PIDs, and DOIs",
+          "id": "5e0f43e190efe51a17eb30b0",
+          "idShort": 1,
+          "shortLink": "SZj67cdd"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        },
+        "list": {
+          "id": "5e0f43d10f72430f10d76176",
+          "name": "Data Sharing"
+        }
+      },
+      "type": "updateCard",
+      "date": "2020-01-03T13:51:01.657Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f46943fa9363e8f2d277f",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f46943fa9363e8f2d277d",
+          "name": "Licensing",
+          "idShort": 11,
+          "shortLink": "6qc5JgrN"
+        },
+        "list": {
+          "id": "5e0f43d10f72430f10d76176",
+          "name": "Data Sharing"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:50:12.491Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f466831b4a3202f2e1e2a",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f466731b4a3202f2e1e29",
+          "name": "Non-Destructive Data Processing",
+          "idShort": 10,
+          "shortLink": "D62uB9u0"
+        },
+        "list": {
+          "id": "5e0f4540f3d833732edf73f7",
+          "name": "Data Versioning"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:49:28.033Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f466094670a4cce26e9ab",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f466094670a4cce26e9aa",
+          "name": "Within-Analysis Data Provenance",
+          "idShort": 9,
+          "shortLink": "HV2QmsIX"
+        },
+        "list": {
+          "id": "5e0f4540f3d833732edf73f7",
+          "name": "Data Versioning"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:49:20.520Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f45bbeef5e18c8d529f02",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "pos": 196607
+        },
+        "card": {
+          "pos": 32767.5,
+          "id": "5e0f45b98672e96fdfb66153",
+          "name": "Computational vs Empirical Reproducibility",
+          "idShort": 8,
+          "shortLink": "0vIoZsFV"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        },
+        "list": {
+          "id": "5e0f43bc0765c80f7a8f0377",
+          "name": "Reproducibility in Science"
+        }
+      },
+      "type": "updateCard",
+      "date": "2020-01-03T13:46:35.656Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f45b98672e96fdfb66154",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f45b98672e96fdfb66153",
+          "name": "Computational vs Empirical Reproducibility",
+          "idShort": 8,
+          "shortLink": "0vIoZsFV"
+        },
+        "list": {
+          "id": "5e0f43bc0765c80f7a8f0377",
+          "name": "Reproducibility in Science"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:46:33.908Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f45a175078364fd163b3c",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f45a175078364fd163b3b",
+          "name": "FAIR Data Principles",
+          "idShort": 7,
+          "shortLink": "YXbH4OXF"
+        },
+        "list": {
+          "id": "5e0f43bc0765c80f7a8f0377",
+          "name": "Reproducibility in Science"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:46:09.358Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f459b05f2407439f00c64",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f459b05f2407439f00c63",
+          "name": "Reproducibility Crisis",
+          "idShort": 6,
+          "shortLink": "7HEsXRYz"
+        },
+        "list": {
+          "id": "5e0f43bc0765c80f7a8f0377",
+          "name": "Reproducibility in Science"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:46:03.761Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f45700593271ff83723cb",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f45700593271ff83723ca",
+          "name": "Version Control Systems",
+          "idShort": 5,
+          "shortLink": "ut6PO7da"
+        },
+        "list": {
+          "id": "5e0f4540f3d833732edf73f7",
+          "name": "Data Versioning"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:45:20.516Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f4540f3d833732edf73f9",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "list": {
+          "id": "5e0f4540f3d833732edf73f7",
+          "name": "Data Versioning"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createList",
+      "date": "2020-01-03T13:44:32.362Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f4537bc90ee0ee6f833f9",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f4537bc90ee0ee6f833f8",
+          "name": "Code and Data Integration: Data Packages vs Data Format vs Database System",
+          "idShort": 4,
+          "shortLink": "aXh1OncC"
+        },
+        "list": {
+          "id": "5e0f44b1e4045273d4a5ea67",
+          "name": "Data Structuring"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:44:23.377Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f44b68672e96fdfb620a9",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f44b68672e96fdfb620a8",
+          "name": "Schemas",
+          "idShort": 3,
+          "shortLink": "UuzIpWeJ"
+        },
+        "list": {
+          "id": "5e0f44b1e4045273d4a5ea67",
+          "name": "Data Structuring"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:42:14.322Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f44b1e4045273d4a5ea69",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "list": {
+          "id": "5e0f44b1e4045273d4a5ea67",
+          "name": "Data Structuring"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createList",
+      "date": "2020-01-03T13:42:09.668Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f43e99cb2403754af38f1",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f43e99cb2403754af38f0",
+          "name": "Dataset Metadata",
+          "idShort": 2,
+          "shortLink": "4PupN27h"
+        },
+        "list": {
+          "id": "5e0f43d10f72430f10d76176",
+          "name": "Data Sharing"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:38:49.816Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f43e190efe51a17eb30b1",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "card": {
+          "id": "5e0f43e190efe51a17eb30b0",
+          "name": "DOIs",
+          "idShort": 1,
+          "shortLink": "SZj67cdd"
+        },
+        "list": {
+          "id": "5e0f43d10f72430f10d76176",
+          "name": "Data Sharing"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createCard",
+      "date": "2020-01-03T13:38:41.642Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f43dea622c38d2345b3b7",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "name": "Data Sharing and Metadata"
+        },
+        "list": {
+          "name": "Data Sharing",
+          "id": "5e0f43d10f72430f10d76176"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "updateList",
+      "date": "2020-01-03T13:38:38.341Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f43dabef4d04438e7945e",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "old": {
+          "name": "Data Sharing"
+        },
+        "list": {
+          "name": "Data Sharing and Metadata",
+          "id": "5e0f43d10f72430f10d76176"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "updateList",
+      "date": "2020-01-03T13:38:34.460Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f43d10f72430f10d76178",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "list": {
+          "id": "5e0f43d10f72430f10d76176",
+          "name": "Data Sharing"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createList",
+      "date": "2020-01-03T13:38:25.881Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f43bc0765c80f7a8f0379",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "list": {
+          "id": "5e0f43bc0765c80f7a8f0377",
+          "name": "Reproducibility in Science"
+        },
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createList",
+      "date": "2020-01-03T13:38:04.132Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f43af992ff0174e301e02",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        },
+        "organization": {
+          "id": "5ac487e80df0f4d79a21fde3",
+          "name": "Science Slam Team"
+        }
+      },
+      "type": "addToOrganizationBoard",
+      "date": "2020-01-03T13:37:51.020Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    },
+    {
+      "id": "5e0f43af992ff0174e301e00",
+      "idMemberCreator": "5570b0799b192c1550547a44",
+      "data": {
+        "board": {
+          "id": "5e0f43ae992ff0174e301dfe",
+          "name": "research data management course",
+          "shortLink": "7jkTcy2a"
+        }
+      },
+      "type": "createBoard",
+      "date": "2020-01-03T13:37:51.015Z",
+      "limits": {},
+      "memberCreator": {
+        "id": "5570b0799b192c1550547a44",
+        "activityBlocked": false,
+        "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+        "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+        "fullName": "Nicholas Del Grosso",
+        "idMemberReferrer": null,
+        "initials": "NDG",
+        "nonPublic": {},
+        "nonPublicAvailable": false,
+        "username": "nicholasdelgrosso"
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "5e0f45b98672e96fdfb66153",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:46:35.648Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f43bc0765c80f7a8f0377",
+      "idMembersVoted": [],
+      "idShort": 8,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Computational vs Empirical Reproducibility",
+      "pos": 32767.5,
+      "shortLink": "0vIoZsFV",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnnq48pn7eb9ncl77+2ah9s5edrp@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/0vIoZsFV",
+      "subscribed": false,
+      "url": "https://trello.com/c/0vIoZsFV/8-computational-vs-empirical-reproducibility",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f459b05f2407439f00c63",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:46:03.728Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f43bc0765c80f7a8f0377",
+      "idMembersVoted": [],
+      "idShort": 6,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Reproducibility Crisis",
+      "pos": 65535,
+      "shortLink": "7HEsXRYz",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnnmthvcqzvfsqvz7+1ruugfw7mh@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/7HEsXRYz",
+      "subscribed": false,
+      "url": "https://trello.com/c/7HEsXRYz/6-reproducibility-crisis",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f45a175078364fd163b3b",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:46:09.332Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f43bc0765c80f7a8f0377",
+      "idMembersVoted": [],
+      "idShort": 7,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "FAIR Data Principles",
+      "pos": 131071,
+      "shortLink": "YXbH4OXF",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnnnijkz86yv88117+0zwwmgso00@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/YXbH4OXF",
+      "subscribed": false,
+      "url": "https://trello.com/c/YXbH4OXF/7-fair-data-principles",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f43e190efe51a17eb30b0",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:51:01.646Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f43d10f72430f10d76176",
+      "idMembersVoted": [],
+      "idShort": 1,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Accessible Data Storage: URLs, PIDs, and DOIs",
+      "pos": 65535,
+      "shortLink": "SZj67cdd",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnmb2vsf6h7on0xio+1i62xjolu5@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/SZj67cdd",
+      "subscribed": false,
+      "url": "https://trello.com/c/SZj67cdd/1-accessible-data-storage-urls-pids-and-dois",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f43e99cb2403754af38f0",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:38:49.784Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f43d10f72430f10d76176",
+      "idMembersVoted": [],
+      "idShort": 2,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Dataset Metadata",
+      "pos": 131071,
+      "shortLink": "4PupN27h",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnmby7fanmjdg5tkg+1h9r86dni8@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/4PupN27h",
+      "subscribed": false,
+      "url": "https://trello.com/c/4PupN27h/2-dataset-metadata",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f46943fa9363e8f2d277d",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:50:12.462Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f43d10f72430f10d76176",
+      "idMembersVoted": [],
+      "idShort": 11,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Licensing",
+      "pos": 196607,
+      "shortLink": "6qc5JgrN",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnodrqquwcrcsv531+1qnfe9w4kf@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/6qc5JgrN",
+      "subscribed": false,
+      "url": "https://trello.com/c/6qc5JgrN/11-licensing",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f483925f4b73274a690a2",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:57:13.272Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f43d10f72430f10d76176",
+      "idMembersVoted": [],
+      "idShort": 17,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Data Sharing Platforms",
+      "pos": 262143,
+      "shortLink": "tKoJRrHy",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnpnabpazoq5htk82+1v5z9j0jhf@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/tKoJRrHy",
+      "subscribed": false,
+      "url": "https://trello.com/c/tKoJRrHy/17-data-sharing-platforms",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f44b68672e96fdfb620a8",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:57:58.416Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f44b1e4045273d4a5ea67",
+      "idMembersVoted": [],
+      "idShort": 3,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Data Schemas",
+      "pos": 65535,
+      "shortLink": "UuzIpWeJ",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnmy3xxpsrp56jfs8+1mnqoxnxe5@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/UuzIpWeJ",
+      "subscribed": false,
+      "url": "https://trello.com/c/UuzIpWeJ/3-data-schemas",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f46eb05583871a84f8065",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:52:13.730Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f44b1e4045273d4a5ea67",
+      "idMembersVoted": [],
+      "idShort": 12,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Self-Describing Data Formats",
+      "pos": 98303,
+      "shortLink": "VM23Re40",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnon5jufghml6hrol+123u4i6wm1@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/VM23Re40",
+      "subscribed": false,
+      "url": "https://trello.com/c/VM23Re40/12-self-describing-data-formats",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f4537bc90ee0ee6f833f8",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:51:57.163Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f44b1e4045273d4a5ea67",
+      "idMembersVoted": [],
+      "idShort": 4,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Code and Data Integration: Data Packages vs Structured Data Format vs Database System",
+      "pos": 131071,
+      "shortLink": "aXh1OncC",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnnc2yvk40ec02ayg+0z1crroco8@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/aXh1OncC",
+      "subscribed": false,
+      "url": "https://trello.com/c/aXh1OncC/4-code-and-data-integration-data-packages-vs-structured-data-format-vs-database-system",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f4851dc2a8f8d921b1f6d",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:57:37.617Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f44b1e4045273d4a5ea67",
+      "idMembersVoted": [],
+      "idShort": 18,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Data Harmonization",
+      "pos": 196607,
+      "shortLink": "EzzgjGBU",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnppyj1rcorf40fot+0q2p3qvop5@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/EzzgjGBU",
+      "subscribed": false,
+      "url": "https://trello.com/c/EzzgjGBU/18-data-harmonization",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f466094670a4cce26e9aa",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:58:48.307Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f4540f3d833732edf73f7",
+      "idMembersVoted": [],
+      "idShort": 9,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Within-Analysis Data Provenance",
+      "pos": 32767.5,
+      "shortLink": "HV2QmsIX",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlno86lcq6tn8rxvoq+025yc1vgh0@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/HV2QmsIX",
+      "subscribed": false,
+      "url": "https://trello.com/c/HV2QmsIX/9-within-analysis-data-provenance",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f45700593271ff83723ca",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:45:20.482Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f4540f3d833732edf73f7",
+      "idMembersVoted": [],
+      "idShort": 5,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Version Control Systems",
+      "pos": 65535,
+      "shortLink": "ut6PO7da",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnni6389y9xbtrg7e+1191gv0g2j@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/ut6PO7da",
+      "subscribed": false,
+      "url": "https://trello.com/c/ut6PO7da/5-version-control-systems",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f48dba5987b228c2f5dc5",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T14:01:15.717Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f4540f3d833732edf73f7",
+      "idMembersVoted": [],
+      "idShort": 20,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "What to Save: Data vs Code, Data vs Parameter, Data vs Code, Data vs Build Artifact",
+      "pos": 131071,
+      "shortLink": "RJIafE5F",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnq4uxu10azkac1qd+03cxbehxj9@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/RJIafE5F",
+      "subscribed": false,
+      "url": "https://trello.com/c/RJIafE5F/20-what-to-save-data-vs-code-data-vs-parameter-data-vs-code-data-vs-build-artifact",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f466731b4a3202f2e1e29",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:49:28.005Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f4540f3d833732edf73f7",
+      "idMembersVoted": [],
+      "idShort": 10,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Non-Destructive Data Processing",
+      "pos": 196607,
+      "shortLink": "D62uB9u0",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlno8wcda5zonezktl+1i5oan9rdr@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/D62uB9u0",
+      "subscribed": false,
+      "url": "https://trello.com/c/D62uB9u0/10-non-destructive-data-processing",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f4887ecf7d818fbf5ed37",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:58:33.587Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f47582cce13739a63d889",
+      "idMembersVoted": [],
+      "idShort": 19,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Artififact-as-Data vs Artifact-as-Code",
+      "pos": 16383.75,
+      "shortLink": "FdbtLwav",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnpvt0bxywdu3xq2f+051l48utua@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/FdbtLwav",
+      "subscribed": false,
+      "url": "https://trello.com/c/FdbtLwav/19-artififact-as-data-vs-artifact-as-code",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f47be68f1277b93bb37f3",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:55:21.720Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f47582cce13739a63d889",
+      "idMembersVoted": [],
+      "idShort": 14,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Automation and The Command Line",
+      "pos": 32767.5,
+      "shortLink": "0FQQWNmJ",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnpa0hykmub1kyupf+2klaxfj2od@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/0FQQWNmJ",
+      "subscribed": false,
+      "url": "https://trello.com/c/0FQQWNmJ/14-automation-and-the-command-line",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f479655d34a6d783a1299",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:54:30.017Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f47582cce13739a63d889",
+      "idMembersVoted": [],
+      "idShort": 13,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Compuational Environment Reproduction: Package Managers, Virtual Environments, and Containerization Tools",
+      "pos": 65535,
+      "shortLink": "mcwsLM1O",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnp5ohi82mk3ns049+15z0bpzxey@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/mcwsLM1O",
+      "subscribed": false,
+      "url": "https://trello.com/c/mcwsLM1O/13-compuational-environment-reproduction-package-managers-virtual-environments-and-containerization-tools",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f47e5eaa40573760c7d78",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:55:49.190Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f47582cce13739a63d889",
+      "idMembersVoted": [],
+      "idShort": 15,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "Data Pipeline Workflow Managers",
+      "pos": 131071,
+      "shortLink": "GOCXfIk1",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnpeaasy066espc3c+14ab2xq86s@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/GOCXfIk1",
+      "subscribed": false,
+      "url": "https://trello.com/c/GOCXfIk1/15-data-pipeline-workflow-managers",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    },
+    {
+      "id": "5e0f481d2201c922c4a84e07",
+      "address": null,
+      "checkItemStates": null,
+      "closed": false,
+      "coordinates": null,
+      "creationMethod": null,
+      "dateLastActivity": "2020-01-03T13:56:45.745Z",
+      "desc": "",
+      "descData": null,
+      "dueReminder": null,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "idLabels": [],
+      "idList": "5e0f47582cce13739a63d889",
+      "idMembersVoted": [],
+      "idShort": 16,
+      "idAttachmentCover": null,
+      "limits": {
+        "attachments": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 1000,
+            "warnAt": 900
+          }
+        },
+        "checklists": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 500,
+            "warnAt": 450
+          }
+        },
+        "stickers": {
+          "perCard": {
+            "status": "ok",
+            "disableAt": 70,
+            "warnAt": 63
+          }
+        }
+      },
+      "locationName": null,
+      "manualCoverAttachment": false,
+      "name": "The Scientific Filesystem",
+      "pos": 196607,
+      "shortLink": "AscZ51zW",
+      "isTemplate": false,
+      "badges": {
+        "attachmentsByType": {
+          "trello": {
+            "board": 0,
+            "card": 0
+          }
+        },
+        "location": false,
+        "votes": 0,
+        "viewingMemberVoted": false,
+        "subscribed": false,
+        "fogbugz": "",
+        "checkItems": 0,
+        "checkItemsChecked": 0,
+        "comments": 0,
+        "attachments": 0,
+        "description": false,
+        "due": null,
+        "dueComplete": false
+      },
+      "dueComplete": false,
+      "due": null,
+      "email": "nicholasdelgr+2kah4mqkj31tfj663pg+2tlnpk99ckds56srg1z+2bxd1eb290@boards.trello.com",
+      "idChecklists": [],
+      "idMembers": [],
+      "labels": [],
+      "shortUrl": "https://trello.com/c/AscZ51zW",
+      "subscribed": false,
+      "url": "https://trello.com/c/AscZ51zW/16-the-scientific-filesystem",
+      "cover": {
+        "idAttachment": null,
+        "color": null,
+        "idUploadedBackground": null,
+        "size": "normal",
+        "brightness": "light"
+      },
+      "attachments": [],
+      "pluginData": [],
+      "customFieldItems": []
+    }
+  ],
+  "labels": [
+    {
+      "id": "5e0f43aeaf988c41f267207d",
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "name": "",
+      "color": "green"
+    },
+    {
+      "id": "5e0f43aeaf988c41f2672080",
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "name": "",
+      "color": "red"
+    },
+    {
+      "id": "5e0f43aeaf988c41f2672082",
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "name": "",
+      "color": "orange"
+    },
+    {
+      "id": "5e0f43aeaf988c41f2672085",
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "name": "",
+      "color": "yellow"
+    },
+    {
+      "id": "5e0f43aeaf988c41f267208b",
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "name": "",
+      "color": "purple"
+    },
+    {
+      "id": "5e0f43aeaf988c41f2672093",
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "name": "",
+      "color": "blue"
+    }
+  ],
+  "lists": [
+    {
+      "id": "5e0f43bc0765c80f7a8f0377",
+      "name": "Reproducibility in Science",
+      "closed": false,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "pos": 65535,
+      "subscribed": false,
+      "softLimit": null,
+      "limits": {
+        "cards": {
+          "openPerList": {
+            "status": "ok",
+            "disableAt": 5000,
+            "warnAt": 4500
+          },
+          "totalPerList": {
+            "status": "ok",
+            "disableAt": 1000000,
+            "warnAt": 900000
+          }
+        }
+      },
+      "creationMethod": null
+    },
+    {
+      "id": "5e0f43d10f72430f10d76176",
+      "name": "Data Sharing",
+      "closed": false,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "pos": 131071,
+      "subscribed": false,
+      "softLimit": null,
+      "limits": {
+        "cards": {
+          "openPerList": {
+            "status": "ok",
+            "disableAt": 5000,
+            "warnAt": 4500
+          },
+          "totalPerList": {
+            "status": "ok",
+            "disableAt": 1000000,
+            "warnAt": 900000
+          }
+        }
+      },
+      "creationMethod": null
+    },
+    {
+      "id": "5e0f44b1e4045273d4a5ea67",
+      "name": "Data Structuring",
+      "closed": false,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "pos": 196607,
+      "subscribed": false,
+      "softLimit": null,
+      "limits": {
+        "cards": {
+          "openPerList": {
+            "status": "ok",
+            "disableAt": 5000,
+            "warnAt": 4500
+          },
+          "totalPerList": {
+            "status": "ok",
+            "disableAt": 1000000,
+            "warnAt": 900000
+          }
+        }
+      },
+      "creationMethod": null
+    },
+    {
+      "id": "5e0f4540f3d833732edf73f7",
+      "name": "Data Versioning",
+      "closed": false,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "pos": 262143,
+      "subscribed": false,
+      "softLimit": null,
+      "limits": {
+        "cards": {
+          "openPerList": {
+            "status": "ok",
+            "disableAt": 5000,
+            "warnAt": 4500
+          },
+          "totalPerList": {
+            "status": "ok",
+            "disableAt": 1000000,
+            "warnAt": 900000
+          }
+        }
+      },
+      "creationMethod": null
+    },
+    {
+      "id": "5e0f47582cce13739a63d889",
+      "name": "Research Artifacts",
+      "closed": false,
+      "idBoard": "5e0f43ae992ff0174e301dfe",
+      "pos": 327679,
+      "subscribed": false,
+      "softLimit": null,
+      "limits": {
+        "cards": {
+          "openPerList": {
+            "status": "ok",
+            "disableAt": 5000,
+            "warnAt": 4500
+          },
+          "totalPerList": {
+            "status": "ok",
+            "disableAt": 1000000,
+            "warnAt": 900000
+          }
+        }
+      },
+      "creationMethod": null
+    }
+  ],
+  "members": [
+    {
+      "id": "5570b0799b192c1550547a44",
+      "activityBlocked": false,
+      "avatarHash": "afd52af3f22ac12d08c9aac7184525b8",
+      "avatarUrl": "https://trello-avatars.s3.amazonaws.com/afd52af3f22ac12d08c9aac7184525b8",
+      "bio": "",
+      "bioData": {
+        "emoji": {}
+      },
+      "confirmed": true,
+      "fullName": "Nicholas Del Grosso",
+      "idEnterprise": null,
+      "idEnterprisesDeactivated": [],
+      "idMemberReferrer": null,
+      "idPremOrgsAdmin": [],
+      "initials": "NDG",
+      "memberType": "normal",
+      "nonPublic": {},
+      "nonPublicAvailable": false,
+      "products": [],
+      "url": "https://trello.com/nicholasdelgrosso",
+      "username": "nicholasdelgrosso",
+      "status": "disconnected"
+    }
+  ],
+  "checklists": [],
+  "customFields": [],
+  "memberships": [
+    {
+      "id": "5e0f43ae992ff0174e301dff",
+      "idMember": "5570b0799b192c1550547a44",
+      "memberType": "admin",
+      "unconfirmed": false,
+      "deactivated": false
+    }
+  ],
+  "pluginData": []
+}

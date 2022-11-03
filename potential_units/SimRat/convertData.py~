@@ -1,0 +1,162 @@
+import pickle
+import numpy as np
+from scipy import io, stats
+from matplotlib import pyplot as plt
+
+plt.ion()
+
+#######  Custom Functions
+def angleChange(angleArray):
+	"""Only gives positive angle changes.  Sorry!"""
+	direction_change = []
+	for prevDir, nextDir in zip(angleArray[:-1],angleArray[1:]):
+		dotprod =  np.cos(prevDir)*np.cos(nextDir) + np.sin(prevDir)*np.sin(nextDir) #Dot product
+		crossprod =  np.cos(prevDir)*np.sin(nextDir) + np.sin(prevDir)*np.cos(nextDir) #cross product
+		direction_change.append(np.arccos(dotprod) * np.sign(crossprod))
+	direction_change = np.array(direction_change)
+
+	return direction_change
+
+
+######## Script 
+
+#Load data into memory
+data = io.loadmat('example_xyzData.mat')
+data = data['xyz']
+dt = 120 #time resolution
+
+#Average all marker positions
+data = np.mean(data,1)
+
+
+#Take velocity
+velocity = np.diff(data,axis=0) 
+acceleration = np.diff(velocity,axis=0)
+kurtosis = np.diff(acceleration,axis=0)
+
+#Convert to polar coordinates (direction and absolute amount)
+abs_velocity = np.sqrt(velocity[:,0]**2 + velocity[:,1]**2) #instaneous velocity
+abs_acceleration = np.sqrt(acceleration[:,0]**2 + acceleration[:,1]**2) 
+abs_kurtosis = np.sqrt(kurtosis[:,0]**2 + kurtosis[:,1]**2) 
+
+direction = np.arctan2(velocity[:,0],velocity[:,1]) #instantaneous direction
+direction_velocity = angleChange(direction)
+direction_acceleration = angleChange(direction)
+#direction_acceleration = np.arctan2(acceleration[:,0],acceleration[:,1])
+
+
+#Filter outliers
+keepdata = (abs_velocity < 48) & (abs_velocity > 0.)
+
+velocity = velocity[keepdata,:]
+abs_velocity = abs_velocity[keepdata]  #Filter and account for time steps.
+abs_acceleration = abs_acceleration[keepdata[1:]]
+abs_kurtosis = abs_kurtosis[keepdata[2:]]
+
+abs_kurtosis = abs_kurtosis[abs_kurtosis < 5]
+
+direction = direction[keepdata]
+direction_velocity = direction_velocity[keepdata[1:]]
+direction_acceleration = direction_acceleration[keepdata[2:]]
+
+abs_acceleration = abs_acceleration[abs_acceleration < 0.5]
+direction_acceleration = direction_acceleration[abs_acceleration < 0.5]
+
+
+abs_acceleration = abs_acceleration[direction_acceleration < 3.]
+direction_acceleration = direction_acceleration[direction_acceleration < 3.]
+
+abs_acceleration = abs_acceleration[direction_acceleration > -3.]
+direction_acceleration = direction_acceleration[direction_acceleration > -3.]
+
+
+#Correct Units
+abs_velocity *= dt / 1000. #Update units to m/sec
+
+
+
+
+#Reduce Data to a more manageable size
+abs_velocity = abs_velocity[::6]
+direction = direction[::6]
+
+
+#plot data
+plt.figure(1)
+plt.clf()
+
+plt.subplot(2,4,2)
+abs_freq, abs_x, patches = plt.hist(abs_velocity[::10],100)
+plt.title('Rat Velocity (m/s)')
+
+plt.subplot(2,4,3)
+plt.hist(abs_acceleration[::10],100)
+plt.title('Rat Acceleration')
+
+plt.subplot(2,4,4)
+plt.hist(abs_kurtosis[::10],100)
+plt.title('Rat Kurtosis')
+
+plt.subplot(2,4,5)
+plt.hist(direction[::10],100)
+plt.title('Rat Direction (radians)')
+
+
+plt.subplot(2,4,6)
+plt.hist(direction_velocity[::10],100)
+plt.title('Rat Direction Velocity')
+
+plt.subplot(2,4,7)
+dir_freq, dir_x, patches = plt.hist(direction_acceleration[::10],100)
+plt.title('Rat Direction Acceleration')
+
+plt.subplot(2,4,8)
+
+
+#Check independence of angle and amount of acceleration, and find out how much can be cut away.
+full_f, x, y = np.histogram2d(abs_acceleration, direction_acceleration, bins = 200)
+full_f = full_f / np.sum(full_f) #Convert to 2D PDF
+
+x_pdf = np.sum(full_f, axis=1)
+y_pdf = np.sum(full_f, axis=0)
+
+x_cdf = np.sum(np.cumsum(full_f, axis=0),axis=1)
+y_cdf = np.sum(np.cumsum(full_f, axis=1),axis=0)
+
+
+plt.figure(3)
+plt.clf()
+
+plt.subplot(2,3,1)
+plt.imshow(full_f)
+plt.colorbar()
+
+plt.subplot(2,3,2)
+plt.plot(x_cdf)
+plt.plot(y_cdf)
+
+plt.subplot(2,3,4)
+plt.plot(x[1:], x_pdf)
+plt.plot(y[1:], y_pdf)
+
+plt.subplot(2,3,5)
+plt.imshow(np.dot(np.matrix(x_pdf).transpose(),np.matrix(y_pdf)))
+plt.colorbar()
+
+plt.subplot(2,3,6)
+plt.imshow(np.dot(np.matrix(x_pdf).transpose(),np.matrix(y_pdf)) - full_f)
+plt.colorbar()
+
+
+plt.show()
+
+
+
+#Export data for curve fitting in another script.
+with open('velocity_data.pickle','wb') as file:
+	pickle.dump({'acc': x[1:], 'acc_pdf':x_pdf, 
+			 'dir': y[1:], 'dir_pdf':y_pdf},file)
+
+
+
+
