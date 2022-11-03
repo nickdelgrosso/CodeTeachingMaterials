@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.0 20120330//EN" "http://jats.nlm.nih.gov/publishing/1.0/JATS-journalpublishing1.dtd">
+<article article-type="research-article" xml:lang="en"
+	xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<?origin annotum?>
+	<front>
+		<journal-meta>
+			<journal-id journal-id-type="publisher"/>
+			<journal-title-group>
+				<journal-title>Journal of Open Psychology Data</journal-title>
+			</journal-title-group>
+			<issn>2050-9863</issn>
+			<publisher>
+				<publisher-name>Ubiquity Press</publisher-name>
+			</publisher>
+		</journal-meta>
+		<article-meta>
+			<article-id pub-id-type="doi">10.5334/jopd.ab</article-id>
+			<article-categories>
+				<subj-group>
+					<subject>Data paper</subject>
+				</subj-group>
+			</article-categories>
+			<title-group>
+				<article-title>Data from “Changes in test-taking patterns over time” concerning the
+					Flynn Effect in Estonia</article-title>
+			</title-group>
+			<contrib-group>
+				<contrib>
+					<name>
+						<surname>Must</surname>
+						<given-names>Olev</given-names>
+					</name>
+					<email/>
+					<xref ref-type="aff" rid="aff-1"/>
+				</contrib>
+				<contrib>
+					<name>
+						<surname>Must</surname>
+						<given-names>Aasa</given-names>
+					</name>
+					<email/>
+					<xref ref-type="aff" rid="aff-2"/>
+				</contrib>
+			</contrib-group>
+
+			<aff id="aff-1">Department of Psychology, University of Tartu, Tartu, Estonia</aff>
+			<aff id="aff-2">Estonian National Defence College, Tartu, Estonia</aff>
+
+			<pub-date publication-format="electronic" iso-8601-date="2014-03-18">
+				<day>18</day>
+				<month>03</month>
+				<year>2014</year>
+			</pub-date>
+
+			<volume>2</volume>
+			<issue>1</issue>
+			<elocation-id>e2</elocation-id>
+			<permissions>
+				<copyright-statement>Copyright: &#x00A9; 2014 The Author(s)</copyright-statement>
+				<copyright-year>2014</copyright-year>
+				<license license-type="open-access"
+					xlink:href="http://creativecommons.org/licenses/by/3.0/">
+					<license-p>This is an open-access article distributed under the terms of the
+						Creative Commons Attribution 3.0 Unported License (CC-BY 3.0), which permits
+						unrestricted use, distribution, and reproduction in any medium, provided the
+						original author and source are credited. See
+						http://creativecommons.org/licenses/by/3.0/.</license-p>
+				</license>
+			</permissions>
+			<self-uri xlink:href="http://openpsychologydata.metajnl.com/article/view/jopd.ab/"/>
+			<abstract>
+				<p>The dataset from our previous <italic>Intelligence</italic> paper [<xref
+						ref-type="bibr" rid="B1">1</xref>] consists of data collected from the
+					National Intelligence Tests (NIT, Estonian adaptation) at two historical time
+					points: in 1933/36 (N=890) and in 2006, (N=913). The average age of the students
+					was 13 years. The data-file consists of information about the cohort, age, and
+					gender and test results at the item level for nine of the ten NIT subtests and
+					subtest scores for the 10<sup>th</sup> subtest. The three answer types are
+					separated into three categories: right answers, wrong answers and missing
+					answers. Data can be used for the psychometric research of cohort and sex
+					differences at the scale and item level.</p>
+			</abstract>
+			<kwd-group kwd-group-type="simple">
+				<kwd>Flynn Effect</kwd>
+				<kwd>National Intelligence Tests</kwd>
+				<kwd>Tork</kwd>
+				<kwd>test taking pattern</kwd>
+				<kwd>Estonia</kwd>
+			</kwd-group>
+			<funding-group>
+				<funding-statement>Estonian Scientific Foundation: grant no 2387 and 5856. European
+					Social Fund: a Primus grant (#3-8.2/60) to Anu Realo. Baylor University
+					financial support for data quality control in the archive. </funding-statement>
+			</funding-group>
+
+		</article-meta>
+	</front>
+	<body>
+		<sec>
+			<title>(1) Overview</title>
+			<sec>
+				<title>Context</title>
+				<p>The study concerns the Flynn Effect (FE), or the secular increase in intelligence
+					(IQ) test scores over time. Two cohorts of the same age are compared based on
+					the results of the same 10 subtests of mental abilities. Must and Must [<xref
+						ref-type="bibr" rid="B1">1</xref>] provide a detailed account of the study
+					and the data collection from the 1930s and from 2006.</p>
+				<p>Two unique historical circumstances made this study possible. In the early 1930s
+					Estonian educators sought instruments which would allow them to measure a
+					student’s intelligence to be able to influence their educational careers for the
+					better. It was decided to adapt the National Intelligence Tests into Estonian –
+					tests that were originally developed to measure students’ IQ in United States
+						[<xref ref-type="bibr" rid="B2">2</xref>, <xref ref-type="bibr" rid="B3"
+						>3</xref>, <xref ref-type="bibr" rid="B4">4</xref>, <xref ref-type="bibr"
+						rid="B5">5</xref>]. This work was headed by Juhan Tork. He took this duty
+					quite seriously as the analysis of the test adaptation process and the
+					elaboration of IQ norms of Estonian students were the main focus of his PhD
+					dissertation: “The Intelligence of Estonian Children” in 1939 [<xref
+						ref-type="bibr" rid="B6">6</xref>].</p>
+				<p>Although The Second World War and Soviet occupation set back Estonian society and
+					intellectual life for half of a century, most of the completed test materials
+					were kept in the repository of the Estonian National Historical Archive.
+					Although most of the data was collected from southern Estonia, Tork’s
+					interpretation was that the results of his work were representative for entire
+					Estonia. The availability of real historical test- data made the Flynn Effect
+					comparisons possible decades later. The second measurement, undertaken with the
+					aim to estimate the FE in Estonia was done in 2006.</p>
+			</sec>
+			<sec>
+				<title>Collection date(s)</title>
+				<p>Estimation of the FE means comparisons of test results of comparable cohorts from
+					different time periods. The first testing was done in 1933 - 1936 and the second
+					in 2006.</p>
+			</sec>
+			<sec>
+				<title>Background</title>
+				<p>The scientific roots of this project are related to the history of IQ
+					measurement. The development and application of IQ tests in the army recruiting
+					process during The First World War was successful and led up to a major
+					expansion of the use of IQ tests beyond the army. The American army tests (Army
+					Alfa and Army Beta) served as the basis for the development of the next
+					generations of testing instruments and approaches. The test, titled
+						<italic>National Intelligence Tests</italic> (NIT) sought to measure the
+					intelligence of schoolchildren (grades 3 to 8) and was developed by a team of
+					psychologists – M. Haggerty, L. Terman, E. Thorndike, G. Whipple and R. Yerkes
+					– who had previous experience with American Army Mental Tests [<xref
+						ref-type="bibr" rid="B7">7</xref>]. The NIT was adapted into Estonian at the
+					beginning of the 1930s. The test name in Estonian is “Intelligentsustestid”
+					(Intelligence tests).</p>
+			</sec>
+		</sec>
+
+		<sec>
+			<title>(2) Methods</title>
+			<p>The NIT is a timed test administered in paper-and-pencil format. It consists of two
+				complementary scales (A and B) in two parallel forms (I and II). Both scales – A and
+				B - consist of 5 subtests.</p>
+			<p><list list-type="bullet">
+					<list-item>
+						<p>Arithmetical Reasoning (A1). The subtest consists of 16 items that
+							require the test taker to find a solution to an unknown quantity. For
+							example: “How many seats are there in 7 rooms, if each room has 30
+							seats?”</p>
+					</list-item>
+					<list-item>
+						<p>Sentence Completion (A2). The subtest consists of 20 items that require
+							the test taker to fill in a missing word to make sentence understandable
+							and correct. An example: “The letter …… came …… good news”.</p>
+					</list-item>
+					<list-item>
+						<p>Concepts (A3). The subtest consists of 24 items requiring the selection
+							of two characteristic features from among those given. For example,
+							“apple: basket/redness/seeds/skin/sweetness”.</p>
+					</list-item>
+					<list-item>
+						<p>Same–Different (A4). The subtest consists of 40 items requiring the
+							evaluation of whether the meaning of the words presented is the same or
+							different. For example, “brief….short; elevate…raise”.</p>
+					</list-item>
+					<list-item>
+						<p>Symbol–Digit (A5). The subtest consists of 120 items requiring a decision
+							as to which digit should be assigned a symbol based on a key; 9
+							different symbols were presented. An abridged example of the key: ∞ □ Δ
+							1 2 3 </p>
+					</list-item>
+					<list-item>
+						<p>Computation (B1). The subtest consists of 22 items requiring addition,
+							subtraction, multiplication, and division of both integers and
+							fractions. For example, subtract: 38260 − 17700.</p>
+					</list-item>
+					<list-item>
+						<p>Information (B2). The subtest consists of 40 items of everyday knowledge.
+							For example, “The day before Thursday is:
+							Wednesday/Tuesday/Friday/Monday”.</p>
+					</list-item>
+					<list-item>
+						<p>Vocabulary (B3). The test consists of 40 items requiring knowledge of the
+							qualities of different objects (<italic>yes</italic> and
+								<italic>no</italic> answers), for example, “Does a dog have five
+							legs?”</p>
+					</list-item>
+					<list-item>
+						<p>Analogies (B4). The test consists of 32 items requiring the transference
+							of the relation of two given words to other presented words. For
+							example, baby – cries; cat - : mews/hole/little/dog. </p>
+					</list-item>
+					<list-item>
+						<p>Comparisons (B5). The test consists of 50 items requiring judgment of the
+							sameness of sets of numbers, family names, and graphic symbols presented
+							in two columns. For example, Lindpere A. J. … Lindpere J. A.</p>
+					</list-item>
+				</list></p>
+			<p>Both the original NIT-tests in English and the Estonian adaptation are subject to
+				copyright and are available from the authors upon request.</p>
+			<sec>
+				<title>Samples</title>
+				<p>The data for the sample from 1933/36 was taken from the Estonian National
+					Historical Archive (foundation EAA.2101). There is data from approximately 5000
+					persons in the archive depository. However various persons have completed
+					different combinations of test forms and scales (for example, scale A form I and
+					scale B form II etc.).</p>
+				<p>The main inclusion criterion in the sample formation for the current study was
+					that all students in this sample have filled out both forms of the second
+					version of the test. Our preliminary pilot study revealed that the second
+					version of the scales (A II and B II) is more appropriate for re-use decades
+					later (due to the content of vocabulary and information subtest). Hence we
+					sought only those specific cases from the archive that met this inclusion
+					criterion.</p>
+				<p>The second inclusion criterion was the school grade. In the 1930s, the compulsory
+					basic school had 6 grades. The intellectual level of graduates of this
+					educational level was of great interest to J.Tork. At the same time he tested
+					students from other grades also, mainly those preceding the 6<sup>th</sup>
+					grade. The largest portion of historical data derives from students of the
+						4<sup>th</sup> to 6<sup>th</sup> grades. The typical age of this group is 12
+					to 14 years. Those parameters guided the selection of a younger cohort in our
+					study. In 2006 this group corresponded mostly with students from the
+						6<sup>th</sup> to 8<sup>th</sup> grades. The formation of the sample of the
+					younger cohort was guided by the aim of being as comparable as possible to the
+					older one. This means that we were seeking schools and students from the same
+					region (mainly from southern Estonia), and from the grades 6 to 8, where the
+					typical student is 12 to 14 years old.</p>
+				<p>The older cohort (1933/36; N = 890) consisted of students from grades 4 to 6,
+					with a mean age of 13.3 (SD = 1.24) years whereas the younger cohort (2006, N =
+					913) were from the grades 6 to 8 with a mean age of 13.5 (SD = .93) years.</p>
+				<p>The samples are different at least in two important points: <list
+						list-type="bullet">
+						<list-item>
+							<p>Educational differences. The younger cohort has had two more years of
+								education than the older one. This difference is related to the
+								lowering of the age of obligatory school attendance in Estonia. The
+								educational difference may have a significant impact on the test
+								results. For Tork himself schooling differences were also important.
+								He found that the students’ age and grade were intertwined with the
+								test results. Tork [<xref ref-type="bibr" rid="B6">6</xref>, p 192-
+								205] devoted a whole chapter to this co-variation and calculated
+								age-grade IQ norms. The same-aged students in the higher grades
+								averaged higher test scores.</p>
+						</list-item>
+						<list-item>
+							<p>Urbanization differences. Tork [<xref ref-type="bibr" rid="B6"
+									>6</xref>, p 212-218] noticed that the rural-urban dimension
+								creates significant differences in test results. He found that this
+								difference is equal to one year of schooling. He believed that there
+								should be different IQ norms for urban and rural students. Changes
+								over the decades in the urbanization rate of the population may have
+								influenced the estimation of the FE in Estonia.</p>
+						</list-item>
+					</list>
+				</p>
+				<p>In both cohorts the tests were administered in groups, based on school-grade, in
+					a regular classroom, during a regular school day. Students who were absent from
+					school on the testing day were not tested. There were only a few absentees in
+					each group. We interpreted this as a random event. The participation rate was
+					not fixed. </p>
+			</sec>
+			<sec>
+				<title>Procedures</title>
+				<p>The testing procedures of the NIT resembled testing in a military context. From
+					test-takers, full obedience to the procedures was required. “Directions, and
+					especially commands, should be spoken authoritatively, and instant obedience
+					should be expected and required. Every child should obey promptly and without
+					question.” [<xref ref-type="bibr" rid="B3">3</xref>, p.6; 6, p.69]. Exercise
+					examples of items preceded each subtest. The procedure established exact timing
+					requirements which were set for both pre-subtests and real tests (Table <xref
+						ref-type="table" rid="T1">1</xref>). The NIT procedure included 20 different
+					timing episodes. Commands such as “Ready — Go!”, “Stop!”, “Pencil up!” are
+					typical commands in the NIT testing manual. [<xref ref-type="bibr" rid="B6"
+						>6</xref>, p 69 – 75]).</p>
+				<table-wrap id="T1">
+					<label>Table 1</label>
+					<caption>
+						<p>Time limits and the NIT scoring system.</p>
+					</caption>
+					<table>
+						<tr>
+							<th align="left" colspan="1" valign="bottom"/>
+							<th align="left" colspan="2">Pre-test</th>
+							<th align="left" colspan="4" valign="bottom">Test</th>
+						</tr>
+						<tr>
+							<td align="center" colspan="7">
+								<hr/>
+							</td>
+						</tr>
+						<tr>
+							<th align="center"/>
+							<th align="center">No of items in pre-test</th>
+							<th align="center">Minutes per pre-test</th>
+							<th align="center">No of items in subtest</th>
+							<th align="center">Minutes per subtest</th>
+							<th align="center">Sec per item</th>
+							<th align="left">Scoring algorithm</th>
+						</tr>
+						<tr>
+							<td colspan="7">
+								<hr/>
+							</td>
+						</tr>
+						<tr>
+							<td align="left">Arithmetical Reasoning (A1)</td>
+							<td align="right">6</td>
+							<td align="right">1</td>
+							<td align="right">16</td>
+							<td align="right">5</td>
+							<td align="right">18.8</td>
+							<td align="left">Number of right answers x 2</td>
+						</tr>
+						<tr>
+							<td colspan="7">
+								<hr/>
+							</td>
+						</tr>
+						<tr>
+							<td align="left">Sentence completion (A2)</td>
+							<td align="right">10</td>
+							<td align="right">0.5</td>
+							<td align="right">20</td>
+							<td align="right">4</td>
+							<td align="right">12</td>
+							<td align="left">Number of right answers x 2</td>
+						</tr>
+						<tr>
+							<td colspan="7">
+								<hr/>
+							</td>
+						</tr>
+						<tr>
+							<td align="left">Concepts (A3)</td>
+							<td align="right">8</td>
+							<td align="right">0.5</td>
+							<td align="right">24</td>
+							<td align="right">3</td>
+							<td align="right">7.5</td>
+							<td align="left">Partial credit system (1 and 2 points for right
+								answers); sum of credit points</td>
+						</tr>
+						<tr>
+							<td colspan="7">
+								<hr/>
+							</td>
+						</tr>
+						<tr>
+							<td align="left">Same - Different (A4)</td>
+							<td align="right">20</td>
+							<td align="right">0.5</td>
+							<td align="right">40</td>
+							<td align="right">2</td>
+							<td align="right">3</td>
+							<td align="left">Number of right answers – number of wrong answers</td>
+						</tr>
+						<tr>
+							<td colspan="7">
+								<hr/>
+							</td>
+						</tr>
+						<tr>
+							<td align="left">Symbol- Digit (A5)</td>
+							<td align="right">20</td>
+							<td align="right">0.5</td>
+							<td align="right">120</td>
+							<td align="right">3</td>
+							<td align="right">1.5</td>
+							<td align="left">Number of right answers x 3/10</td>
+						</tr>
+						<tr>
+							<td colspan="7">
+								<hr/>
+							</td>
+						</tr>
+						<tr>
+							<td align="left">Computation (B1)</td>
+							<td align="right">10</td>
+							<td align="right">1</td>
+							<td align="right">22</td>
+							<td align="right">4</td>
+							<td align="right">10.9</td>
+							<td align="left">Number of right answers x 2</td>
+						</tr>
+						<tr>
+							<td colspan="7">
+								<hr/>
+							</td>
+						</tr>
+						<tr>
+							<td align="left">Information (B2)</td>
+							<td align="right">16</td>
+							<td align="right">0.5</td>
+							<td align="right">40</td>
+							<td align="right">4</td>
+							<td align="right">6</td>
+							<td align="left">Number of right answers</td>
+						</tr>
+						<tr>
+							<td colspan="7">
+								<hr/>
+							</td>
+						</tr>
+						<tr>
+							<td align="left">Vocabulary (B3)</td>
+							<td align="right">15</td>
+							<td align="right">0.5</td>
+							<td align="right">40</td>
+							<td align="right">3</td>
+							<td align="right">4.5</td>
+							<td align="left">Number of right answers – number of wrong answers</td>
+						</tr>
+						<tr>
+							<td colspan="7">
+								<hr/>
+							</td>
+						</tr>
+						<tr>
+							<td align="left">Analogies (B4)</td>
+							<td align="right">12</td>
+							<td align="right">0.5</td>
+							<td align="right">32</td>
+							<td align="right">3</td>
+							<td align="right">5.6</td>
+							<td align="left">Number of right answers</td>
+						</tr>
+						<tr>
+							<td colspan="7">
+								<hr/>
+							</td>
+						</tr>
+						<tr>
+							<td align="left">Comparisons (B5)</td>
+							<td align="right">20</td>
+							<td align="right">0.5</td>
+							<td align="right">50</td>
+							<td align="right">2</td>
+							<td align="right">2.4</td>
+							<td align="left">Number of right answers – number of wrong answers</td>
+						</tr>
+					</table>
+				</table-wrap>
+
+				<p>A and B scales were printed and administered as independent tests. Both booklets
+					included the title page for a person’s background information. Information on
+					the title page was used to join data from scales A and B into one record. As a
+					rule, the A scale was used first and the B after a little break. In several
+					cases the testing took place over several days.</p>
+			</sec>
+
+			<sec>
+				<title>Quality control</title>
+				<p>The scoring and data computerization were checked twice. We also used logic
+					analysis (possible values of computerized data) and checked for extreme values
+					(age). It was possible to check the declared age (years and months) by comparing
+					the birth and testing date.</p>
+				<p>In both cohorts there were some test booklets that were only superficially
+					completed (sporadic answers in one or several subtests); these results were not
+					included in the data file. The number of such test booklets was very small
+					(&lt;10). We interpreted this as an indicator of a lack of any motivation to do
+					well on the test.</p>
+			</sec>
+			<sec>
+				<title>Ethical issues</title>
+				<p>The testing of both cohorts was done in accordance with the local guidelines of
+					student examination and testing. In 1933/36 the testing was supported by the
+					Estonian Ministry of Education. There is no evidence that some schools did not
+					allow students to take the test. Evidently one of the main criteria of school
+					selection was the location of the school, this was due to the transport cost and
+					time resources. The majority of schools were located in the same region
+					(southern Estonia) as the researcher's office.</p>
+				<p>In 2006 the decision to allow testing was made at the school level. Some school
+					authorities refused to take part as the testing disturbs educational process.
+					The testing was done during regular school hours in regular classrooms.
+					Actually, since testing took place during an ordinary school-day all the
+					students were asked to take part. The participation was voluntary for students
+					(both in 1934/36 and in 2006) in the sense that the test-takers were not forced
+					to take the test, and the test had no consequences for the test-takers. In both
+					cohorts there were some students (about 1%) who filled out the tests in a very
+					superficial manner (occasional answers). We interpret this as a formal
+					conformity to take the test without any real interest in doing well on it.
+					Test-booklets with only random answers were not included in the data-file.</p>
+				<p>The testing was not anonymous – test-takers had to write their names and
+					background data on the first sheet of the test booklet (school, grade, their
+					parents’ employment, the number of children in the family and their birth order,
+					the parents’ birth place, age, ethnicity). The Estonian adaptation required more
+					personal information from students than the original NIT. Presenting personal
+					information in testing and school examinations was a relatively typical practice
+					in Estonia. In some cases, in the test booklets, the corresponding fields about
+					personal information on the test-booklets were left empty, or filled in very
+					generally.</p>
+				<p>Estonian regulations do not require additional parental approval for testing
+					students in schools. All data is sufficiently anonymised to prevent
+					identification of individual students (based on the information in the data
+					files).</p>
+				<p>The completed historical test booklets are in the public archive. Personal
+					information from the 2006 cohort is not publicly available and not used in any
+					way. The test-takers, their parents and teachers were not given individual
+					feedback on the test results. In our research we operated under the ethical
+					testing and examination standards accepted by the Estonian educational system.
+				</p>
+			</sec>
+		</sec>
+		<sec>
+			<title>(3) Dataset description</title>
+			<sec>
+				<title>Object name</title>
+				<p>Data: FE_1933_2006_data.csv</p>
+				<p>Description of variables and coding: FE_1933_2006_variables_and_coding.csv</p>
+			</sec>
+			<sec>
+				<title>Data type</title>
+				<p>The file consists of secondary data. This means that direct answers are coded
+					according to a key at the item level (true, wrong, missing). In one subtest (A5)
+					the right, wrong and missing answers were tallied at the test site by the test
+					administrators, from the test booklet.</p>
+			</sec>
+			<sec>
+				<title>Format names and versions</title>
+				<p>The files format: comma separated variables (.csv).</p>
+			</sec>
+			<sec>
+				<title>Data collectors</title>
+				<p>
+					<list list-type="bullet">
+						<list-item>
+							<p>Vilve Raudik (preparation of the new test layout, testing, data
+								coding).</p>
+						</list-item>
+						<list-item>
+							<p>Triin Lett (testing, data coding).</p>
+						</list-item>
+						<list-item>
+							<p>Ene Karja (archival work).</p>
+						</list-item>
+						<list-item>
+							<p>Aasa Must (data collection, archival research with historical data,
+								data coding).</p>
+						</list-item>
+						<list-item>
+							<p>Olev Must (data collection, archival research with historical data,
+								data coding).</p>
+						</list-item>
+					</list>
+				</p>
+			</sec>
+			<sec>
+				<title>Language</title>
+				<p>The test language was Estonian. Data documentation is in English.</p>
+			</sec>
+			<sec>
+				<title>License</title>
+				<p>CCO</p>
+			</sec>
+			<sec>
+				<title>Embargo</title>
+				<p>None.</p>
+			</sec>
+			<sec>
+				<title>Repository location</title>
+				<p><uri>http://doi.org/10.7910/DVN/23791</uri></p>
+			</sec>
+			<sec>
+				<title>Publication date</title>
+				<p>01 January 2014</p>
+			</sec>
+		</sec>
+
+		<sec>
+			<title>(4) Reuse potential</title>
+			<p>The data set is quite extensive because it includes item-level data from nine of the
+				10 NIT subtests of two large cohorts. The data may be reused for different purposes:
+				e.g. (1) re-analysis of the results in the <italic>Intelligence</italic> paper, (2)
+				for teaching purposes, and (3) for further analysis (including collaborative
+				projects with Must and Must). The data is useful for advanced psychometric analyses
+				at both the item level (Item Response Theory models) and/or the scale level
+				(Structural Equation Modelling with latent variables) for the study of the Flynn
+				Effect, or sex differences.</p>
+		</sec>
+	</body>
+	<back>
+		<ack>
+			<title>Acknowledgements</title>
+			<p>
+				<list>
+					<list-item>
+						<p>Vello Paatsi (Estonian Literary Museum, Estonia)</p>
+					</list-item>
+					<list-item>
+						<p>Jelte Wicherts (Tilburg University, The Netherlands)</p>
+					</list-item>
+					<list-item>
+						<p>A. Alexander Beaujean (Baylor University, United States)</p>
+					</list-item>
+				</list>
+			</p>
+		</ack>
+		<ref-list>
+			<title>References</title>
+			<ref id="B1">
+				<element-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Must</surname>
+							<given-names>O</given-names>
+						</name>
+						<name>
+							<surname>Must</surname>
+							<given-names>A</given-names>
+						</name>
+					</person-group>
+					<article-title>Changes in test-taking patterns over time</article-title>
+					<source>Intelligence</source>
+					<year iso-8601-date="2013">2013</year>
+					<volume>41</volume>
+					<fpage>780</fpage>
+					<lpage>790</lpage>
+					<pub-id pub-id-type="doi">10.1016/j.intell.2013.04.005</pub-id>
+				</element-citation>
+			</ref>
+			<ref id="B2">
+				<element-citation publication-type="book">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Brigham</surname>
+							<given-names>C</given-names>
+						</name>
+					</person-group>
+					<source>A Study of American Intelligence</source>
+					<year iso-8601-date="1923">1923</year>
+					<publisher-loc>Princeton</publisher-loc>
+					<publisher-name>Princeton University Press</publisher-name>
+				</element-citation>
+			</ref>
+			<ref id="B3">
+				<element-citation publication-type="book">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Haggerty</surname>
+							<given-names>M</given-names>
+						</name>
+						<name>
+							<surname>Terman</surname>
+							<given-names>L</given-names>
+						</name>
+						<name>
+							<surname>Thorndike</surname>
+							<given-names>E</given-names>
+						</name>
+						<name>
+							<surname>Whipple</surname>
+							<given-names>G</given-names>
+						</name>
+						<name>
+							<surname>Yerkes</surname>
+							<given-names>R</given-names>
+						</name>
+					</person-group>
+					<source>National Intelligence Tests. Manual of Directions. For Use with
+						Scale A, Form 1 and Scale B, Form 1</source>
+					<year iso-8601-date="1920">1920</year>
+					<publisher-loc>New York</publisher-loc>
+					<publisher-name>World Book Company</publisher-name>
+				</element-citation>
+			</ref>
+			<ref id="B4">
+				<element-citation publication-type="book">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Terman</surname>
+							<given-names>L</given-names>
+						</name>
+					</person-group>
+					<source>The Intelligence of School Children</source>
+					<year iso-8601-date="1921">1921</year>
+					<publisher-loc>London</publisher-loc>
+					<publisher-name>George G. Harrap</publisher-name>
+				</element-citation>
+			</ref>
+			<ref id="B5">
+				<element-citation publication-type="journal">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Whipple</surname>
+							<given-names>G</given-names>
+						</name>
+					</person-group>
+					<article-title>The National Intelligence Tests</article-title>
+					<source>The Journal of 	Educational Research</source>
+					<year iso-8601-date="1921">1921</year>
+					<volume>4</volume>
+					<fpage>16</fpage>
+					<lpage>31</lpage>
+				</element-citation>
+			</ref>
+			<ref id="B6">
+				<element-citation publication-type="book">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Tork</surname>
+							<given-names>J</given-names>
+						</name>
+					</person-group>
+					<source>Eesti laste intelligents</source>
+					<year iso-8601-date="1940">1940</year>
+					<publisher-loc>Tartu</publisher-loc>
+					<publisher-name>Koolivara</publisher-name>
+				</element-citation>
+			</ref>
+			<ref id="B7">
+				<element-citation publication-type="book">
+					<person-group person-group-type="author">
+						<name>
+							<surname>Yoakum</surname>
+							<given-names>C</given-names>
+						</name>
+						<name>
+							<surname>Yerkes</surname>
+							<given-names>R</given-names>
+						</name>
+					</person-group>
+					<source>Army Mental Tests</source>
+					<year iso-8601-date="1920">1920</year>
+					<publisher-loc>New York</publisher-loc>
+					<publisher-name>Henry Holt
+						and Company</publisher-name>
+				</element-citation>
+			</ref>
+		</ref-list>
+		<sec>
+			<title>Peer review comments</title>
+			<p><uri>http://openpsychologydata.metajnl.com/downloads/peerreview/jopd-ab.pdf</uri></p>
+		</sec>
+	</back>
+</article>

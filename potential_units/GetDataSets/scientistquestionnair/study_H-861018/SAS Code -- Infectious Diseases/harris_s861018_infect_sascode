@@ -1,0 +1,624 @@
+PROC FORMAT LIBRARY=LIBRARY CNTLOUT=SAS.FORMATS;
+VALUE YESNO 1='Yes' 0='No';
+VALUE Q6A_1Z    0 = '0 -- Not promising at all'
+                1 = '1'
+                2 = '2'
+                3 = '3'
+                4 = '4'
+                5 = '5'
+                6 = '6'
+                7 = '7'
+                8 = '8'
+                9 = '9'
+               10 = '10 -- Most promising one could imagine';
+VALUE Q10A_1Z   0 = '0 -- No change'
+                1 = '1'
+                2 = '2'
+                3 = '3'
+                4 = '4'
+                5 = '5'
+                6 = '6'
+                7 = '7'
+                8 = '8'
+                9 = '9'
+               10 = '10 -- Will be prevented entirely';
+VALUE Q10B_1Z   0 = '0 -- No change'
+                1 = '1'
+                2 = '2'
+                3 = '3'
+                4 = '4'
+                5 = '5'
+                6 = '6'
+                7 = '7'
+                8 = '8'
+                9 = '9'
+               10 = '10 -- Wll hv  cmplt nd ttl cr';
+VALUE Q21BZ     1 = 'There is a limit'
+                2 = 'Go on increasing it indefinitely'
+                3 = 'Not sure';
+VALUE Q9Z       1 = 'Better prevention'
+                2 = 'Better diagnosis'
+                3 = 'Better treatment'
+                4 = 'Not sure';
+VALUE Q12_1Z    1 = 'Much More Used'
+                2 = 'Somewhat More Used'
+                3 = 'Less Used'
+                4 = 'Used as Often (Vol )'
+                5 = 'Scarcely Used'
+                6 = 'Not Sure';
+VALUE Q13_1Z    1 = 'Much More Used'
+                2 = 'Somewhat More Used'
+                3 = 'Less Used'
+                4 = 'Used as Often (Vol )'
+                5 = 'Scarcely Used'
+                6 = 'Not Sure';
+VALUE Q14BZ     1 = 'Replace'
+                2 = 'Supplement'
+                3 = 'Not sure';
+DATA SAS.HDATA; INFILE IN lrecl=160 recfm=f;
+LENGTH Q19A Q21A_M Q21A_W Q21C_M Q21C_W WEIGHT 8 DEFAULT=3;
+INPUT
+#1  @5  COL5      CB1.
+    @25 Q1_1 CB2.
+    @27 Q1_2 CB2.
+    @29 Q2_1 CB2.
+    @31 Q2_2 CB2.
+    @33 Q3_1 CB2.
+    @35 Q3_2 CB2.
+    @37 Q4_1 CB2.
+    @39 Q4_2 CB2.
+    @41 Q4_3 CB2.
+    @43 Q5_1 CB2.
+    @45 Q5_2 CB2.
+    @47 Q6A_1     CB2.
+    @49 Q6A_2     CB2.
+    @51 Q6A_3     CB2.
+    @53 Q6A_4     CB2.
+    @55 Q6A_5     CB2.
+    @57 Q6A_6     CB2.
+    @59 Q6A_7     CB2.
+    @61 Q6A_8     CB2.
+    @63 Q6A_9     CB2.
+    @65 Q6A_10    CB2.
+    @67 Q6A_11    CB2.
+    @69 Q6A_12    CB2.
+    @71 Q6A_13    CB2.
+    @73 Q6A_14    CB2.
+    @75 Q6A_15    CB2.
+#2  @16 Q6B_1 CB2.
+    @18 Q6B_2 CB2.
+    @20 Q6B_3 CB2.
+    @22 Q7A_1 CB2.
+    @24 Q7A_2 CB2.
+    @26 Q7B_19     CB2.
+    @28 Q7B_20     CB2.
+    @30 Q8_1 CB2.
+    @32 Q8_2 CB2.   
+    @34 Q9X       ROW1.4
+    @35 Q10A_1    CB2.
+    @37 Q10A_2    CB2.
+    @39 Q10A_3    CB2.
+    @41 Q10A_4    CB2.
+    @43 Q10A_5    CB2.
+    @45 Q10A_6    CB2.
+    @47 Q10A_7    CB2.
+    @49 Q10A_8    CB2.
+    @51 Q10A_9    CB2.
+    @53 Q10A_10   CB2.
+    @55 Q10A_11   CB2.
+    @57 Q10A_12   CB2.
+    @59 Q10A_13   CB2.
+    @61 Q10A_14   CB2.
+    @63 Q10B_1    CB2.
+    @65 Q10B_2    CB2.
+    @67 Q10B_3    CB2.
+    @69 Q10B_4    CB2.
+    @71 Q10B_5    CB2.
+    @73 Q10B_6    CB2.
+    @75 Q10B_7    CB2.
+    @77 Q10B_8    CB2.
+    @79 Q10B_9    CB2.
+#3  @10 Q10B_10   CB2.
+    @12 Q10B_11   CB2.
+    @14 Q10B_12   CB2.
+    @16 Q10B_13   CB2.
+    @18 Q10B_14   CB2.
+    @20 Q11A_1 CB2.
+    @22 Q11A_2 CB2.
+    @24 Q11B_1 CB2.
+    @26 Q11B_2 CB2.
+    @28 Q11C_1 CB2.
+    @30 Q11C_2 CB2.
+    @32 Q12_1X    ROW1.6
+    @33 Q12_2X    ROW1.6
+    @34 Q12_3X    ROW1.6
+    @35 Q12_4X    ROW1.6
+    @37 Q12_5X    ROW1.6
+    @37 Q12_6X    ROW1.6
+    @38 Q12_7X    ROW1.6
+    @39 Q12_8X    ROW1.6
+    @40 Q12_9X    ROW1.6
+    @41 Q13_1X    ROW1.6
+    @42 Q13_2X    ROW1.6
+    @43 Q13_3X    ROW1.6
+    @44 Q13_4X    ROW1.6
+    @45 Q13_5X    ROW1.6
+    @46 Q13_6X    ROW1.6
+    @47 Q13_7X    ROW1.6
+    @48 Q13_8X    ROW1.6
+    @49 Q13_9X     ROW1.6
+    @50 Q14A_1 CB2.
+    @52 Q14A_2 CB2.
+    @54 Q14A_3 CB2.
+    @56 Q14BX     ROW1.3
+    @57 Q14C_1 CB2.
+    @59 Q14C_2 CB2.
+    @61 Q14C_3 CB2.
+    @66 Q18A_1 CB2.
+    @68 Q18A_2 CB2.
+    @70 Q18B_1 CB2.
+    @72 Q18B_2 CB2.
+    @74 Q19B_19    CB2.
+    @76 Q19B_20    CB2.
+    @78 Q19B_NS   ROW1.1
+#4  @10 Q19C_19    CB2.
+    @12 Q19C_20    CB2.
+    @14 Q19C_NS   ROW1.1
+    @27 Q21A_M    CB3.
+    @30 Q21A_W    CB3.
+    @33 Q21BX     ROW1.3
+    @34 Q21C_M    CB3.
+    @37 Q21C_W    CB3.
+    @40 Q19A      CB6.
+    @46 Q19A_NS   ROW1.1
+    @75 WEIGHT   CB6. ;
+                IF COL5 = 2;
+DROP     Q21BX
+         Q9X
+         Q12_1X
+         Q12_2X
+         Q12_3X
+         Q12_4X
+         Q12_5X
+         Q12_6X
+         Q12_7X
+         Q12_8X
+         Q12_9X
+         Q13_1X
+         Q13_2X
+         Q13_3X
+         Q13_4X
+         Q13_5X
+         Q13_6X
+         Q13_7X
+         Q13_8X
+         Q13_9X
+         Q14BX;
+ARRAY MISS Q6A_1-Q6A_15 Q10A_1-Q10A_14 Q10B_1-Q10B_14;
+DO OVER MISS;
+   IF MISS > 10 THEN MISS = .;
+END;
+Q21B = Q21BX    ;
+ATTRIB Q21B FORMAT=Q21BZ.
+     LABEL='Do you think there is any limit to how m';
+Q9 = Q9X      ;
+ATTRIB Q9 FORMAT=Q9Z.
+     LABEL='Which do you think will do the most to c';
+Q12_1 = Q12_1X   ;
+ATTRIB Q12_1 FORMAT=Q12_1Z.
+     LABEL='Hygiene and sanitary measures';
+Q12_2 = Q12_2X   ;
+ATTRIB Q12_2 FORMAT=Q12_1Z.
+     LABEL='Nutrition';
+Q12_3 = Q12_3X   ;
+ATTRIB Q12_3 FORMAT=Q12_1Z.
+     LABEL='Mnclnl ntbdy tsts tht llw fr fst, spcfc ';
+Q12_4 = Q12_4X   ;
+ATTRIB Q12_4 FORMAT=Q12_1Z.
+     LABEL='Live virus vaccines';
+Q12_5 = Q12_5X   ;
+ATTRIB Q12_5 FORMAT=Q12_1Z.
+     LABEL='Killed virus vaccines';
+Q12_6 = Q12_6X   ;
+ATTRIB Q12_6 FORMAT=Q12_1Z.
+     LABEL='Genetically engineered vaccines';
+Q12_7 = Q12_7X   ;
+ATTRIB Q12_7 FORMAT=Q12_1Z.
+     LABEL='Immnztn wth pld mmnglblns frm bld dnrs';
+Q12_8 = Q12_8X   ;
+ATTRIB Q12_8 FORMAT=Q12_1Z.
+     LABEL='Immnztn wth mnclnl r plyclnl ntbds';
+Q12_9 = Q12_9X    ;
+ATTRIB Q12_9 FORMAT=Q12_1Z.
+     LABEL='Gntc mrkrs fr prnnss t crtn nfctns';
+Q13_1 = Q13_1X   ;
+ATTRIB Q13_1 FORMAT=Q13_1Z.
+     LABEL='Broad-spectrum antibiotics';
+Q13_2 = Q13_2X   ;
+ATTRIB Q13_2 FORMAT=Q13_1Z.
+     LABEL='Antbtcs tht r hghly spcfc fr  prtclr pth';
+Q13_3 = Q13_3X   ;
+ATTRIB Q13_3 FORMAT=Q13_1Z.
+     LABEL='Systemic antifungal drugs';
+Q13_4 = Q13_4X   ;
+ATTRIB Q13_4 FORMAT=Q13_1Z.
+     LABEL='Systmc drgs gnst prtzl dsss';
+Q13_5 = Q13_5X   ;
+ATTRIB Q13_5 FORMAT=Q13_1Z.
+     LABEL='Antiviral drugs';
+Q13_6 = Q13_6X   ;
+ATTRIB Q13_6 FORMAT=Q13_1Z.
+     LABEL='Drugs linked to monoclonal antibodies';
+Q13_7 = Q13_7X   ;
+ATTRIB Q13_7 FORMAT=Q13_1Z.
+     LABEL='Drugs that stimulate the immune stystem';
+Q13_8 = Q13_8X   ;
+ATTRIB Q13_8 FORMAT=Q13_1Z.
+     LABEL='Oral rehydration therapy';
+Q13_9 = Q13_9X    ;
+ATTRIB Q13_9 FORMAT=Q13_1Z.
+     LABEL='Nutrition';
+Q14B = Q14BX    ;
+ATTRIB Q14B FORMAT=Q14BZ.
+     LABEL='Will this (these new therapy-therapies) ';
+ATTRIB Q6A_1 FORMAT=Q6A_1Z.
+     LABEL='New antibiotics';
+ATTRIB Q6A_2 FORMAT=Q6A_1Z.
+     LABEL='New sytemic antifungal drugs';
+ATTRIB Q6A_3 FORMAT=Q6A_1Z.
+     LABEL='Nw systmc drgs gnst prtzl prsts';
+ATTRIB Q6A_4 FORMAT=Q6A_1Z.
+     LABEL='New antiviral drugs';
+ATTRIB Q6A_5 FORMAT=Q6A_1Z.
+     LABEL='Trtng nfctns n mmncmprmsd ptnts';
+ATTRIB Q6A_6 FORMAT=Q6A_1Z.
+     LABEL='Trtng nscml (hsptl) nfctns';
+ATTRIB Q6A_7 FORMAT=Q6A_1Z.
+     LABEL='Tests, probably based on monoclonal anti';
+ATTRIB Q6A_8 FORMAT=Q6A_1Z.
+     LABEL='Drgs tht r hghly spcfc gnst  prtclr pthg';
+ATTRIB Q6A_9 FORMAT=Q6A_1Z.
+     LABEL='Drug-antibody conjugations';
+ATTRIB Q6A_10 FORMAT=Q6A_1Z.
+     LABEL='Passive immunizations';
+ATTRIB Q6A_11 FORMAT=Q6A_1Z.
+     LABEL='Gntc mrkrs fr prnnss t crtn nfctns';
+ATTRIB Q6A_12 FORMAT=Q6A_1Z.
+     LABEL='Mlclr mchnsms f ltncy, n vrss lk hrps';
+ATTRIB Q6A_13 FORMAT=Q6A_1Z.
+     LABEL='Mlcrlr mchnsms by whch pthgns vd mmn srv';
+ATTRIB Q6A_14 FORMAT=Q6A_1Z.
+     LABEL='Genetically engineered vaccines';
+ATTRIB Q6A_15 FORMAT=Q6A_1Z.
+     LABEL='Immunomodifiers and immunostimulants';
+ATTRIB Q10A_1 FORMAT=Q10A_1Z.
+     LABEL='Diarrhea';
+ATTRIB Q10A_2 FORMAT=Q10A_1Z.
+     LABEL='Typhoid fever';
+ATTRIB Q10A_3 FORMAT=Q10A_1Z.
+     LABEL='Dysentary';
+ATTRIB Q10A_4 FORMAT=Q10A_1Z.
+     LABEL='Cholera';
+ATTRIB Q10A_5 FORMAT=Q10A_1Z.
+     LABEL='Homophilus';
+ATTRIB Q10A_6 FORMAT=Q10A_1Z.
+     LABEL='Chlamydia';
+ATTRIB Q10A_7 FORMAT=Q10A_1Z.
+     LABEL='Malaria';
+ATTRIB Q10A_8 FORMAT=Q10A_1Z.
+     LABEL='Schistosomiasis';
+ATTRIB Q10A_9 FORMAT=Q10A_1Z.
+     LABEL='AIDS';
+ATTRIB Q10A_10 FORMAT=Q10A_1Z.
+     LABEL='Flu';
+ATTRIB Q10A_11 FORMAT=Q10A_1Z.
+     LABEL='Colds';
+ATTRIB Q10A_12 FORMAT=Q10A_1Z.
+     LABEL='Slow viruses';
+ATTRIB Q10A_13 FORMAT=Q10A_1Z.
+     LABEL='Herpes';
+ATTRIB Q10A_14 FORMAT=Q10A_1Z.
+     LABEL='Hepatitis';
+ATTRIB Q10B_1 FORMAT=Q10B_1Z.
+     LABEL='Diarrhea';
+ATTRIB Q10B_2 FORMAT=Q10B_1Z.
+     LABEL='Typhoid fever';
+ATTRIB Q10B_3 FORMAT=Q10B_1Z.
+     LABEL='Dysentary';
+ATTRIB Q10B_4 FORMAT=Q10B_1Z.
+     LABEL='Cholera';
+ATTRIB Q10B_5 FORMAT=Q10B_1Z.
+     LABEL='Homophilus';
+ATTRIB Q10B_6 FORMAT=Q10B_1Z.
+     LABEL='Chlamydia';
+ATTRIB Q10B_7 FORMAT=Q10B_1Z.
+     LABEL='Malaria';
+ATTRIB Q10B_8 FORMAT=Q10B_1Z.
+     LABEL='Schistosomiasis';
+ATTRIB Q10B_9 FORMAT=Q10B_1Z.
+     LABEL='AIDS';
+ATTRIB Q10B_10 FORMAT=Q10B_1Z.
+     LABEL='Flu';
+ATTRIB Q10B_11 FORMAT=Q10B_1Z.
+     LABEL='Colds';
+ATTRIB Q10B_12 FORMAT=Q10B_1Z.
+     LABEL='Slow viruses';
+ATTRIB Q10B_13 FORMAT=Q10B_1Z.
+     LABEL='Herpes';
+ATTRIB Q10B_14 FORMAT=Q10B_1Z.
+     LABEL='Hepatitis';/*
+%PUTMERGE('H-861018ID-6')
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q6A_1 / OUT=TEMP;
+%FREQOUT(TEMP,Q6A_1);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q6A_2 / OUT=TEMP;
+%FREQOUT(TEMP,Q6A_2);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q6A_3 / OUT=TEMP;
+%FREQOUT(TEMP,Q6A_3);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q6A_4 / OUT=TEMP;
+%FREQOUT(TEMP,Q6A_4);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q6A_5 / OUT=TEMP;
+%FREQOUT(TEMP,Q6A_5);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q6A_6 / OUT=TEMP;
+%FREQOUT(TEMP,Q6A_6);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q6A_7 / OUT=TEMP;
+%FREQOUT(TEMP,Q6A_7);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q6A_8 / OUT=TEMP;
+%FREQOUT(TEMP,Q6A_8);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q6A_9 / OUT=TEMP;
+%FREQOUT(TEMP,Q6A_9);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q6A_10 / OUT=TEMP;
+%FREQOUT(TEMP,Q6A_10);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q6A_11 / OUT=TEMP;
+%FREQOUT(TEMP,Q6A_11);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q6A_12 / OUT=TEMP;
+%FREQOUT(TEMP,Q6A_12);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q6A_13 / OUT=TEMP;
+%FREQOUT(TEMP,Q6A_13);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q6A_14 / OUT=TEMP;
+%FREQOUT(TEMP,Q6A_14);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q6A_15 / OUT=TEMP;
+%FREQOUT(TEMP,Q6A_15);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+IF LAST THEN PUT ';';
+%PUTMERGE('H-861018ID-12')
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10A_1 / OUT=TEMP;
+%FREQOUT(TEMP,Q10A_1);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10A_2 / OUT=TEMP;
+%FREQOUT(TEMP,Q10A_2);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10A_3 / OUT=TEMP;
+%FREQOUT(TEMP,Q10A_3);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10A_4 / OUT=TEMP;
+%FREQOUT(TEMP,Q10A_4);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10A_5 / OUT=TEMP;
+%FREQOUT(TEMP,Q10A_5);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10A_6 / OUT=TEMP;
+%FREQOUT(TEMP,Q10A_6);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10A_7 / OUT=TEMP;
+%FREQOUT(TEMP,Q10A_7);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10A_8 / OUT=TEMP;
+%FREQOUT(TEMP,Q10A_8);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10A_9 / OUT=TEMP;
+%FREQOUT(TEMP,Q10A_9);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10A_10 / OUT=TEMP;
+%FREQOUT(TEMP,Q10A_10);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10A_11 / OUT=TEMP;
+%FREQOUT(TEMP,Q10A_11);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10A_12 / OUT=TEMP;
+%FREQOUT(TEMP,Q10A_12);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10A_13 / OUT=TEMP;
+%FREQOUT(TEMP,Q10A_13);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10A_14 / OUT=TEMP;
+%FREQOUT(TEMP,Q10A_14);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+IF LAST THEN PUT ';';
+%PUTMERGE('H-861018ID-13')
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10B_1 / OUT=TEMP;
+%FREQOUT(TEMP,Q10B_1);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10B_2 / OUT=TEMP;
+%FREQOUT(TEMP,Q10B_2);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10B_3 / OUT=TEMP;
+%FREQOUT(TEMP,Q10B_3);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10B_4 / OUT=TEMP;
+%FREQOUT(TEMP,Q10B_4);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10B_5 / OUT=TEMP;
+%FREQOUT(TEMP,Q10B_5);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10B_6 / OUT=TEMP;
+%FREQOUT(TEMP,Q10B_6);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10B_7 / OUT=TEMP;
+%FREQOUT(TEMP,Q10B_7);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10B_8 / OUT=TEMP;
+%FREQOUT(TEMP,Q10B_8);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10B_9 / OUT=TEMP;
+%FREQOUT(TEMP,Q10B_9);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10B_10 / OUT=TEMP;
+%FREQOUT(TEMP,Q10B_10);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10B_11 / OUT=TEMP;
+%FREQOUT(TEMP,Q10B_11);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10B_12 / OUT=TEMP;
+%FREQOUT(TEMP,Q10B_12);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10B_13 / OUT=TEMP;
+%FREQOUT(TEMP,Q10B_13);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q10B_14 / OUT=TEMP;
+%FREQOUT(TEMP,Q10B_14);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+IF LAST THEN PUT ';'; 
+%PUTMERGE('H-861018ID-28')
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q21B / OUT=TEMP;
+%FREQOUT(TEMP,Q21B);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+IF LAST THEN PUT ';';
+%PUTMERGE('H-861018ID-29')
+PUT ';';
+IF LAST THEN PUT ';';
+%PUTMERGE('H-861018ID-11')
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q9 / OUT=TEMP;
+%FREQOUT(TEMP,Q9);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+IF LAST THEN PUT ';';
+%PUTMERGE('H-861018ID-17')
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q12_1 / OUT=TEMP;
+%FREQOUT(TEMP,Q12_1);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q12_2 / OUT=TEMP;
+%FREQOUT(TEMP,Q12_2);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q12_3 / OUT=TEMP;
+%FREQOUT(TEMP,Q12_3);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q12_4 / OUT=TEMP;
+%FREQOUT(TEMP,Q12_4);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q12_5 / OUT=TEMP;
+%FREQOUT(TEMP,Q12_5);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q12_6 / OUT=TEMP;
+%FREQOUT(TEMP,Q12_6);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q12_7 / OUT=TEMP;
+%FREQOUT(TEMP,Q12_7);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q12_8 / OUT=TEMP;
+%FREQOUT(TEMP,Q12_8);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q12_9 / OUT=TEMP;
+%FREQOUT(TEMP,Q12_9);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+IF LAST THEN PUT ';';
+%PUTMERGE('H-861018ID-18')
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q13_1 / OUT=TEMP;
+%FREQOUT(TEMP,Q13_1);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q13_2 / OUT=TEMP;
+%FREQOUT(TEMP,Q13_2);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q13_3 / OUT=TEMP;
+%FREQOUT(TEMP,Q13_3);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q13_4 / OUT=TEMP;
+%FREQOUT(TEMP,Q13_4);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q13_5 / OUT=TEMP;
+%FREQOUT(TEMP,Q13_5);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q13_6 / OUT=TEMP;
+%FREQOUT(TEMP,Q13_6);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q13_7 / OUT=TEMP;
+%FREQOUT(TEMP,Q13_7);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q13_8 / OUT=TEMP;
+%FREQOUT(TEMP,Q13_8);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q13_9 / OUT=TEMP;
+%FREQOUT(TEMP,Q13_9);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+IF LAST THEN PUT ';';
+%PUTMERGE('H-861018ID-20')
+PROC FREQ DATA=SAS.HDATA;
+  TABLES Q14B / OUT=TEMP;
+%FREQOUT(TEMP,Q14B);
+IF LAST THEN PUT 'NUMCASES = ' N ';';
+IF LAST THEN PUT ';'; */
