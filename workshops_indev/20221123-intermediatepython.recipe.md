@@ -5,15 +5,17 @@ sessions:
 
 
     # Day 1
-    - title: Dataframes in Depth
+    - title: Dataframes in Depth, Managing Relational Data
       units:
-      - file: notebooks/DS Pandas Overview.ipynb
+      - file: notebooks/DS Pandas Overview.ipynb  # basics
         filename:
       - file:  # Functional Pandas 
         filename:  
       - file:  # Timeseries and Imputation in Pandas
         filename: 
       - file: notebooks/DS Cleaning Categorical Tables.ipynb
+        filename: 
+      - file: # Parquet and HDF5
         filename: 
 
     # Day 2
@@ -25,8 +27,7 @@ sessions:
         filename: 
       - file:  notebooks/DS Intro To SQL.ipynb
         filename: 
-      - file: # Parquet and HDF5
-        filename: 
+      
 
     # Day 3
     - title: Fit, Predict; Reshaping Data for Statistics and Machine Learning

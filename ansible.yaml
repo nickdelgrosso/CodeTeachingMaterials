@@ -1,0 +1,72 @@
+---
+- name: Install Miniconda
+  hosts: all
+  remote_user: root
+
+  tasks:
+  - name: Ensure nano is installed
+    ansible.builtin.apt:
+      name: nano
+      state: latest
+  - name: Download Miniconda
+    ansible.builtin.get_url:
+      url: https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+      dest: /tmp/miniconda.sh
+  - name: Install Miniconda
+    ansible.builtin.command: 
+      cmd: bash /tmp/miniconda.sh -b -p /opt/miniconda
+      creates: /opt/miniconda
+  - name: Initialize conda
+    ansible.builtin.command: 
+      cmd: /opt/miniconda/bin/conda init bash 
+  
+- name: Install Docker
+  hosts: all
+  remote_user: root
+
+  tasks:
+  - name: Ensure apt-transport-https is installed
+    ansible.builtin.apt:
+      name: apt-transport-https
+      state: latest
+  - name: Ensure ca-certificates is installed
+    ansible.builtin.apt:
+      name: ca-certificates
+      state: latest
+  - name: Ensure curl is installed
+    ansible.builtin.apt:
+      name: curl
+      state: latest
+  - name: Ensure gnupg is installed
+    ansible.builtin.apt:
+      name: gnupg
+      state: latest
+  - name: Ensure lsb-release is installed
+    ansible.builtin.apt:
+      name: lsb-release
+      state: latest
+  - name: Add Docker's official GPG key
+    ansible.builtin.apt_key:
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+  - name: Add Docker's official repository
+    ansible.builtin.apt_repository:
+      repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+      state: present
+  - name: Ensure docker-ce is installed
+    ansible.builtin.apt:
+      name: docker-ce
+      state: latest
+  - name: Ensure docker-ce-cli is installed
+    ansible.builtin.apt:
+      name: docker-ce-cli
+      state: latest
+  - name: Ensure containerd.io is installed
+    ansible.builtin.apt:
+      name: containerd.io
+      state: latest
+  - name: Ensure docker is running
+    ansible.builtin.service:
+      name: docker
+      state: started
+      enabled: yes
