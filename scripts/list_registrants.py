@@ -58,7 +58,7 @@ for meeting_registrants in registrants_iterator:
     print(output, end='\n\n')
     print('')
 
-    filename = Path('/home/nickdg/Dropbox/Teaching/Registrants') / (str(meeting.id.iloc[0]) + '.txt')
+    filename = Path('/home/nickdg/Dropbox/Teaching/Registrants') / f"{meeting.topic.iloc[0]}-{meeting.id.iloc[0]}.txt"
     filename.touch(exist_ok = True)
     with filename.open(mode='r+') as f:
         f.write(output)
@@ -66,3 +66,5 @@ for meeting_registrants in registrants_iterator:
     # print(regs, end='\n\n')
     
 
+
+# %%

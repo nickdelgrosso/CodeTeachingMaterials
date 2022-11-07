@@ -1,0 +1,102 @@
+---
+buildFolder: 'build/intro2python3'
+status: running
+git:
+  sync: true
+  branch: main
+  remoteName: origin
+  remoteURL: https://github.com/CodingForScientists/Intro2PythonMPI2022
+readme:
+  addDeepnoteShortcut: true
+  addGitpodShortcut: false
+
+sessions:
+    - title: Intro To Python
+      include: true
+      includeSolutions: false
+      units:
+      - file: notebooks/Python First Look.ipynb
+        filename: Day1/1-1-IntroToNotebookEnvironment.ipynb
+      - file: notebooks/Python Types.ipynb
+        filename: Day1/1-2-FunctionsAndPythonTypes.ipynb
+      - file: notebooks/Python Strings And Methods.ipynb
+        filename: Day1/1-3-MethodsInPython.ipynb        
+      - file: notebooks/Python Data Collections And Functions.ipynb
+        filename: Day1/1-4-DataCollections.ipynb
+      - file: notebooks/DS Plotting With Matplotlib.ipynb
+        filename: Day1/1-5-PlottingWithMatplotlib.ipynb
+    
+    - title: Arrays and Matrices
+      include: false
+      includeSolutions: false
+      units:
+      - file: notebooks/Python Indexing and Slicing.ipynb
+        filename: Day2/2-1-IndexingAndSlicingSequences.ipynb
+      - file: notebooks/DS List Array Comparison.ipynb
+        filename: Day2/2-2-ListArrayComparison.ipynb
+      - file: notebooks/DS Numpy Arrays.ipynb
+        filename: Day2/2-3-ArraysWithNumpy.ipynb
+      - file: notebooks/DS Logical Indexing.ipynb
+        filename: Day2/2-4-NumpyLogicalIndexing.ipynb
+      - file: notebooks/DS Plotting Distributions With Numpy And Matplotlib.ipynb
+        filename: Day2/2-5-PlottingDistributionsWithNumpyAndMatplotlib.ipynb
+
+    - title: Dicts and DataFrames
+      include: false
+      includeSolutions: false
+      units:
+      - file: notebooks/DS Multidimensional Arrays.ipynb
+        filename: Day3/3-1-MultidimensionalArrays.ipynb
+      - file: notebooks/DS Cropping And Plotting Image Data With Matplotlib.ipynb
+        filename: Day3/3-2-IndexingNDArraysAndCroppingImages.ipynb
+      - file: notebooks/DS TTests With Scipy Stats.ipynb
+        filename: Day3/3-3-ComparingMultipleVariables.ipynb
+      - file: notebooks/Python Dictionaries.ipynb
+        filename: Day3/3-4-Dictionaries.ipynb
+      - file: notebooks/DS Dataframe Creation.ipynb
+        filename: Day3/3-5-ReadingTabularFileFormats.ipynb
+      
+
+    - title: Data Analysis with DataFrames
+      include: false
+      includeSolutions: false
+      units:
+      - file: notebooks/DS Plotting With Pandas.ipynb
+        filename: Day4/4-1-PlottingWithPandas.ipynb
+      - file: notebooks/DS Analyzing DataFrames.ipynb
+        filename: Day4/4-2-SelectingAndAggregatingDataframes.ipynb
+      - file: notebooks/DS Groupby Seaborn.ipynb
+        filename: Day4/4-3-GroupingData.ipynb
+      # - file: notebooks/DS DataFrame Reorganizing.ipynb
+      #   filename: Day4/4-4-ReshapingData.ipynb
+    
+    - title: Batch Data Processing
+      include: false
+      includeSolutions: false
+      units:
+      - file: notebooks/DS Pandas Review MentalRotation.ipynb
+        filename: Day5/5-1-PandasReview.ipynb
+      - file: notebooks/DS DataFrame Reorganizing.ipynb
+        filename: Day5/5-2-ReshapingData.ipynb
+      - file: notebooks/Misc Filepaths With Pathlib.ipynb
+        filename: Day5/5-3-FindingFilePathsWithPathlib.ipynb
+      - file: notebooks/SE Conda Environment Manager.ipynb
+        filename: Day5/5-Ref-InstallingPythonWithCondaManager.ipynb
+      - file: notebooks/Python Blocks If Else.ipynb
+        filename: Day5/5-4-IfElseBlocksInPython.ipynb
+      - file: notebooks/Python Blocks For Loops.ipynb
+        filename: Day5/5-5-ForLoopsInPython.ipynb
+      
+      
+project:
+  - LICENSE
+  - jupyter_lab_config.py
+  - .gitpod.yml
+  - .gitignore
+  
+
+---
+
+
+
+# Intro 2 Python
