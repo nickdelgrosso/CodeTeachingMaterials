@@ -8,12 +8,12 @@ git:
   remoteURL: https://github.com/CodingForScientists/Intro2PythonMPI2022
 readme:
   addDeepnoteShortcut: true
-  addGitpodShortcut: false
+  addGitpodShortcut: true
 
 sessions:
     - title: Intro To Python
       include: true
-      includeSolutions: false
+      includeSolutions: true
       units:
       - file: notebooks/Python First Look.ipynb
         filename: Day1/1-1-IntroToNotebookEnvironment.ipynb
@@ -27,7 +27,7 @@ sessions:
         filename: Day1/1-5-PlottingWithMatplotlib.ipynb
     
     - title: Arrays and Matrices
-      include: false
+      include: true
       includeSolutions: false
       units:
       - file: notebooks/Python Indexing and Slicing.ipynb
