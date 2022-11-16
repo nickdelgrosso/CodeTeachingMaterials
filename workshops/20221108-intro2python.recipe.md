@@ -43,7 +43,7 @@ sessions:
 
     - title: Dicts and DataFrames
       include: true
-      includeSolutions: false
+      includeSolutions: true
       units:
       - file: notebooks/DS Multidimensional Arrays.ipynb
         filename: Day3/3-1-MultidimensionalArrays.ipynb
@@ -51,24 +51,22 @@ sessions:
         filename: Day3/3-2-IndexingNDArraysAndCroppingImages.ipynb
       - file: notebooks/DS TTests With Scipy Stats.ipynb
         filename: Day3/3-3-ComparingMultipleVariables.ipynb
-      - file: notebooks/Python Dictionaries.ipynb
-        filename: Day3/3-4-Dictionaries.ipynb
-      - file: notebooks/DS Dataframe Creation.ipynb
-        filename: Day3/3-5-ReadingTabularFileFormats.ipynb
       
 
     - title: Data Analysis with DataFrames
       include: false
-      includeSolutions: false
+      includeSolutions: true
       units:
-      - file: notebooks/DS Plotting With Pandas.ipynb
-        filename: Day4/4-1-PlottingWithPandas.ipynb
+      - file: notebooks/Python Dictionaries.ipynb
+        filename: Day3/3-4-Dictionaries.ipynb
+      - file: notebooks/DS Dataframe Creation.ipynb
+        filename: Day3/3-5-ReadingTabularFileFormats.ipynb
+      # - file: notebooks/DS Plotting With Pandas.ipynb
+      #   filename: Day4/4-1-PlottingWithPandas.ipynb
       - file: notebooks/DS Analyzing DataFrames.ipynb
         filename: Day4/4-2-SelectingAndAggregatingDataframes.ipynb
       - file: notebooks/DS Groupby Seaborn.ipynb
         filename: Day4/4-3-GroupingData.ipynb
-      # - file: notebooks/DS DataFrame Reorganizing.ipynb
-      #   filename: Day4/4-4-ReshapingData.ipynb
     
     - title: Batch Data Processing
       include: false
