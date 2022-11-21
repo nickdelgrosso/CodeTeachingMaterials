@@ -54,19 +54,17 @@ sessions:
       
 
     - title: Data Analysis with DataFrames
-      include: false
-      includeSolutions: true
+      include: true
+      includeSolutions: false
       units:
       - file: notebooks/Python Dictionaries.ipynb
-        filename: Day3/3-4-Dictionaries.ipynb
+        filename: Day4/4-1-Dictionaries.ipynb
       - file: notebooks/DS Dataframe Creation.ipynb
-        filename: Day3/3-5-ReadingTabularFileFormats.ipynb
-      # - file: notebooks/DS Plotting With Pandas.ipynb
-      #   filename: Day4/4-1-PlottingWithPandas.ipynb
+        filename: Day4/4-2-ReadingTabularFileFormats.ipynb
       - file: notebooks/DS Analyzing DataFrames.ipynb
-        filename: Day4/4-2-SelectingAndAggregatingDataframes.ipynb
+        filename: Day4/4-3-SelectingAndAggregatingDataframes.ipynb
       - file: notebooks/DS Groupby Seaborn.ipynb
-        filename: Day4/4-3-GroupingData.ipynb
+        filename: Day4/4-4-GroupingData.ipynb
     
     - title: Batch Data Processing
       include: false
