@@ -55,7 +55,7 @@ sessions:
 
     - title: Data Analysis with DataFrames
       include: true
-      includeSolutions: false
+      includeSolutions: true
       units:
       - file: notebooks/Python Dictionaries.ipynb
         filename: Day4/4-1-Dictionaries.ipynb
@@ -67,21 +67,18 @@ sessions:
         filename: Day4/4-4-GroupingData.ipynb
     
     - title: Batch Data Processing
-      include: false
-      includeSolutions: false
+      include: true
+      includeSolutions: true
       units:
-      - file: notebooks/DS Pandas Review MentalRotation.ipynb
-        filename: Day5/5-1-PandasReview.ipynb
-      - file: notebooks/DS DataFrame Reorganizing.ipynb
-        filename: Day5/5-2-ReshapingData.ipynb
       - file: notebooks/Misc Filepaths With Pathlib.ipynb
-        filename: Day5/5-3-FindingFilePathsWithPathlib.ipynb
-      - file: notebooks/SE Conda Environment Manager.ipynb
-        filename: Day5/5-Ref-InstallingPythonWithCondaManager.ipynb
+        filename: Day5/5-1-FindingFilePathsWithPathlib.ipynb
       - file: notebooks/Python Blocks If Else.ipynb
-        filename: Day5/5-4-IfElseBlocksInPython.ipynb
+        filename: Day5/5-2-IfElseBlocksInPython.ipynb
+      - file: notebooks/Python Blocks While Loops.ipynb
+        filename: Day5/5-3-WhileLoopsInPython.ipynb
       - file: notebooks/Python Blocks For Loops.ipynb
-        filename: Day5/5-5-ForLoopsInPython.ipynb
+        filename: Day5/5-4-ForLoopsInPython.ipynb
+      
       
       
 project:
