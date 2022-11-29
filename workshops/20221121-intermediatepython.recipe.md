@@ -15,7 +15,7 @@ sessions:
     # Day 1
     - title: Pandas and Multiple Files
       include: true
-      includeSolutions: false
+      includeSolutions: true
       units:
 
       # DataFrames

@@ -29,14 +29,14 @@ sessions:
         filename: Week1/1-4-Homework-DataCollections.ipynb
 
     - title: Numpy Arrays and Plotting with Matplotlib
-      include: false
-      includeSolutions: false
+      include: true
+      includeSolutions: true
       units:
       # In-Class
-      - file: notebooks/DS Numpy Arrays.ipynb
-        filename: Week2/2-1-ArraysWithNumpy.ipynb
       - file: notebooks/Python Indexing and Slicing.ipynb
-        filename: Week2/2-2-IndexingAndSlicingSequences.ipynb
+        filename: Week2/2-1-IndexingAndSlicingSequences.ipynb
+      - file: notebooks/DS Numpy Arrays.ipynb
+        filename: Week2/2-2-ArraysWithNumpy.ipynb
       - file: notebooks/DS Plotting With Matplotlib.ipynb
         filename: Week2/2-3-PlottingWithMatplotlib.ipynb
       
@@ -47,6 +47,7 @@ sessions:
         filename: Week2/2-5-Homework-NumpyLogicalIndexing.ipynb
       
       
+      
     
     - title: Multidimensional Arrays and Statistics with Scipy-Stats
       include: false
@@ -54,7 +55,7 @@ sessions:
       units:
       # In-Class
       - file: notebooks/DS Plotting Distributions With Numpy And Matplotlib.ipynb
-        filename: Day2/2-5-PlottingDistributionsWithNumpyAndMatplotlib.ipynb
+        filename: Week2/2-6-Homework-PlottingDistributionsWithNumpyAndMatplotlib.ipynb
       - file: notebooks/DS Multidimensional Arrays.ipynb
         filename: Day3/3-1-MultidimensionalArrays.ipynb
       - file: notebooks/DS TTests With Scipy Stats.ipynb
