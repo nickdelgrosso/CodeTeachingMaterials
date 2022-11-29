@@ -27,30 +27,31 @@ sessions:
       # Managing Many Files, Importance of IDs
       - file: notebooks/DS Pandas Review MentalRotation.ipynb
         filename: Day1/1-3-PandasReview.ipynb
-      # - file: notebooks/DS Pandas Concatenate.ipynb
-      #   filename: Day1/1-4-SplittingAndConcatenatingData.ipynb
       
-    # # Day 2
-    # - title: Relational Data, Shrinking the Analysis Pipeline
-    #   include: false
-    #   includeSolutions: false
-    #   units:
-    #     # Stats and Plotting
-    #       - file:
-    #         filename: Day2/GGPlot
-    #       - file:
-    #         filename: Pingouin
-    #     # Managing Databases
-    #     - file:
-    #       filename: Day2/2-1-CategoricalAndParquet.ipynb
-    #     - file:
-    #       filename: Day2/2-2-SQL_pandas.ipynb
+      
+    # Day 2
+    - title: Relational Data, Shrinking the Analysis Pipeline
+      include: false
+      includeSolutions: false
+      units:
+        - file: notebooks/DS Pandas Concatenate.ipynb
+          filename: Day1/1-4-SplittingAndConcatenatingData.ipynb
+        - file:
+          filename: Day2/2-1-CategoricalAndParquet.ipynb
+        # Stats and Plotting
+          - file:
+            filename: Day2/Merge
+        # Managing Databases
+        - file:
+          filename: Day2/2-2-SQL_pandas.ipynb
 
     # # Day 3
     # - title: Statistics and Machine Learning
     #   include: false
     #   includeSolutions: false
     #   units:
+      # - file:
+      #         filename: Pingouin
     #     # GLM
     #       - file:
     #         filename: Day3/2-3-Fitting One Dimensional Data
