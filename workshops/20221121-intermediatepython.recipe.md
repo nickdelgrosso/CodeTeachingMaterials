@@ -31,19 +31,15 @@ sessions:
       
     # Day 2
     - title: Relational Data, Shrinking the Analysis Pipeline
-      include: false
+      include: true
       includeSolutions: false
       units:
         - file: notebooks/DS Pandas Concatenate.ipynb
-          filename: Day1/1-4-SplittingAndConcatenatingData.ipynb
-        - file:
-          filename: Day2/2-1-CategoricalAndParquet.ipynb
-        # Stats and Plotting
-          - file:
-            filename: Day2/Merge
-        # Managing Databases
-        - file:
-          filename: Day2/2-2-SQL_pandas.ipynb
+          filename: Day2/2-1-SplittingAndConcatenatingDataFramesInLoops.ipynb
+        - file: notebooks/DS DataFrame Merging Columns.ipynb
+          filename: Day2/2-2-MergingDataFrames.ipynb
+        - file: notebooks/DS Intro To SQL.ipynb
+          filename: Day2/2-3-SQL_pandas.ipynb
 
     # # Day 3
     # - title: Statistics and Machine Learning

@@ -152,3 +152,4 @@ attendance.xlsx
 .terraform.lock.hcl
 terraform.tfstate.backup
 terraform.tfstate
+results
