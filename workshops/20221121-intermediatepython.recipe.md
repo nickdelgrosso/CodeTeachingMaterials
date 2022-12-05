@@ -75,10 +75,10 @@ sessions:
       include: true
       includeSolutions: false
       units:
-        - file: notebooks/Python Functions.ipynb
-          filename: Day4/4-1-DefiningPythonFunctions.ipynb
         - file: notebooks/DS Fitting One Dimensional Data.ipynb
-          filename: Day4/4-2-FittingDistributionsWithScipyStats.ipynb
+          filename: Day4/4-1-FittingDistributionsWithScipyStats.ipynb
+        - file: notebooks/Python Functions.ipynb
+          filename: Day4/4-2-DefiningPythonFunctions.ipynb
         - file: notebooks/DS GLM with Pingouin And Statsmodels.ipynb
           filename: Day4/4-3-GLMwithPinguoinAndStatsmodels.ipynb
 
