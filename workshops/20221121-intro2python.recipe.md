@@ -11,7 +11,7 @@ readme:
   addGitpodShortcut: true
 
 sessions:
-    - title: Intro to Python's Syntax and Data Science Notebooks with DeepNote
+    - title: Intro to Python's Syntax and Data Science Notebooks
       include: true
       includeSolutions: true
       units:
@@ -50,22 +50,22 @@ sessions:
       
     
     - title: Multidimensional Arrays and Statistics with Scipy-Stats
-      include: false
-      includeSolutions: false
+      include: true
+      includeSolutions: true
       units:
       # In-Class
       - file: notebooks/DS Plotting Distributions With Numpy And Matplotlib.ipynb
-        filename: Week2/2-6-Homework-PlottingDistributionsWithNumpyAndMatplotlib.ipynb
+        filename: Week3/3-1-PlottingDistributionsWithNumpyAndMatplotlib.ipynb
       - file: notebooks/DS Multidimensional Arrays.ipynb
-        filename: Day3/3-1-MultidimensionalArrays.ipynb
-      - file: notebooks/DS TTests With Scipy Stats.ipynb
-        filename: Day3/3-3-ComparingMultipleVariables.ipynb
-    
-        # Homework
+        filename: Week3/3-2-MultidimensionalArrays.ipynb
       - file: notebooks/DS Cropping And Plotting Image Data With Matplotlib.ipynb
-        filename: Day3/3-2-IndexingNDArraysAndCroppingImages.ipynb
+        filename: Week3/3-3-IndexingNDArraysAndCroppingImages.ipynb
+      
+        # Homework
+      - file: notebooks/DS TTests With Scipy Stats.ipynb
+        filename: Week3/3-4-Homework-TtestsWithScipyStats.ipynb
       - file: notebooks/Python Dictionaries.ipynb
-        filename: Day4/4-1-Dictionaries.ipynb
+        filename: Week3/3-5-Homework-Dictionaries.ipynb
       
 
       

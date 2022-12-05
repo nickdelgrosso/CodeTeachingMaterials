@@ -32,7 +32,7 @@ sessions:
     # Day 2
     - title: Relational Data, Shrinking the Analysis Pipeline
       include: true
-      includeSolutions: false
+      includeSolutions: true
       units:
         - file: notebooks/DS Pandas Concatenate.ipynb
           filename: Day2/2-1-SplittingAndConcatenatingDataFramesInLoops.ipynb
@@ -42,15 +42,26 @@ sessions:
           filename: Day2/2-3-SQL_pandas.ipynb
 
     # # Day 3
-    # - title: Statistics and Machine Learning
-    #   include: false
-    #   includeSolutions: false
-    #   units:
-      # - file:
-      #         filename: Pingouin
-    #     # GLM
+    - title: Tidy Data, Statistics and Machine Learning
+      include: true
+      includeSolutions: false
+      units:
+        # Plotting
+        - file: notebooks/DS Seaborn2.ipynb
+          filename: Day3/3-1-PlottingWithSeaborn.ipynb
+        - file: notebooks/DS Plotnine.ipynb
+          filename: Day3/3-2-PlottingWithPlotnine.ipynb
+        - file: notebooks/DS Dataframe Tidy Data Using Melts.ipynb
+          filename: Day3/3-3-TidyingDataWithPandasMelt.ipynb
+        - file: notebooks/DS Fitting One Dimensional Data.ipynb
+          filename: Day3/3-4-FittingDistributionsWithScipyStats.ipynb
+
+
+
+          
+    
     #       - file:
-    #         filename: Day3/2-3-Fitting One Dimensional Data
+    #         filename: 
     #       - file:
     #         filename: Day3/GLM
     #     # Scikit-Learn: Regression and Clustering
@@ -59,11 +70,17 @@ sessions:
     #     - file:
     #       filename: Day3/Clustering
     
-    # # Day 4
-    # - title: Neo
-    #   include: false
-    #   includeSolutions: false
-    #   units:
+    # Day 4
+    - title: Functions, GLM, and Neo
+      include: true
+      includeSolutions: false
+      units:
+        - file: notebooks/Python Functions.ipynb
+          filename: Day4/4-1-DefiningPythonFunctions.ipynb
+        - file: notebooks/DS Fitting One Dimensional Data.ipynb
+          filename: Day4/4-2-FittingDistributionsWithScipyStats.ipynb
+        - file: notebooks/DS GLM with Pingouin And Statsmodels.ipynb
+          filename: Day4/4-3-GLMwithPinguoinAndStatsmodels.ipynb
 
     # # Day 5
     # - title: Statistics and Machine Learning
@@ -74,10 +91,8 @@ sessions:
     #     filename: 
     #   - file: # Streamlit  (which uses altair)
     #     filename: 
-    #   - file:   
-    #     filename: # IPyWidgets
     #   - file: 
-    #     filename: # Panel
+    #     filename: # Streamlit
 
     
 project:
