@@ -77,22 +77,21 @@ sessions:
       units:
         - file: notebooks/DS Fitting One Dimensional Data.ipynb
           filename: Day4/4-1-FittingDistributionsWithScipyStats.ipynb
-        - file: notebooks/Python Functions.ipynb
-          filename: Day4/4-2-DefiningPythonFunctions.ipynb
-        - file: notebooks/DS GLM with Pingouin And Statsmodels.ipynb
-          filename: Day4/4-3-GLMwithPinguoinAndStatsmodels.ipynb
 
-    # # Day 5
-    # - title: Statistics and Machine Learning
-    #   include: false
-    #   includeSolutions: false
-    #   units:
-    #   - file: # Altair
-    #     filename: 
-    #   - file: # Streamlit  (which uses altair)
-    #     filename: 
-    #   - file: 
-    #     filename: # Streamlit
+    # Day 5
+    - title: Statistics and Machine Learning
+      include: true
+      includeSolutions: false
+      units:
+      - file: notebooks/DS TTests with Pingouin.ipynb
+        filename:  Day5/5-1-TtestsWithPingouin.ipynb
+      - file: notebooks/Python Functions.ipynb
+        filename: Day5/5-2-DefiningPythonFunctions.ipynb
+      - file: notebooks/DS GLM with Pingouin And Statsmodels.ipynb
+        filename: Day5/5-3-GLMwithPinguoinAndStatsmodels.ipynb
+      - file: notebooks/DS Machine Learning With ScikitLearn.ipynb
+        filename: Day5/5-4-MachineLearningWithScikitLearn.ipynb
+      
 
     
 project:
