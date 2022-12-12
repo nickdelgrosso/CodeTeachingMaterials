@@ -71,25 +71,23 @@ sessions:
       
 
     - title: Data Analysis with DataFrames
-      include: false
-      includeSolutions: false
+      include: true
+      includeSolutions: true
       units:
         # In-Class
-      - file: notebooks/DS Dataframe Creation.ipynb
-        filename: Day4/4-2-ReadingTabularFileFormats.ipynb
       - file: notebooks/DS Analyzing DataFrames.ipynb
-        filename: Day4/4-3-SelectingAndAggregatingDataframes.ipynb
+        filename: Week4/4-1-SelectionAndAggregation.ipynb
       - file: notebooks/DS Groupby Seaborn.ipynb
-        filename: Day4/4-4-GroupingData.ipynb
+        filename: Week4/4-2-GroupingData.ipynb
       - file: notebooks/DS DataFrame Reorganizing.ipynb
-        filename: Day5/5-2-ReshapingData.ipynb
+        filename: Week4/4-3-ReshapingData.ipynb
 
         # Homework
+      - file: notebooks/DS Dataframe Creation.ipynb
+        filename: Week4/4-Homework-ReadingTabularFileFormats.ipynb
+      - file: notebooks/Misc Filepaths With Pathlib.ipynb
+        filename: Week4/4-Homework-FindingFilePathsWithPathlib.ipynb
       
-      - file: notebooks/DS Pandas Review MentalRotation.ipynb
-        filename: Day5/5-1-PandasReview.ipynb
-      - file: notebooks/DS TTests With Scipy Stats And Pingouin.ipynb
-        filename: Day4/4-2-StatsWithPingouin.ipynb
       
       
     
@@ -98,10 +96,12 @@ sessions:
       include: false
       includeSolutions: false
       units:
-      - file: notebooks/Misc Filepaths With Pathlib.ipynb
-        filename: Day5/5-3-FindingFilePathsWithPathlib.ipynb
       - file: notebooks/SE Conda Environment Manager.ipynb
         filename: Day5/5-Ref-InstallingPythonWithCondaManager.ipynb
+      - file: notebooks/DS Pandas Review MentalRotation.ipynb
+        filename: Day5/5-1-PandasReview.ipynb
+      
+      # Homework
       - file: notebooks/Python Blocks If Else.ipynb
         filename: Day5/5-4-IfElseBlocksInPython.ipynb
       - file: notebooks/Python Blocks For Loops.ipynb
