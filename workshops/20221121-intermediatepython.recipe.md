@@ -44,7 +44,7 @@ sessions:
     # # Day 3
     - title: Tidy Data, Statistics and Machine Learning
       include: true
-      includeSolutions: false
+      includeSolutions: true
       units:
         # Plotting
         - file: notebooks/DS Seaborn2.ipynb
@@ -73,7 +73,7 @@ sessions:
     # Day 4
     - title: Functions, GLM, and Neo
       include: true
-      includeSolutions: false
+      includeSolutions: true
       units:
         - file: notebooks/DS Fitting One Dimensional Data.ipynb
           filename: Day4/4-1-FittingDistributionsWithScipyStats.ipynb
@@ -81,7 +81,7 @@ sessions:
     # Day 5
     - title: Statistics and Machine Learning
       include: true
-      includeSolutions: false
+      includeSolutions: true
       units:
       - file: notebooks/DS TTests with Pingouin.ipynb
         filename:  Day5/5-1-TtestsWithPingouin.ipynb
