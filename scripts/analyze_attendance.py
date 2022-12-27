@@ -5,7 +5,7 @@ from utils.time import overlapping_duration
 
 
 # %%
-df = pd.concat(pd.read_csv(fname, index_col=0) for fname in Path('../data').glob('*.csv'))
+df = pd.concat(pd.read_csv(fname, index_col=0) for fname in Path('./data').glob('*.csv'))
 df = df.assign(join_time = pd.to_datetime(df['join_time']), leave_time = pd.to_datetime(df['leave_time']))
 df.head()
 
@@ -54,3 +54,5 @@ success
 writer.close()
 
 
+
+# %%

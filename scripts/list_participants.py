@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Iterator, List, Dict, Tuple
 from pathlib import Path
 import pandas as pd
@@ -27,7 +28,7 @@ if __name__ == '__main__':
 
     basedir = Path('data')
     basedir.mkdir(parents=True, exist_ok=True)
-    for meeting_events in list_participants(token=(oauth["access_token"]), from_date='2022-10-24', to_date='2022-10-28'):
+    for meeting_events in list_participants(token=(oauth["access_token"]), from_date='2022-10-24', to_date=datetime.today().strftime("%Y-%m-%d")):
         meeting_events.to_csv(basedir / ('attendance_' + meeting_events['meeting_start_time'].iloc[0] + '.csv'))
         print(len(meeting_events))
 

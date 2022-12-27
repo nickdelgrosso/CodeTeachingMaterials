@@ -153,3 +153,4 @@ attendance.xlsx
 terraform.tfstate.backup
 terraform.tfstate
 results
+.snakemake

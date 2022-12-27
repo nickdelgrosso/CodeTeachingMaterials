@@ -44,6 +44,8 @@ def list_past_meeting_sessions(token: str, user_id, from_: str, to: str, type='p
         f"https://api.zoom.us/v2/report/users/{user_id}/meetings?from={from_}&to={to}&type={type}",
         headers={"Authorization": f"Bearer {token}"},
     )
+    assert resp.ok, resp.text
     assert resp.content
+
     data: ReportUserMeetingsResponse = resp.json()
     return data['meetings']
