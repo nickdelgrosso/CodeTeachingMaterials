@@ -21,7 +21,6 @@ class Meeting(TypedDict):
     join_url: str
 
 
-@lru_cache()
 def list_meetings(
     token: str,
     user_id="me", 

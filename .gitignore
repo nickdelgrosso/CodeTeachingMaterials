@@ -154,3 +154,4 @@ terraform.tfstate.backup
 terraform.tfstate
 results
 .snakemake
+data.bak

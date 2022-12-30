@@ -21,7 +21,7 @@ class Meeting2(TypedDict):
     participants_count: int
     source: str
 
-@lru_cache()
+
 def list_past_meeting_sessions(token: str, user_id, from_: str, to: str, type='past') -> List[Meeting2]:
     """
     GET /report/users/{userId}/meetings

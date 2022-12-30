@@ -29,8 +29,11 @@ class Registrant(TypedDict):
     status: str  # approved, denied, or pending
     zip: str
 
-@lru_cache()
+
 def list_registrants(token: str, meeting_id: int) -> List[Registrant]:
+    """
+    https://marketplace.zoom.us/docs/api-reference/zoom-api/methods/#operation/meetingRegistrants
+    """
     class RegistrantsResponse(TypedDict):
         page_size: int
         total_records: int
