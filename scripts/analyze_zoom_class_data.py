@@ -4,7 +4,7 @@
 # os.chdir('..')
 
 # %%
-from scripts import zoom_api
+import zoom_api
 from datetime import datetime, timedelta
 import pandas as pd
 from dateutil.parser import parse
@@ -24,10 +24,10 @@ assert token
 past_meetings = []
 for teacher in zoom_api.list_users(token=token, role_id=0):
     today = datetime.today()
-    courses = zoom_api.list_past_meeting_sessions(
+    courses = zoom_api.get_all_meeting_reports(
         token=token, 
         user_id=teacher["id"], 
-        from_=(today - timedelta(days=150)).strftime("%Y-%m-%d"), 
+        from_=(today - timedelta(days=70)).strftime("%Y-%m-%d"), 
         to=today.strftime("%Y-%m-%d"),
     )
     past_meetings.extend(courses)
