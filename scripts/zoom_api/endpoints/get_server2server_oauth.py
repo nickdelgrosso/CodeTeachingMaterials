@@ -24,9 +24,13 @@ def get_server2server_oauth(account_id: str, client_id: str, client_secret: str)
     """
     auth_code = b64encode(f"{client_id}:{client_secret}".encode()).decode()
     response = requests.post(
-        url=f"https://zoom.us/oauth/token?grant_type=account_credentials&account_id={account_id}",
+        url=f"https://zoom.us/oauth/token",
         headers={
             'Authorization': f"Basic {auth_code}",
+        },
+        params={
+            'grant_type': 'account_credentials',
+            'account_id': account_id,
         }
     )
     if response.ok:

@@ -33,15 +33,12 @@ def list_users(token: str, role_id: int = None):
         next_page_token: str
         users: List[User]
 
-    query_params = {}
-    if role_id is not None:
-        query_params['role_id'] = role_id
-    
-    query = "?" + '&'.join([f"{k}={v}" for k, v in query_params.items()]) if query_params else ''
+    params = {'role_id': role_id} if role_id is not None else None   
 
     resp = requests.get(
-        f"https://api.zoom.us/v2/users" + query,
+        f"https://api.zoom.us/v2/users",
         headers = {"Authorization": f"Bearer {token}"},
+        params=params,
     )
 
     data: UsersResponse = resp.json()

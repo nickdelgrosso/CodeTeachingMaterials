@@ -39,10 +39,19 @@ def get_meeting_participant_events(token: str, meeting_id: int):
     next_page_token = ''
     while True:
         meeting_id_safe = urllib.parse.quote(urllib.parse.quote(meeting_id, safe=''), safe='')  # "Double encode" meeting uuid, needed if there's a forward slash
-        url = f"https://api.zoom.us/v2/report/meetings/{meeting_id_safe}/participants?include_fields=registrant_id&page_size=300"
+        url = f"https://api.zoom.us/v2/report/meetings/{meeting_id_safe}/participants"
+        params={
+                'include_fields': 'registrant_id',
+                'page_size': 300,
+            }
         if next_page_token:
-            url += f'&next_page_token={next_page_token}'
-        resp = requests.get(url, headers={"Authorization": f"Bearer {token}"})
+            params['next_page_token'] = next_page_token
+
+        resp = requests.get(
+            url, 
+            headers={"Authorization": f"Bearer {token}"},
+            params=params,
+        )
         if not resp.ok:
             raise IOError(resp)
 

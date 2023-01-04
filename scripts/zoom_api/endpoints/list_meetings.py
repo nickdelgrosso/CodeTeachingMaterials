@@ -38,8 +38,12 @@ def list_meetings(
         meetings: List[Meeting]
 
     resp = requests.get(
-        f"https://api.zoom.us/v2/users/{user_id}/meetings?page_size={page_size}&type={type}",
-        headers={"Authorization": f"Bearer {token}"}
+        f"https://api.zoom.us/v2/users/{user_id}/meetings",
+        headers={"Authorization": f"Bearer {token}"},
+        params={
+            'page_size': page_size,
+            'type': type,
+        }
     )
 
     data: MeetingResponse = resp.json()

@@ -42,8 +42,13 @@ def get_meeting_reports(token: str, user_id, from_: str, to: str, type='past') -
         meetings: List[Meeting2]
 
     resp = requests.get(
-        f"https://api.zoom.us/v2/report/users/{user_id}/meetings?from={from_}&to={to}&type={type}",
+        f"https://api.zoom.us/v2/report/users/{user_id}/meetings",
         headers={"Authorization": f"Bearer {token}"},
+        params={
+            'from': from_,
+            'to': to,
+            'type': type,
+        }
     )
     
     assert resp.ok, resp.text

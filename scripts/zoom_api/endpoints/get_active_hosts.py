@@ -35,9 +35,15 @@ def get_active_hosts(token: str, from_date: str = "2022-10-14", to_date: str = "
         users: List[ActiveUser]
 
     resp = requests.get(
-        f"https://api.zoom.us/v2/report/users?type=active&from={from_date}&to={to_date}&page_size=100",
+        f"https://api.zoom.us/v2/report/users",
         # f"https://api.zoom.us/v2/report/meetings/{meeting_id}",
         headers = {"Authorization": f"Bearer {token}"},
+        params={
+            'type': 'active',
+            'from': from_date,
+            'to': to_date,
+            'page_size': 100,
+        }
     )
     assert resp.content
     data: ActiveUsersReportResponse = resp.json()
