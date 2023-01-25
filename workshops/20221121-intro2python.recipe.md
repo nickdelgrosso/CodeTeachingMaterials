@@ -93,19 +93,21 @@ sessions:
     
     
     - title: Batch Data Processing
-      include: false
+      include: true
       includeSolutions: false
       units:
       - file: notebooks/SE Conda Environment Manager.ipynb
-        filename: Day5/5-Ref-InstallingPythonWithCondaManager.ipynb
+        filename: Week5/5-Ref-InstallingPythonWithCondaManager.ipynb
       - file: notebooks/DS Pandas Review MentalRotation.ipynb
-        filename: Day5/5-1-PandasReview.ipynb
+        filename: Week5/5-1-PandasReview.ipynb
       
       # Homework
+      - file: notebooks/Misc Filepaths With Pathlib.ipynb
+        filename: Week5/5-2-FindingFilePathsWithPathlib.ipynb
       - file: notebooks/Python Blocks If Else.ipynb
-        filename: Day5/5-4-IfElseBlocksInPython.ipynb
+        filename: Week5/5-3-IfElseBlocksInPython.ipynb
       - file: notebooks/Python Blocks For Loops.ipynb
-        filename: Day5/5-5-ForLoopsInPython.ipynb
+        filename: Week5/5-4-ForLoopsInPython.ipynb
       
     - title: Putting it all together into an analysis
       include: false

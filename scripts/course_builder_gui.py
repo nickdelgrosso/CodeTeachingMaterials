@@ -9,7 +9,7 @@ import workshop_recipe as wr
 st.title('Data Science Workshop Builder')
 
 st.header('Workshop')
-st.text_input(label='Workshop Title')
+workshop_title = st.text_input(label='Workshop Title')
 git_remote_url = st.text_input(label='GitHub Repo URL')
 
 st.header('Sessions')
@@ -30,6 +30,6 @@ for idx, tab in enumerate(tabs, start=1):
 
 recipe = wr.create_recipe(url=git_remote_url, sessions=session)
 
-
-st.download_button(label="Download Recipe File", data=wr.serialize_recipe(recipe=recipe))
+print(type(workshop_title))
+st.download_button(label="Download Recipe File", data=wr.serialize_recipe(recipe=recipe), file_name=f"{workshop_title.lower().replace(' ', '_')}.recipe.yaml")
 recipe

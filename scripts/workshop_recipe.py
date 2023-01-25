@@ -31,7 +31,7 @@ def create_session(title, unit_paths, unit_names):
         'title': title,
         'include': True,
         'includeSolutions': False,
-        'units':  [{'file': str(path), 'filename': f"Session{idx}/{name}"} for path, name in zip(unit_paths, unit_names)],
+        'units':  [{'file': str(path), 'filename': f"Session{idx}/{name}"} for idx, (path, name) in enumerate(zip(unit_paths, unit_names), start=1)],
     }
     return session
 

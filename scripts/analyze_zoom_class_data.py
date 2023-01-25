@@ -12,15 +12,13 @@ import json
 import pytz
 from utils.email import to_mailbox
 
-# %%
+# %% Get token for Zoom API
 oauth = zoom_api.Credentials.from_environment_variables().get_oauth()
 token = oauth['access_token']
 assert token
 
-# %% [markdown]
-# ### Get All Past Meetings by the Teachers
 
-# %%
+# %% Get All Past Meetings by the Teachers
 past_meetings = []
 for teacher in zoom_api.list_users(token=token, role_id=0):
     today = datetime.today()
@@ -32,7 +30,6 @@ for teacher in zoom_api.list_users(token=token, role_id=0):
     )
     past_meetings.extend(courses)
 
-
 past_meetings = pd.DataFrame(past_meetings)
 
 
@@ -40,15 +37,24 @@ past_meetings = pd.DataFrame(past_meetings)
 past_courses = past_meetings.query('type == 8')
 past_courses
 
+# %% Future Courses
+
+
+meetings = pd.DataFrame(zoom_api.list_meetings(token=token, type='scheduled', ))
+courses = meetings.query('type == 8')
+course_series = courses.sort_values('start_time').groupby('id').head(1)
+course_series
+
+
 # %%
-# Make Labels for each course id, for making folder names
 course_labels = {}
-for id, course in past_courses.groupby('id'):
-    topic = course.topic.iloc[0]
-    start_time = parse(course['start_time'].min()).astimezone(pytz.timezone('Europe/Berlin')).strftime('%Y-%m-%d')
-    jsonized_data = json.dumps(course.to_dict('records'), indent=4)
-    label = f"{start_time} {topic} {id}"
-    course_labels[id] = label
+for _, course in course_series.iterrows():
+    ...
+    start_time = parse(course['start_time']).astimezone(pytz.timezone('Europe/Berlin')).strftime('%Y-%m-%d')
+    course_dict = course.to_dict()
+    jsonized_data = json.dumps(course_dict, indent=4)
+    label = f"{start_time} {course['topic']} {course['id']}"
+    course_labels[course['id']] = label
 course_labels
 
 
@@ -56,24 +62,27 @@ course_labels
 from pathlib import Path
 folder = Path('data/courses')
 for id, course in past_courses.groupby('id'):
+    
 
     course_folder = folder / course_labels[id]
     course_folder.mkdir(exist_ok=True, parents=True)
+    print(course_folder)
 
     # Write all Course Data to JSON File
     jsonized_data = json.dumps(course.to_dict('records'), indent=4)
     (course_folder / "sessions.json").write_text(jsonized_data)
 
     # Write Only the Repeated Course Data to Another File, for easier human reading
-    course_info = course[['id', 'type', 'topic', 'user_name', 'user_email', 'source']].iloc[0].to_dict()
+    course_info = course[['id', 'type', 'topic']].iloc[0].to_dict()
     for col in course_info:
         assert len(course[col].unique()) == 1
     (course_folder / "course.json").write_text(json.dumps(course_info, indent=4))
 
     
 
-# %% Get Registrants for each Course
-for id, course in past_courses.groupby('id'):
+#%%
+course_ids_with_registrants = course_series.id.tolist() + past_courses.groupby('id').head(1).id.tolist()
+for id in course_ids_with_registrants:
     regs = pd.DataFrame(zoom_api.list_registrants(token=token, meeting_id=id))
     regs = regs.drop(columns=['address', 'city', 'country', 'zip', 'state', 'phone', 'industry', 'purchasing_time_frame', 'role_in_purchase_process', 'no_of_employees'])
     regs = regs[::-1].reset_index(drop=True) # organize first-to-last to register
@@ -81,6 +90,7 @@ for id, course in past_courses.groupby('id'):
 
     # Get course folder to save data in
     course_folder = folder / course_labels[id]
+    course_folder.mkdir(exist_ok=True, parents=True)
 
     # Save machine-readable version with data for analysis
     jsonized_data = json.dumps(regs.to_dict('records'), indent=4)
@@ -120,14 +130,14 @@ for id, course in past_courses.groupby('id'):
 
     
 
-# %% [markdown]
-# ### Process the Events to calculate Attendance
 
-# %%
+# %% Process the Events to calculate Attendance
 for course_folder in Path('data/courses').glob('*/'):
 
     # Read in all participation events from a course into a single DataFrame
     filenames = list(course_folder.glob('participation_events/*.json'))
+    if not filenames:
+        continue
     df = pd.concat([pd.read_json(f) for f in filenames], ignore_index=True)
 
     # Calculate Attendance by adding up the durations, grouped by name and user email (note that the names and emails may have errors)
