@@ -1,6 +1,6 @@
 ---
 buildFolder: 'build/intro2python4'
-status: running
+status: finished
 git:
   sync: true
   branch: main

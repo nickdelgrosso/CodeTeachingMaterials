@@ -1,6 +1,6 @@
 ---
 buildFolder: 'build/intermediatepython'
-status: running
+status: finished
 git:
   sync: true
   branch: main
