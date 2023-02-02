@@ -13,7 +13,7 @@ readme:
 sessions:
     - title: Intro To Python
       include: true
-      includeSolutions: false
+      includeSolutions: true
       units:
       - file: notebooks/Python First Look.ipynb
         filename: Day1/1-1-IntroToNotebookEnvironment.ipynb
@@ -29,8 +29,8 @@ sessions:
         filename: Day1/Extra-FunctionsAndPythonTypes.ipynb
     
     - title: Arrays and Matrices
-      include: false
-      includeSolutions: false
+      include: true
+      includeSolutions: true
       units:
       - file: notebooks/DS Numpy Arrays.ipynb
         filename: Day2/2-1-ArraysWithNumpy.ipynb
@@ -48,8 +48,8 @@ sessions:
         filename: Day2/2-5b-TTestsWithScipyStats.ipynb
 
     - title: Dicts and DataFrames
-      include: false
-      includeSolutions: false
+      include: true
+      includeSolutions: true
       units:
       - file: notebooks/Python Dictionaries.ipynb
         filename: Day3/3-1-Dictionaries.ipynb
@@ -63,7 +63,7 @@ sessions:
         filename: Day3/Extra-ReadingTabularFileFormats.ipynb
       
     - title: Data Analysis with DataFrames
-      include: false
+      include: true
       includeSolutions: false
       units:
       - file: notebooks/DS Pandas Concatenate.ipynb
