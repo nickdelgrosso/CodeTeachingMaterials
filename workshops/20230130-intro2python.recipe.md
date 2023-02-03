@@ -82,6 +82,8 @@ sessions:
         filename: Day4/Extra-FunctionsInPython.ipynb
       - file: notebooks/Misc Filepaths With Pathlib.ipynb
         filename: Day4/Extra-FindingFilePathsWithPathlib.ipynb
+      - file: notebooks/DS DataFrame Merging Columns.ipynb
+        filename: Day4/4-4-MergingDataFrames.ipynb
         
         
         
