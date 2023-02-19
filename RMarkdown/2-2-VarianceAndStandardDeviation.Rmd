@@ -1,0 +1,193 @@
+
+## Calculate the Mean and Variance
+
+Using the following formulas: Calculate the
+
+
+## Calculate the Mean
+
+Calculate the mean using the formula below, 
+and Compare the results of the function against the built-in `mean()` function:
+$$ \bar{X} = \frac{\sum_{i=1}^{N}X_i}{N} $$
+# Scenario 2: The number of errors in a visual attention task of a sample of people
+
+Formaula translated into words:  "*The sum of the values in X divided by the total number of observations*"
+```{r}
+errors <- c(4, 7, 8, 5, 6, 10, 9, 11, 12)
+```
+
+
+## Check that the mean produces and unbiased estimate of the data.
+Generate the data's "residuals" (a.k.a. the error) from the mean model by subtracting
+the mean from the data and summing them up (formula below).  If the mean was unbiased,
+the total should be zero.
+
+$$  bias_{residuals} = \sum_{i=1}^N{(X_i - \bar{X})} $$
+
+```{r}
+
+```
+
+
+# Scenario 3: The duration (in minutes) of a deep sleep episode and the duration (in minutes) of a REM sleep episode of a sample of people
+```{r}
+deep_sleep <- c(420, 450, 460, 480, 500, 510, 530, 550, 560)
+REM_sleep <- c(60, 70, 80, 90, 100, 110, 120, 130, 140, 100, 120, 150, 130, 110, 100, 120, 150, 180, 110, 130, 150, 140, 170)
+
+```
+
+## Calculate the Total Error
+During which of these periods did people have the greatest variance (in minutes) in sleep duration: deep sleep or REM sleep?
+To answer this question, subtract out the mean from each group's data and leave only the residuals.
+Finally, square the residuals in order to make them all positive and compare the two groups: which dataset had the largest total residuals?
+
+$$  total.error = \sum_{i=1}^N{(X_i - \bar{X})}^2 $$
+```{r}
+
+```
+
+
+## Compensate for the difference in dataset size: Divide the Total Error by the number of observations
+But wait... one of the two datasets has more data.  This means more error in total, but what would be better is if we had the *average* error!  Divide the total errors of each dataset by their number of observations and compare the two groups.  Which had more variation in the dataset, on average?
+
+$$  average.error = \frac{\sum_{i=1}^N{(X_i - \bar{X})}^2}{N} $$
+```{r}
+
+```
+
+It is very close to the same value calculated when you use the `var()` function in R.  Try it on boath groups and compare the two calculations:
+```{r}
+
+```
+
+
+## Compensate for the Degree of Freedom we used up when calculating the Mean: Calculate the Sample Variance
+
+The `var()` function gives us a slightly different answer, and this is not because of some computer rounding error. What is happening?
+The `var()` function knows one more thing: that we used up a *"Degree of Freedom"* when calculating the residuals, because we needed to calculate
+the mean from our dataset to get the residuals.  That means that we didn't have quite as much data telling us about the variance as we thought;
+instead, we should have subtracted 1 from the total number of observations.
+
+In other words:
+  - when calculating the mean, the total degrees of freedom is N
+  - when calculating the variance, the total degrees of freedom is N - 1
+  
+So, let's correct the previous formula to get the *"sample variance" (often just called the "variance") (s^2)*:
+
+$$  s^2 = \frac{\sum_{i=1}^N{(X_i - \bar{X})}^2}{N - 1} $$
+Using the formula above, calculate the variance of the two sleep datasets 
+and compare them to the calculation that the `var()` function makes. 
+Are they similar?
+```{r}
+
+```
+
+
+# Scenario 4: The baseline body temperature (in °C) of a sample of patients
+```{r}
+body_temperature <- c(36.5, 36.7, 36.9, 37.1, 37.3, 37.5, 37.7, 37.9, 38.1, 38.3)
+```
+
+## Recalculate the Variance 
+
+Using the formula from before, what is the variance of the baseline body temperatures?
+```{r}
+
+```
+
+## Calculate the Standard Deviation: Fixing the Units of the Variance
+
+How would you answer this question in words, "The average variation in the patient body temperature is ___ degrees." ?
+From the variance, you kind of can't; the units is "degrees squared".  That makes no sense.
+Let's correct for it by square-rooting the variance calculation so our units are back to "degrees":
+```{r}
+
+```
+
+Now how would you answer this question in words, "The average variation in the patient body temperature is ___ degrees." ?
+
+Since now the variation units and mean units are the same as the original dataset, we have something really useful and intuitive!  This formula is so useful, in fact, that it is known as the *"standard deviation" (s)* formula:
+
+$$  s = \sqrt{\frac{\sum_{i=1}^N{(X_i - \bar{X})}^2}{N - 1}} $$
+In R, this is provided by the `sd()` formula.   Check that the value you calculated is the same as the `sd()` formula's below:
+```{r}
+
+```
+
+
+# Visualizing the Mean and Standard Deviations
+
+Now that we have an algorithmic understanding of the standard deviation, 
+let's train our visual system a little bit and see if we can get better at doing mental statistics on data visualizations.
+
+Do the following exercises as a group game, with each person looking at the plot
+together and making a guess about the mean and standard deviation of the data.
+
+## Scenario 5: The number of movements in a motor task of a sample of Parkinson's disease patients
+Plot the data using just the `plot()` function and *guess* what the mean and standard deviation will be, 
+then check your guess by computing them.
+Who had the closest guess in your group?
+```{r}
+movements <- c(16, 14, 17, 12, 15, 18, 19, 15, 10, 17)
+```
+
+
+## Scenario 6: The baseline heart rate (in beats per minute) of a sample of athletes before starting a running test
+Plot the data using just the `plot()` function and *guess* what the mean and standard deviation will be, 
+then check your guess by computing them.
+Who had the closest guess in your group?
+```{r}
+heart_rate <- c(65, 75, 60, 70, 80, 55, 100, 90, 95, 105, 110, 85, 50)
+```
+
+
+## Scenario 7: The number of errors in a cognitive task of a sample of Alzheimer's disease patients
+Plot each of the datasets below using just the `plot()` function and *guess* what the mean and standard deviation will be,
+as well as which dataset has the highest mean and largest standard deviation.
+then check your guess by computing them.
+Who had the closest guess in your group?
+```{r}
+cognitive_errors_1 <- c(16, 11, 13, 10, 19, 16, 19, 18, 19, 13, 19, 11, 13, 17, 12, 14, 16, 14, 19, 13, 12, 13, 19, 13, 14, 15, 11, 10, 15, 12)
+cognitive_errors_2 <- c(10, 2, 4, 18, 6, 2, 14, 6, 18, 4, 8, 10, 12, 20, 20, 12, 14, 20, 14, 12, 14, 10, 6, 6, 14, 18, 16, 6, 12, 14)
+```
+
+# Standard Deviation Error Bars
+
+## Scenario 8: The baseline reaction time (in milliseconds) of a sample of healthy adults and the baseline reaction time (in milliseconds) of a sample of stroke patients
+
+Let's make a summary plot of the data: Using the `barplot()` and `arrow()` functions,  draw a point and error bars showing the mean and standard deviation of the data.
+```{r}
+reaction_time_healthy <- c(250, 260, 270, 280, 290, 300, 310, 320, 330)
+reaction_time_stroke <- c(350, 360, 370, 380, 390, 400, 410, 420, 430)
+```
+
+
+## Scenario 9: The baseline muscle strength (in kg) of a sample of young adults and the baseline muscle strength (in kg) of a sample of elderly adults
+
+Make a bar plot with errorbars of the following data:
+```{r}
+muscle_strength_young <- c(40, 42, 44, 46, 48, 50, 52, 54, 56, 58)
+muscle_strength_elderly <- c(30, 32, 34, 36, 38, 40, 42, 44, 46, 48)
+```
+
+Compare this to the normal scatter plot (the `plot()` function).  Is the barplot
+doing a good summary of the data?  
+
+Userful Reference: https://www.data-to-viz.com/caveat/error_bar.html
+
+# "Long" Data Format
+
+In each of the datasets below, the data is organized a bit differently.  
+Instead, the data is in "long" format, meaning that each statistical variable is
+seperated into its own computational variable, with each index representing a 
+single *"case"* (a.k.a. observation).  We'll find this to be quite convenient
+later on; let's practice analyzing it!
+
+## Scenario 10: The heights (in cm) of a sample of people and the labels indicating whether they are male or female
+
+```{r}
+heights <- c(173, 183, 168, 178, 163, 189, 176, 165)
+gender <- c("male", "male", "female", "male", "female", "male", "male", "female")
+
+```
+

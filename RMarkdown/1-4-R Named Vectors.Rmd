@@ -1,0 +1,89 @@
+---
+title: "One-Dimensional Sequences: Named Vectors"
+output: html_notebook
+---
+
+# Vectors: Positional Data
+
+
+# Named Vectors
+
+You can keep the data values and labels together!  Instead of having 
+positional vectors, you can give each index a name:
+
+```{r}
+
+```
+
+Subsetting works by name.  
+```{r}
+
+```
+
+If you want only the number from the subset, you can use the double square brackets:
+```{r}
+
+```
+
+
+Plots will automatically use the names:
+```{r}
+barplot(heights)
+```
+
+
+Finally, you can separate out the names from the values with the `names()` and `as.numeric()` functions:
+```{r}
+names(heights)
+as.numeric(heights)
+```
+
+
+**Exercises**
+Let's try it out!  Make a named "age" vector for the following children:
+  - Cindy: Age 5
+  - Anna: Age 4
+  - Emma: Age 6
+  - Adrian: Age 8
+
+```{r}
+
+```
+
+
+Use R to find the values:  What is Emma's age?
+```{r}
+
+```
+
+
+Use R to find the values:  What is Anna's age?
+```{r}
+
+```
+
+
+Use R to find the values:  What is the `mean()` age of Cindy and Emma?
+```{r}
+
+```
+
+
+Use R to find the values:  What is the `mean()` age of Adrian and Anna?
+```{r}
+
+```
+
+
+Make a bar plot of the children's ages, including title, axis labels, and labels for each bar.
+```{r}
+
+```
+
+
+Remove Anna from the dataset, and make a new bar plot.
+```{r}
+
+```
+  
+

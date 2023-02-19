@@ -1,0 +1,323 @@
+# Noise, Sampling, Confidence Intervals, Bootstrapping, and Standard Error of the Mean
+
+When doing an experiment, the precision and consistency of our measurements plays 
+a large role in how much variance there is in our data.  Some of this variance
+may naturally arise out of the stochastic nature of the universe (determining whether
+that is true is way, way outside the scope of this course 😉), but
+all the rest of the variance that we are not interested in we can consider to be *"noise"*.
+
+Let's take a look at the effect of noise on our data, first if it were to come from
+a deterministic universe, then for a stochastic universe.
+
+## Case 1: The Deterministic Universe.
+
+Scenario: You're measuring the  reaction time of a subject who is supposed to press a button
+whenever they see a white dot appear on the screen.  In a perfect world, this should take 
+a fixed amount of time (let's say 800 milliseconds), meaning that if you measured 
+it 50 times, you would get 50 samples of 800 milliseconds.  
+
+Let's write the code for that down below, using R's built-in `rep()` function.  Make a histogram
+showing the distribution of this data.  How does it look?
+```{r}
+
+```
+
+
+Another way to write this data would be to imply a distribution with zero variance.
+We'll be focusing in this unit on the normal distribution, so let's generate the
+same data in a different way, using the `rnorm()` function.  Make the data and 
+show that it's identical to the `rep()` case:
+```{r}
+
+```
+
+## Biased Noise
+
+### Scenario 1: Screen Update Rate
+Now, let's simulate the effects of different noise on our data.  First, we'll look
+at noise that adds bias to our results, meaning that it changes our estimate.  
+
+Often, the noise is *"additive"*, meaning that it's not really related to what we collected.
+For example, the computer screen might not have a totally-stable screen brightness because
+of it's update rate, the LCD's backlight frequency, etc. 
+Let's say that, on average, our screen updates every 16 milliseconds, meaning that
+it could add anywhere from 0 to 16 milliseconds of time to the response.  Since this
+could happen unpredicatably at any time, we'll uses a `uniform` distrubtion, using
+the `runif()` function.  
+
+Please calculate the response times with this screen-update-rate noise included,
+and plot the histogram.  How has it changed?  What is the mean and 
+standard deviation of the data?  What is the mean and standard deviation of the noise?
+
+
+### Scenario 2: Participant's Attention Levels
+
+Sometimes our participant is paying lots of attention, trying to responsd as fast
+as possible, and sometimes not so much.  When they aren't paying attention, it adds even more noise!  Let's say that their attention, on average, adds anywhere from 25 to 70 millisonds
+of noise to their response time.
+
+Please factor in this attention level noise, on top of the previous noise.  
+How has it changed?  What is the mean and standard deviation of the data?
+Is the SD of our data larger, the same, or smaller than the SD of the 
+individual sources of noise?
+
+
+# Unbiased Noise
+
+Other times, the noise has no effect on the mean, but rather only affects the
+variance of the data. This is considered *unbiased* noise, and simply means that
+we need more data in order to get a good estimation of the mean.  In the case
+of some studies, this kind of noise doesn't exist (for example, the reaction time
+scenario above; most people can't predict the future and so can't react faster 
+than the appearance of the light stimulus.)
+
+There are a lot of sources of this kind of noise, often falling in one or more 
+categories:
+   - *Random measurement error*: This type of noise occurs when there is a random 
+      variation in the measurement process, leading to inaccurate results.
+   - *Instrumental error*: This occurs when the measuring instrument has a 
+      systematic error, such as a calibration error.
+   - *Human error*: This type of noise is introduced when a human makes a mistake 
+      during the experimental process, such as misreading a scale or recording 
+      an incorrect value.
+   - *Environmental noise*: This type of noise occurs when external factors 
+      such as temperature, humidity, or wind, affect the experiment and produce 
+      random variations in the results.
+   - *Natural variability*: This type of noise occurs when there is natural variability 
+      in the system being studied, such as in the case of biological experiments 
+      where individuals may respond differently to a treatment.
+
+Let's try simulating this in the case of a microscopy measurement of a fluoescent
+calcium recording.  Here, the measurement lasts for 200 milliseconds, and 20
+brightness measurements of a single spot are recorded.
+
+First, let's start with the assumption that the "true" brightness of the spot
+should be recorded at a value of 3.2. Please generate the data and plot its histogram:
+```{r}
+
+```
+
+Next, let's add noise from the neuronal cell that was being recorded. During this 
+time, the amount of calcium that bound to the cell membrane protein varied a bit
+up and down, adding an additional deviation of 0.3 and plot the histogram:
+```{r}
+
+```
+
+There was a tiny amount of vibration in the room from a train passing down the street
+and from the car traffic, that moved the sample slightly so that we measured from
+slightly different places on the cell.  Since the brightness isn't uniform across
+the cell, it added another 0.3 to the deviation:
+```{r}
+
+```
+
+The laser that shined the light, whose recording we are getting, didn't always 
+hit the right spots on our fluorescent protein, adding another 0.3 to the deviation:
+```{r}
+
+```
+
+Our camera sensor also had some measurement noise (0.3)...
+```{r}
+
+```
+
+Our analog recording system wasn't shielded properly (0.3)...
+```{r}
+
+```
+
+...etc. How much noise do we have, in total?  We added 0.3 5 times, does this mean
+we should have a standard deviation of 1.5?
+```{r}
+
+```
+
+
+# The "Box of Chocolates" Problem with Statistical Sampling: It's random!
+
+Another way to think about this is that the data "arrives" to us pre-noisy, not 
+from "noise" but just because it is supporsed to vary, that
+there is no single "true" value that we should be measuring.  
+We can simulate this by simply generating a lot of data with some variance already 
+included. 
+
+Here we're going to explore this by generating a lot of data that is uniformly-
+distributed; in other words, there is no "center" point that it congregates toward.
+From this, we'll do our experiment by "sampling" from the universal data:
+```{r}
+library(withr)
+universe.data <- with_seed(42, runif(500000, min = 2, max = 4))
+hist(universe.data, breaks=35)
+dnorm
+
+our.experiment <- sample(universe.data, 50, replace = T)
+hist(our.experiment, breaks = 12)
+```
+
+In this case, the universe always has the same data, but our experiment is always changing,
+because we get different data each time.  But still, our data can be used to "represent"
+the data, and the goal is to give us evidence about how the universe data (now let's
+call it by it's statistical name, the *"Population Distribution"*) is distributed.
+
+## Challenge 1
+Generate an Experiment with the smallest N you can, that 80% of the time will have a
+mean and standard deviation within 10% of the population's mean and standard deviation.
+
+Useful functions:
+  - `sample(Nsamps, data_to_sample_from, replace=T)`
+  - `replicate(Nreps, code_to_replicate)`
+  
+```{r}
+N <- 7
+mu <- mean(universe.data)
+lower.bound <- .90 * mu
+upper.bound <- 1.10 * mu
+mean(replicate(5000, (lower.bound < (exp.mean = mean(sample(universe.data, N, replace = T)))) & (exp.mean < upper.bound)))
+```
+
+In Challenge 1, our goal was to find an experiment with a "*Statistical Power*" of 80%.
+Let's do it again, this time with a power of 50%:
+```{r}
+N <- 7
+mu <- mean(universe.data)
+lower.bound <- .90 * mu
+upper.bound <- 1.10 * mu
+mean(replicate(5000, (lower.bound < (exp.mean = mean(sample(universe.data, N, replace = T)))) & (exp.mean < upper.bound)))
+```
+
+
+And with a power of 98%?
+```{r}
+N <- 7
+mu <- mean(universe.data)
+lower.bound <- .90 * mu
+upper.bound <- 1.10 * mu
+mean(replicate(5000, (lower.bound < (exp.mean = mean(sample(universe.data, N, replace = T)))) & (exp.mean < upper.bound)))
+```
+
+
+## Challenge 2: Estimate the Population Mean from the Sample Mean
+
+One thing that's interesting about sample data is that if you get enough of it,
+it will start to take on the shape of the population distribution.  This means
+that once we have a decent distribution, we can start to treat our sample distribution 
+as a sort of proxy for the parent distribution.
+
+How much data do you need before the histogram of the sample starts to look similar
+to the parent distribution?  Experiment below:
+```{r}
+our.experiment <- sample(universe.data, 50, replace = T)
+
+
+```
+
+Let's take the data you generated above and say it's our "real" data; in other 
+words, we won't collect any more data.  What can we do, then?  Well, we can sample
+from our sample!  This approach, fittingly, is called "*resampling*".
+
+Use the `replicate()` and `sample()` functions to resample from your data, 
+calculating the mean for each resample (remember to set `replace=T`).  
+Then plot the histogram of the distribution of means you got in each resample.
+Plot a line where the population mean is.  Is your distribution of resampled means
+close to the true mean?  Run it many times.  Is it always the same?
+Finally, what's interesting about this distribution of means?
+```{r}
+c(mean(our.experiment), sd(our.experiment))
+resamples <- replicate(5000, sample(our.experiment, length(our.experiment), replace = T))
+boot.means <- apply(resamples, 2, mean)
+boot.sds   <- apply(resamples, 2, sd)
+
+par(mfrow=c(1, 2))
+hist(boot.means, breaks = 21, xlim=c(2.5, 3.5))
+hist(boot.sds, breaks = 21)
+
+```
+
+
+So, what's your estimate of the population mean?  
+Find the middle 95th percentile from this resampled distribution, and report
+the lowest and highest range (e.g. "We estimate the mean to be between X and Y.")
+This approach is called the "*percentile method for bootstrapping the estimation of the mean.*"
+In shorthand, "*Bootstrapping the confidence intervals for the mean*"
+```{r}
+ci.mean <- quantile(boot.means, c(.025, .975))
+ci.mean
+((ci.mean[2] - ci.mean[1]) / 2) / 2
+  
+sd(our.experiment) / sqrt(length(our.experiment))
+  
+```
+
+What you just estimated are called the **95% Confidence Intervals.**
+
+
+## Challenge 3: Understanding the properties of the bootstrap distribution
+
+Let's try it again, this time using a different sample for the experiment.  Try
+it with a different N (much bigger, or much smaller).  How does the bootstrapped
+distribution's width change when you change N, and how does this affect your
+confidence intervals?  Secondly, how does the bootstrapped distribution's
+width change when you change the number of resamples?
+```{r}
+library(boot)
+
+ci
+```
+```{r}
+cihalf <- sd(our.experiment) / sqrt(length(our.experiment)) * 2
+c(mean(our.experiment) - cihalf, mean(our.experiment) + cihalf)
+```
+
+
+## Challenge 4: Estimate the Population Standard Deviation from the Sample Standard Deviation
+
+Do the same thing, this time bootstrapping the confidence intervals for the standard deviation:
+```{r}
+
+```
+
+
+
+
+# Standard Error of the Mean
+
+When the population distribution is normally-distributed, then our sample 
+distribution (with big enough sample sizes) will also be normally-distributed.
+If we know that, then we can actually estimate the standard deviation of 
+the bootstrapped distribution our accuracy of getting the mean
+by dividing the standard deviation by the square root of sample size!
+
+This number is called the *"Standard Error of the Mean"*:
+
+$$ SEM = \frac{s}{\sqrt{N}} $$ 
+
+## Challenge 5: Calculate the SEM
+
+What is the SEM for our experiment with sample size of 30?  What is it for
+a sample size of 60?
+```{r}
+
+```
+
+
+## Challenge 6: Calculate the 95% CIs from the SEM
+
+The SEM is the standard deviation of the normally-distributed bootstrap distribution.
+How should we multiply modify it in order to get the 95% CIs?  
+Using the SEM for an N=50 experiment, calculate the 95% CIs.
+```{r}
+
+```
+
+
+## Challenge 7: Plot the CI as an error bar
+
+Plot the CI as an error bar of a bar plot, showing 10 replications of the
+experiment with N=50:
+```{r}
+
+```
+
+

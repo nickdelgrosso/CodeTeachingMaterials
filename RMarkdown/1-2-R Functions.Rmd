@@ -1,0 +1,508 @@
+---
+title: "Logicals and Functions"
+subtitle: "R Syntax 2"
+output: html_notebook
+---
+
+
+
+## Functions
+
+Most things you can do with R work with named functions, rather than symbol operators.  For example, there is no symbol to calculate the square root; instead, you would use the `sqrt()` function like so: `sqrt(4)`.  All functions in R have the following syntax:
+
+`output <- functionName(input)`
+
+Let's try out some math functions to get a feel for the syntax!
+
+Math functions:
+  - Positive/Negative functions: `abs()`, `sign()`, 
+  - Rounding functions: `ceiling()`, `floor()`, `round()`
+  - Power Transforms: `sqrt()`, `exp()`, `log()`, `log10()`, `log2()`, `log1p()`
+  - Trigonometry functions: `sin()`, `cos()`, `tan()`, `asin()`, `acos()`, etc.
+  
+
+**Tip**: Not sure what a function does?  Get the help text by putting a ? before it:
+`?abs`
+
+**Tip2**: R not responding?  If you see a + sign at the beginning of the console,
+it means R doesn't think the command is finished.  Cancel the command by clicking
+on the cancel and press the "Esc" key.  When you see a > sign, R is ready for new
+commands.
+
+
+**Exercises**
+
+Convert the following sentences into R code.  Each sentence may involve multiple
+calculations, and there may be multiple ways of getting the same answer.
+
+
+Set "x" to "The absolute value of negative four"
+```{r}
+x <- abs(-4)
+```
+
+
+Set "result" to "4.2 rounded to the nearest integer is less than 4.5"
+```{r}
+
+```
+
+
+Set "data" to "4.2 rounded up is less than 4.5"
+```{r}
+round(digits=2, x=4.1234566)
+```
+
+
+Set "ninety" to "the sine of pi over two is equal to one"
+```{r}
+
+```
+
+
+Set "a" to "the natural log of thirty is greater or equal to 10"
+```{r}
+
+```
+
+Set "b" to "ten to the power of the log-base-10 of eighty is equal to eighty"
+```{r}
+format(10 ^ log10(80), nsmall = 20)
+```
+
+```{r}
+format(.1 + .2, nsmall = 20)
+```
+
+Set "c" to "the square root of the sum of the square of three and the square of four
+is equal to the square root of twenty-five"
+```{r}
+
+```
+
+Set "vera" equal to "e to the power of five"  (Tip: `exp()`)
+```{r}
+
+```
+
+
+## Making New Functions
+
+Sometimes you need to do the same set of calculations over an over again.  
+Rather than writing out the whole code each time, you can summarise those calculations by defining your own function and using that.  Here is how you
+do that in R (note the curly braces):
+
+```
+functionName <- function(input) {
+    output <- input + 3
+    return(output)
+}
+
+functionName(4)
+functionName(5)
+```
+
+Note: the `return()` part is optional.  R will automatically return the output
+of the last calculation (just like how the last calculation is automatically
+printed in the notebook).  So you could write the same thing like this:
+
+```
+functionName <- function(input) {
+    output <- input + 3
+    output
+}
+
+functionName(4)
+functionName(5)
+```
+
+Or on a single line:
+
+
+```
+functionName <- function(input) {input + 3}
+functionName(4)
+functionName(5)
+```
+
+
+**Exercises**
+
+Let's get some practice making functions!  Please make the requested functions 
+that pass the tests below.  If the `stopifnot()` lines are false, you will
+see an error message.  If they are true, `stopifnot()` won't return anything,
+and you will see the "success" message printed.
+
+
+Make the function `isThree()` that returns True if the input is three, False if not.
+```{r}
+
+isThree <- function(x) {x == 4}
+stopifnot(
+  isThree(3) == TRUE,
+  isThree(4) == FALSE
+)
+print("Success!")
+```
+
+
+Make the function `isFour()` that returns TRUE if the input is four, False if not.
+```{r}
+# Function here:
+
+# Run the Tests below to see if the function works as requested
+stopifnot(
+  isFour(3) == FALSE,
+  isFour(4) == TRUE
+)
+print("Success!")
+```
+
+
+Make the function `isPositive()` that returns TRUE if the input is greater or equal to zero, False if not.  (in this case, we'll pretend zero is positive)
+
+```{r}
+# Function here:
+
+# Run the Tests below to see if the function works as requested
+stopifnot(
+  isPositive(3) == TRUE,
+  isPositive(-2) == FALSE,
+  isPositive(0) == TRUE
+)
+print("Success!")
+```
+
+
+Make the function `square()` that returns the square of the input.
+```{r}
+
+# Function here:
+
+# Run the Tests below to see if the function works as requested
+stopifnot(
+  square(3) == 9,
+  square(4) == 16
+)
+print("Success!")
+```
+
+Make a function `not()` that returns False if the input is True, True if False
+
+```{r}
+# Function here:
+
+# Run the Tests below to see if the function works as requested
+stopifnot(
+  not(T) == F,
+  not(F) == T
+)
+print("Success!")
+```
+
+
+### Functions with multiple inputs
+
+Functions can have as many inputs as you want!  For example:
+
+```
+add <- function(x, y) { x + y }
+add(2, 5)
+add(4, 6)
+```
+
+**Exercises**
+
+
+Make a function `subtract()` that subtracts the second input from the first.
+```{r}
+# Function here:
+
+# Run the Tests below to see if the function works as requested
+stopifnot(
+  subtract(5, 3) == 2,
+  subtract(2, 5) == -3,
+  subtract(10, 5) == 5
+)
+print("Success!")
+```
+
+
+Make a function `isGreater()` that returns True if the first input is greater than the second, False if not.
+
+```{r}
+# Function here:
+
+# Run the Tests below to see if the function works as requested
+stopifnot(
+  isGreater(3, 4) == FALSE,
+  isGreater(4, 3) == TRUE,
+  isGreater(4, 4) == FALSE
+)
+print("Success!")
+```
+
+
+Make a function `sumOfSquares()` that adds together the squares of each input.
+```{r}
+# Function here:
+
+# Run the Tests below to see if the function works as requested
+stopifnot(
+  sumOfSquares(1, 2) == 5,
+  sumOfSquares(2, 3) == 13,
+  sumOfSquares(3, 4) == 25
+)
+print("Success!")
+```
+
+
+Make a function `average()` that calculates the mean of the three inputs (the sum of the inputs, divided by the number of inputs)
+```{r}
+# Function here:
+source("../cookbook.R")
+
+# Run the Tests below to see if the function works as requested
+stopifnot(
+  theMean(3, 3, 3) == 3,
+  theMean(3, 4, 5) == 4,
+  theMean(5, 0, 10) == 5,
+  theMean(5, 3) == 3
+)
+print("Success!")
+```
+
+
+
+
+## Functions with default input values
+
+Often, functions will have some inputs "pre-set" to a certain value.
+This makes the input "optional"; you don't have to give it if you are happy
+with the default.  Any inputs that don't have default values will still be 
+required for the function to run.
+
+```{r}
+# Function here:
+
+# Run the Tests below to see if the function works as requested
+add <- function(x, y=1){x + y}
+add(3)  # 4
+add(4)  # 5
+add(3, 4) # 7
+add(3, y=4)  # 7
+add(x=3, y=4)  # 7
+add(y=4, x=3)  # 7
+```
+
+
+**Exercises**
+
+
+Make the function `addN()` that adds 3 to whatever number is supplied by default,
+but can also add other numbers.
+```{r}
+# Function here:
+
+# Run the Tests below to see if the function works as requested
+addN <- function(x, y=3){x + y}
+
+stopifnot(
+  addN(4, 3) == 7,
+  addN(5) == 8,
+  addN(6, y=1) == 7,
+  addN(7, 8) == 15
+)
+print("Success!")
+```
+
+
+
+Make the function `subN()` that subtracts zero from whatever number is supplied
+by default, but can also subtract other numbers.
+
+```{r}
+# Function here:
+
+# Run the Tests below to see if the function works as requested
+stopifnot(
+  subN(4, 3) == 1,
+  subN(5) == 5,
+  subN(5, y=1) == 4,
+  subN(7, 8) == -1
+)
+print("Success!")
+```
+
+
+
+Most functions with defaults use them as settings that change the way the function
+works.  Usually, these defaults are set to TRUE or FALSE, and you can change them
+to the opposite.  To do that, we'll need to use if-else statements inside the function.
+
+Single-line example:
+```
+isPositive <- function(x, incZero=F){x > 0 if incZero == F else x >= 0}
+isPositive(0)  # FALSE
+isPositive(0, incZero=T)  # TRUE
+```
+
+Multi-line example:
+```
+isPositive <- function(x, incZero=F){
+  if (incZero == FALSE) {
+    result <- x > 0
+  } else {
+    result <- x >= 0
+  }
+  result
+}
+```
+
+Another way is with the `ifelse()` function. Here's an example:
+```
+isPositive <- function(x, incZero=F){ifelse(incZero == F, x > 0, x >= 0)}
+```
+
+
+Make the function `sub2()` that subtracts the first number minus the second 
+normally, but subtracts the second number minus the first if "reverse" is True 
+```{r}
+# Function here:
+
+# Run the Tests below to see if the function works as requested
+stopifnot(
+  sub2(3, 2) == 1,
+  sub2(2, 3) == -1,
+  sub2(2, 3, reverse=T) == 1,
+  sub2(1, 4, reverse=T) == 3
+)
+print("Success!")
+```
+
+
+Make the function `math()` that adds two numbers if "add" is True and subtracts
+them if "add" is False
+
+```{r}
+# Function here:
+
+# Run the Tests below to see if the function works as requested
+stopifnot(
+  math(2, 3) == 5,
+  math(5, 3, add=T) == 8,
+  math(4, 5, add=F) == -1,
+  math(1, 1, add=F) == 0
+)
+```
+
+
+Make the function `roundnum()` that rounds a number up if "ceil" is True and
+rounds it to the nearest integer if "ceil" if False
+```{r}
+# Function here:
+
+# Run the Tests below to see if the function works as requested
+stopifnot(
+  roundnum(5.1) == 5,
+  roundnum(5.9) == 6,
+  roundnum(5.1, ceil=T) == 6,
+  roundnum(4.2, ceil=T) == 5
+)
+```
+
+
+
+
+## Extra (Optional): Making Functions with a variable number of inputs
+
+Many functions in R have a special sumbol as an input: the "Elipsis" `...`
+
+The ... is a special variable that holds any extra positional inputs. It can
+be used to create functions that accept unlimited inputs, which the function
+often makes a vector out of internally for calculation.
+
+For example, one can make a function that accepts a "data" vector:
+```{r}
+average <- function(data){
+  mean(data)
+}
+
+average(c(1, 2, 3))  # Making the vector when the function is called.
+```
+
+Alternatively, one can make a function that builds a "data" vector internally:
+```{r}
+average <- function(...){
+  data <- c(...)  # Making a vector inside the function.
+  mean(data)
+}
+
+average(1, 2, 3)
+```
+
+You can combine the ... symbol with positional inputs and optional inputs.
+If R is not sure where to put the input, it will stick it in the ...
+```{r}
+showInputs <- function(x, ..., y=100){
+  print(x)
+  print(c(...))
+  print(y)
+}
+
+showInputs(1, 2, 3, 4, 5)
+```
+
+
+**Exercises**
+
+Make an `add()` function that takes a variable number of inputs to add.
+```{r}
+# function here
+
+# tests here
+stopifnot(
+  add(1) == 1,
+  add(1, 2) == 2,
+  add(2, 3) == 5,
+  add(1, 2, 3) == 6,
+  add(1, 2, 3, 4) == 10
+)
+print("Success!")
+```
+
+
+
+
+Make a `math()` function that adds all the inputs if "add" is True, and multiplies them if not.
+```{r}
+# function here
+
+# tests here
+stopifnot(
+  math(1, 2) == 3,
+  math(1, 2, add=F) == 2,
+  math(1, 2, 3, 4, add=T) == 10,
+  math(1, 2, 3, 4, add=F) == 24
+)
+print("Success!")
+
+```
+
+
+
+Make an `isPositive()` function that returns a vector with a value for True for each positive number, and False for each nonpositive number.
+If "incZero" is True, then 0 is considered positive.  (Tip: Don't use the `ifelse()` function.)
+```{r}
+# function here
+
+
+# tests here
+stopifnot(
+  identical(isPositive(1, 2), c(T, T)),
+  identical(isPositive(-1, 0, 1), c(F, F, T)),
+  identical(isPositive(-1, 0, 1, incZero=T), c(F, T, T))
+)
+print("Success!")
+```
+

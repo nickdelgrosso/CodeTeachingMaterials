@@ -1,0 +1,307 @@
+---
+title: "Categorical Descriptive Analysis: Frequency Tables"
+output: html_notebook
+---
+
+
+# Single-Variate Categorical Analysis: Relative Proportions
+
+
+A "statistic" is a summary of a dataset, almost always in number form.  
+Categorical (a.k.a. "Nominal") data contains only labels, no numbers!
+So, how can we create numbers from nominal data?
+
+The most basic approach is to make **counts** of each value in the dataset. 
+This is called a **"frequency statistic"**, because it tells you how frequently
+a value appears in your dataset.
+
+$$  
+\tilde{c}_{Heads} = \sum\limits_{i=1}^{N} X_i 
+\begin{cases} 
+1 & \text{if Xi = "Heads"} \\
+0 & \text{otherwise}
+\end{cases}
+$$
+  
+
+From the counts, you can then calculate **proportions**, sometimes called a 
+**"normalized frequency"**.  This makes datasets of different sizes easier to
+compare to each other.
+
+
+$$  
+\tilde{p}_{Heads} : \text{"The proportion of Heads in a set of coin flips"} \\
+\tilde{p}_{Heads} = \sum\limits_{i=1}^{N} \frac{X_{i}}{N} = \frac{\tilde{c}_{Heads}}{N}
+$$
+
+## Calculating Proportions by first transforming the data.
+
+
+Examples:
+ - total number of A's: `sum(data == 'A')`
+ - proportion of A's:  `mean(data == 'A')`
+
+
+### Coin Flips
+
+Given the sequence of coin flips below (Heads and Tails), 
+calculate the descriptive statistics requested:
+```{r}
+coinFlips <- strsplit("HTHHTHHHTHTTTHTTHTHHHTHTTTHHTHTHHHTHT", "")[[1]]
+coinFlips
+```
+
+How many total coin flips were there?
+```{r}
+length(coinFlips)
+```
+
+What were the *frequency* of "Heads" observations (i.e. how many total heads were observed), and "Tails" observations?
+```{r}
+length(coinFlips[coinFlips == 'H'])
+sum(coinFlips == 'H')
+```
+
+What were the *proportions* (between 0 and 1) of "Heads" and "Tails" observed?
+```{r}
+mean(coinFlips == 'H')
+```
+
+What *percent* (between  0 and 100) of coin flips were Heads?
+```{r}
+mean(coinFlips == 'H') * 100
+```
+
+Make a `barplot()` showing the frequencies of Heads and Tails observations:
+```{r}
+heads = sum(coinFlips == 'H')
+tails = sum(coinFlips == 'T')
+barplot(c(Heads=heads, Tails=tails))
+```
+
+
+### Working with `data.frame()`: Counting cars
+
+R comes with a built-in dataset called `mtcars`, which has
+some details for different types of autos.  Instead of a vector or table, it
+is stored as a `data.frame()`, which has rows of observations and columns of variables
+associated with each observation. 
+
+`data.frame` reference:
+  - `dd < data.frame(heights=c(2.1, 1.7), weights=c(93, 78))`: Creating a dataframe from scratch
+  - `dd['heights']`: Make a smaller dataframe with only the one column.
+  - `dd[['heights']]`: Get the column 'heights' as a vector.
+  - `dd$heights`: Get the column 'heights' as a vector (same as above, yes)
+  - `dd[1:5, 'heights']`: Get the first 5 rows and the column 'heights' as a vector
+  - `dd[1:5,]`: Get the first 5 rows
+  - `dd[1:5]`: Get the first 5 columns (yes, it looks very similar.  Note the missing comma.)
+  
+  
+
+Use the `mtcars` dataset (it comes with R, just use the variable name to see the data) to answer the questions below.
+```{r}
+nrow(mtcars)
+class(mtcars)
+```
+
+
+
+What proportion of the cars in this dataset have four gears?
+```{r}
+sum(mtcars$gear == 4)
+nrow(mtcars[mtcars$gear == 4,])
+```
+
+
+How many of the cars have three gears?
+```{r}
+
+```
+
+How many of the cars have more than six cylinders?
+```{r}
+
+```
+
+
+What proportion of the cars have more than 150 horsepower?
+```{r}
+
+```
+
+
+What proportion of the cars have three gears?  Five?
+```{r}
+
+```
+
+
+
+### Working with `table()`: Counting Weather Observations
+
+This coding approach is a bit inefficient for data analysis; The more categories we have, the more code we have to write!
+Instead, let's use R to create a new *object* that is designed to calculate and hold frequency table data:  `table`.
+In statistics, this is called a *"Contingency Table"*.
+
+Basic Reference for working with tables:
+  - `tab <- table(x)`: Make a table from the data
+  - `prop.table(tab)`: Translate the table into proportions
+  - `table(x) / sum(x)`: Translate the table into proportions  (same as above)
+  - `names(tab)`: Get the category names
+  - `dimnames(tab)`: Get the name of the variable the category is organized in.
+  - `tab[['category']]`: Subset the data from the category you want.
+  - `plot(tab)`: Plot the data.
+  - `barplot(tab)`: Make a barplot of the data.
+  
+
+Let's work with observations of the weather on different days, this time making a `table()`!
+```{r}
+weather <- c("Sunny", "Rain", "Sunny", "Clouds", "Sunny", "Clouds", "Clouds", "Sunny", "Sunny", "Sunny", "Sunny", "Sunny",  "Rain", "Sunny",  "Rain", "Clouds", "Clouds", "Clouds", "Clouds", "Sunny", "Sunny", "Sunny", "Clouds", "Sunny",  "Rain", "Sunny")
+```
+
+
+How many days were observed of each weather type?
+```{r}
+tab <- table(weather)
+tab
+```
+
+Make a barplot of the observation counts:
+```{r}
+barplot(tab)
+```
+
+
+What proportion of observations were made of each weather type?
+```{r}
+prop.table(tab)
+```
+
+
+Indexing the frequency table, subset the value: how many  of days were sunny?
+```{r}
+tab[['Sunny']]
+```
+
+
+
+
+### Using `table()` with the the matcars dataset
+
+```{r}
+head(mtcars)
+```
+
+How many of each number of cylinders do the cars have?
+```{r}
+table(mtcars$cyl)
+```
+
+
+What proportion of the cars have each number of gears?
+```{r}
+
+```
+
+
+Make a bar plot showing the proportion of number of gears on
+the cars in this dataset.  Label the x and y axes, and make a title for the plot.  
+```{r}
+
+```
+
+
+#### Iris dataset
+
+The iris dataset contains collection of flowers of different
+species.  
+
+
+```{r}
+head(iris)
+```
+
+
+How many flowers of each species are there in this dataset?
+Make a bar plot, labelling everything relavant.
+```{r}
+
+```
+
+
+What proportion of the flowers were of the species setosa?
+(Subset practice)
+```{r}
+
+```
+
+
+What proportion of the flowers were of the species virginica?
+(Subset practice)
+```{r}
+
+```
+
+
+### Aside: Understanding `class` transformations in R
+
+One useful thing to know about R is that for every class (e.g. "table", "vec", "data.frame", "list", etc), 
+there are different constructor functions; some just do the bare minimum to make the class,
+and others do much more work, actually running calculations and transforming the data before
+returning the class.  
+
+The functions that start with `as.`, like `as.table()`, `as.data.frame()`, and `as.list()`
+tend to do the least work.  So depending on how close our data is already to the desired
+format, we may have to pick a different function to create the class that we want.
+
+If you are ever unsure about what class your data is, you can use the `class()`
+function to find out.
+  
+**Exercises**
+
+
+Using `as.table()`: How many days was the bus early, on time, or late?
+```{r}
+nEarly <- 10
+nOntime <- 5
+nLate <- 2
+tab <- as.table(c(Early=nEarly, Ontime=nOntime, Late=nLate))
+tab
+```
+
+
+
+Using `table()` to count the data: 
+```{r}
+performances <- c(rep("Early", 10), rep("OnTime", 5), rep("Late", 2))
+table(performances)
+```
+
+What counts of the marbles drawn from the cup were of each color?  Make a table with the data.
+```{r}
+green <- 10
+red <- 5
+yellow <- 2
+marbles <- as.table(c(Green=green, Red=red, Yellow=yellow))
+marbles
+```
+
+
+Let's pretend that we want to give this table to a function that doesn't understand
+tables, but needs it to be a `data.frame` instead.  Turn the table into a dataframe:
+```{r}
+as.data.frame(marbles)
+```
+
+
+Now there's a function that wants the table as a `vector`:
+```{r}
+as.vector(marbles)
+```
+
+
+Oh, now there's one that wants it as a `list`!
+```{r}
+as.list(marbles)
+```
+

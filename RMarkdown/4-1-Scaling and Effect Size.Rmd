@@ -1,0 +1,378 @@
+---
+title: "Effect Size with Cohen's D and Z-Scaling"
+author: "Nicholas A. Del Grosso"
+date: "2023-02-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Useful functions for this notebook:
+```{r}
+# install.packages("ggplot2")
+library(ggplot2)
+
+plothistogram <- function(data, title=""){
+  (ggplot() 
+  + geom_histogram(mapping = aes(x=x), data = data.frame(x=data)) 
+  + labs(title=title)
+  )
+}
+
+plot2histograms <- function(data1, data2, title="") {
+  (ggplot() 
+  + geom_histogram(mapping = aes(x=x), data = data.frame(x=data1), alpha=.5, fill='red') 
+  + geom_histogram(mapping = aes(x=x), data = data.frame(x=data2), alpha=.5, fill='blue')
+  + labs(title=title)
+  )
+}
+
+# install.packages("withr")
+library(withr)
+generate.secret.data <- function(n, seed){
+  with_seed(seed, rnorm(n, mean=0, sd=runif(1, min=1, max=3)))
+}
+
+# install.packages("ggpubr")
+library(ggpubr)
+plot.paired <- function(data1, data2) {
+  ggpaired(data = data.frame(x=data1, y=data2), cond1="x", cond2="y")
+}
+```
+
+
+```{r}
+runif()
+```
+
+Scenario: The duration (in minutes) of a deep sleep and REM sleep episodes after taking our new drug, 
+compared to normal avarage episode lengths.
+
+# How Large was the Effect I Measured?
+
+When reporting an effect size, we often want to report a *difference* between two values.
+In the case where we are measuring the mean, this would be:
+  - The difference between the mean of our sample and some other value we care about (Often 0)
+  - The difference between the mean of one set of samples and the mean of another set of samples.
+  
+There is a problem with just subtracting the means, though: it doesn't take the *variability* of our
+sample into account.  For example, look at the two histograms below. Each shows two histograms with 
+means of an equal distance, but in one case there is less variability, and in the other case there is
+more.  Which case should we feel like we found a stronger effect?
+
+```{r}
+# install.packages("effsize")
+library(effsize)
+library(patchwork)  # lets you make subplots by joining them with | and / (e.g. p1|p2 makes them side-by-side)
+
+
+x1 <- rnorm(2000, mean=4, sd=1)
+x2 <- rnorm(2000, mean=8, sd=1)
+plot1 <- plot2histograms(x1, x2, title="SD: 1")
+
+y1 <- rnorm(2000, mean=4, sd=3)
+y2 <- rnorm(2000, mean=8, sd=3)
+plot2 <- plot2histograms(y1, y2, title="SD: 4")
+
+plot1 | plot2
+
+
+```
+
+
+We'll see in another unit on that both of these studies would consider the difference of the two samples' means
+"significant".  And on top of that, the difference in means are the same; if this was data from a study showing
+the efffect of taking some drug, then the report from both studies would say, "On average, the drug improved 
+things by 4."!  But that's not very representative of most patients in the study; in fact, in the case where the two plots highly overlap, many of the patients would have gotten worse.
+
+So what's a number we can use to say how strong an effect we found, taking into account the variability of the data?
+This is the purpose of **effect size** metrics.  There are many of them out there to choose from, and they all have some
+shared characteristics:
+  1. They calculate a single number that factors in both the model and the error.
+  2. That number often comes with a rule of thumb interpretation (i.e. "0.2 is usually a small effect, while 0.8 is a large effect").  This is great for prioritizing, planning, and communicating studies.
+  
+Some common effect size measurements are:
+  1. Cohen's d
+    Small effect (cannot be discerned by the naked eye) = 0.2
+    Medium Effect = 0.5
+    Large Effect (can be seen by the naked eye) = 0.8
+  2. *Hedge's g*
+    Small effect (cannot be discerned by the naked eye) = 0.2
+    Medium Effect = 0.5
+    Large Effect (can be seen by the naked eye) = 0.8
+  3. Pearson's r
+  
+  
+We'll start out with some simple effect size calculations, 
+then move to using the `effsize` library to do these estimations and try them out.
+
+
+# Comparing one sample to a theoretical mean
+
+## Scenario 1
+
+Looking at this data using, plot the histogram of the data and visually-estimate the difference in the
+mean of this data from the reference value, taking into account the variability.  If you had to 
+guess the effect size using the terms above, what would you guess?
+```{r}
+# Data
+reference.value <- 0
+x <- generate.secret.data(20, 46) + 1
+
+```
+
+Now, let's calculate the effect size of comparing to a reference value (often represented as the mu ($\mu$) symbol, for the 
+unmeasurable population mean) using *Cohen's d* formula:
+
+
+$$ \operatorname{Cohen's} d = \frac{\bar{X} - \mu}{s} $$
+Use the fomula to calculate Cohen's d.  Is this a "small", "medium", or "large" effect?
+```{r}
+mean(x) / sd(x)
+```
+
+Let's use an R library to calculate the same thing and see if we're getting the same result!
+The `effsize` library has a function called `cohen.d` that either uses Cohen's d or
+Hedge's g (which corrects some bias in Cohen's d in the case of small sample sizes because of that N-1 situation we
+have previously discussed), depending on whether `hedges.correction=T`.
+The function works as follows: `cohen.d(yourMeasurements - referenceValue, yourGroupLabels)`.  
+Here, put `NA` in the second position to act as a placeholder, since we have no groups.
+
+```{r}
+effsize::cohen.d(x, NA)
+```
+
+
+##
+
+```{r}
+mean(x) / sd(x)
+```
+
+
+
+
+
+## Practicing Estimating, Calculating and Interpreting Effect Sizes
+
+For each of the scenarios below, please follow this procedure:
+  1. Plot a histogram of the data and predict the effect size estimate (in words, like "big", "medium", "small", "negligable").  use the `abline(v=reference.value, lty='dotted')` function to add a vertical line where the reference
+  value is. 
+  2. Then calculate it using `cohen.d`  function.  What does the metric suggest this data fits?
+  3. Put the Effect size number in the title (rounded to 2 decimal places).
+
+
+## Scenario 1
+
+```{r}
+reference.value <- 1
+x <- generate.secret.data(20, 10) + 1
+
+```
+
+## Scenario 2
+
+Plot a histogram of the data and predict the effect size estimate (in words, like "big", "medium", "small", "negligable").
+Then calculate it using `cohen.d`  function!
+```{r}
+reference.value <- 1
+x <- generate.secret.data(200, 11) + 1.5
+
+```
+
+## Scenario 3
+
+```{r}
+reference.value <- -5
+x <- generate.secret.data(150, 22) + -3
+
+```
+
+## Scenario 4
+
+```{r}
+reference.value <- 0
+x <- generate.secret.data(150, 28) + .5
+
+```
+  
+
+## Scenario 5
+
+```{r}
+reference.value <- 0
+x <- generate.secret.data(150, 28) + .5
+
+```
+
+
+# Comparing two samples' means against each other.
+
+In most experiments, it's not the theoretical reference point we really care about, but rather
+the difference between two different samples.  Here, we'll look at two different cases: one in which the
+samples are *independent* and one in which the samples are *paired* (i.e. not independent).
+
+  - **Paired Samples**: When you have directly-comparable samples in each group.  Examples:
+    - *Before-After Studies (also called "A/B studies")*: 
+       - You measure 10 students in 4th grade, then the same students in 5th grade.  In each set of measurements,
+         you can compare each student to their corresponding measurement in the other group.
+    - *Matched-Pair Studies*: 
+        - You have two groups of 10 patients each, and to take into account differences between the two groups, you plan
+          to directly compare each patient with a similar patient in the other group.
+          
+  - **Independent Samples**: When you cannot take advantage of a direct comparison between two samples, or when
+    the groups' sample sizes are a different size.  
+      
+
+## Effect Sizes: Comparing Paired Samples
+
+In this case, we want to see if there is the difference between the samples in the groups is greater than 0. 
+Here's the data from the study (in this scenario, a "before-after" study).  
+
+Please run the following code and follow the instructions in the chunks following:
+```{r}
+before <- generate.secret.data(20, 30)
+after <- before + .1 + generate.secret.data(20, 32)
+```
+
+
+Plot the two histograms next to each other (I've made a handy `plot2histograms(x1, x2)` function for this).
+Looking at each group as a whole and visually comparing their means, how big an effect do you think this study
+will find?
+```{r}
+
+```
+
+Fortunately, this plot does not tell the story we are interested in.  The issue with this plot is that it is not
+taking into account the difference between the samples.  Let's correct that by first subtracting the two datasets
+from each other (so that we are calculating the *sample difference*), then plot a single histogram of the differences.
+Compare the histogram to the 0 reference point.  How big an effect would you estimate now?
+```{r}
+x <- 1
+```
+
+
+By the way, a box plot highlighting paired difference can be made to help highlight sample differences
+(the function `plot.paired()` made above).  Try it out!
+```{r}
+
+```
+
+
+Let's calculate the effect size!  Doing this with paired data is the same as the one-sample case; we just work from the
+differences of the samples:
+
+$$ X_{diff} = X_1 - X_2 $$
+$$ \operatorname{Cohen's} d_{paired} = \frac{\bar{X}_{diff}}{s_{diff}}$$
+
+Please calculate Cohen's D for this paired study below.  What effect size does it suggest?  Is this in line with
+your prediction from the plots?
+```{r}
+
+```
+
+
+Let's try it again with the `cohen.d()` function, giving it the difference in the samples (as though it were a 
+single dataset).  Does the result match?
+```{r}
+
+```
+
+Finally, let's give both the samples to the `cohen.d()` function as set `paired=T, within=F`, not doing the 
+subtraction ourselves and letting the function handle it for us.  Does the result match?
+```{r}
+
+```
+
+
+## Effect Sizes: Comparing Independent Samples
+
+
+
+
+
+Please run the following code and follow the instructions in the chunks following:
+```{r}
+group1 <- generate.secret.data(20, 50)
+group2 <- before + 1.5 + generate.secret.data(20, 90)
+```
+
+
+Plot the two histograms next to each other (I've made a handy `plot2histograms(x1, x2)` function for this).
+Looking at each group as a whole and visually comparing their means, how big an effect do you think this study
+will find?
+```{r}
+
+```
+
+
+
+Let's calculate the effect size!  Doing this with independent data is *not* the same as the one-sample case,
+because we have two different variances to consider.  The approach for dealing with this is to *pool* the two
+standard deviations, calculating a new standard deviation that works as a sort of average.
+
+To calculate the **pooled standard deviation**, you follow the standard deviation formula
+for all samples, comparing each sample to its group mean:
+  1. total up all the errors from both groups from its mean, squaring it to make it positive $\sum(X_i - \bar{X})^2$
+  2. Divide this sum it by the total number of samples, subtracting 1 for each group you have (this is the same as subtracting the number of groups)
+  3. Square-root the number to go from variance down to standard deviation!
+
+
+$$ SD_{pooled} = \sqrt{\frac{\sum_{k=1}^{K}{\sum_{i=1}^{N_k}{(X_{ik} - \bar{X_k})^2}}}{N_{total}-K}}$$ 
+
+Whoa, a bit more complicated.  But all this is doing is showing the general case for any number of groups,
+each with any number of sample sizes.  Let's simplify this for the case where there are two equal-sized groups:
+
+$$ s_{pooled} = \sqrt{\frac{s_1^2 + s_2^2}{(N_1 + N_2 - 2)}}$$
+Not so bad!  In other words, the pooled standard deviation is the square root of the variances of the groups, weighted by
+sample size.
+
+Then, Cohen's d is simply:
+
+$$ \operatorname{Cohen's} d = \frac{\bar{X_1} - \bar{X_2}}{s_{pooled}}$$
+
+Please calculate Cohen's D for this paired study below.  What effect size does it suggest?  Is this in line with
+your prediction from the plots?
+```{r}
+
+```
+
+
+Let's try it again with the `cohen.d()` function. Do the results match?
+```{r}
+
+```
+
+
+
+## Comparing Statistical Procedures: Hedge's G Correction
+
+Go through each of the `cohen.d()` calls in the study above, and add `hedges.correction=TRUE`. 
+How does the effect size metric change?  How does it change your interpretation of the data?
+
+
+## Discussing Results of Studies: Comparing Effect Sizes
+Dataset: Which of these two studies examining the effect of a sleep drug on sleep duration showed a larger effect from their reference value: the one examining deep.sleep or the one examining rem.sleep?  Or are they both
+showing similar effects?
+```{r}
+deep.sleep.normal <- 16.8
+deep.sleep <- c(21.0, 18.6, 24.0, 23.0, 23.8, 19.4, 20.2, 18.8, 21.6, 19.6, 22.0, 18.4, 22.4, 19.8, 24.2, 21.4, 18.2, 19.4, 20.8, 19.4, 19.8, 21.8, 22.4, 19.4, 20.4, 19.4, 22.2, 19.4, 20.6, 19.4)
+  )
+
+rem.sleep.normal = 1.3
+REM_sleep <- c(3.0, 2.9, 2.9, 2.9, 2.7, 2.9, 2.8, 2.9, 2.7, 3.0, 2.9, 2.9, 2.7, 3.0, 2.8, 2.9, 2.7, 2.9, 2.9, 2.9, 2.7, 2.9, 2.8, 3.0, 2.7, 2.9, 2.9, 2.7, 2.8, 2.9)
+
+```
+
+
+
+# Effect Size Measurements as a form of Data Rescaling
+
+When we divide an estimate by its variability, we are attempting to rescale the data so that we can do comparisons
+between very different datasets. Doing the division from the standard deviation is often called *Z-Scaling* a dataset,
+because the distribution obtained when doing this to large datasets of normally-distributed samples is often given
+the symbol *Z* in formulas.
+
+

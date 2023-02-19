@@ -1,0 +1,25 @@
+
+
+# Scenario 1: The heights (in cm) of a sample of people
+```{r}
+heights <- c(173, 183, 168, 178, 163, 189, 176, 165, 169, 186, 174, 180, 165)
+```
+
+## Visualize the Data
+Use the `plot()` function to view all the data points. *Without* calculating it, what do you think the mean likely is?  Plot a horizontal line at that point using the `abline()` function.
+```{r}
+guessed.mean <- 160  # Your guess here
+
+par(mfrow=c(1, 3))  # Make two subplots in a 1 x 3 grid.
+# Plot 1
+plot(heights, main=paste("Mean:", round(guessed.mean, 3)), ylim = c(150, 200))
+abline(guessed.mean, 0, lty='dashed')
+
+resids = heights - guessed.mean
+plot(resids, type='h', main=paste('Sum of Residuals:', round(sum(resids), 2)))
+
+# plot 3
+square.resids = resids ^ 2
+plot(square.resids, type='h', main=paste('Sum of Residuals Squared:', round(sum(square.resids), 1), '\n'))
+
+```

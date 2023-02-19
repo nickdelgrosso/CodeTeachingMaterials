@@ -1,0 +1,221 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Multivariate Categorical Data Analysis: Joint and Conditional Proportions
+
+
+Counting individual variables gives us some information, but it's often more interesting
+when we want to look at how those variables *relate* together in our data.  For example:
+  - Do more people go on holiday when the weather is sunny?  (holiday_state vs weather)
+  - Are art majors more or less likely to work in office jobs than math majors? (university_major vs job)
+  - Does treatment A cure more patients than treatment B? (treatment vs survived)
+
+
+## Joint Counts and Proportions
+
+If we know how any given observation relates to two or more variables, we can 
+show their co-occurrence with a **Contingency Table**
+
+For example, from this "U.K High School" dataset:
+
+|          | Men | Women |
+|----------|------|--------|
+| Football | 24   | 15     |
+| Rugby    | 10   | 26     |
+| Other    | 20   | 5      |
+
+
+**Discussion**:  
+  - How many men are in this dataset?
+  - How many Football players?
+
+
+In many contingency tables, people will add the row and/or column sums in the *margins* (edges)
+of the tables to make it easier to interpret the data:
+
+|          | Men | Women | *Sum* |
+|----------|------|--------|-----|
+| Football | 24   | 15     | *39*  |
+| Rugby    | 10   | 26     | *36*  |
+| Other    | 20   | 5      | *25*  |
+| *Sum*      | *54*   | *46*     | *100* |
+
+
+## Creating a Contingency Table (a.k.a. a "Cross-Tabulation")
+
+Let's look at `table()` again, this time to see what extra help we can get from R
+when we have multiple variables we want to compare against each other.
+
+
+Below, I've created two vectors that create the original dataset and put them into a dataframe for organization.
+No need to modify the code, just run it to get the `student.sports` variable name.
+
+
+Using the `table()` function, recreate the contingency table above using the supplied vectors.
+```{r}
+sports <- as.table(rbind(Football=c(Men=24, Women=15), Rugby=c(10, 26), Other=c(20, 5)))
+sports
+```
+
+Transpose the table using the `t()` function.  What happens to the table?
+```{r}
+par(mfrow=c(1, 3))
+
+pie(sports['Football',])
+pie(sports['Rugby',])
+pie(sports['Other',])
+```
+
+
+Using the created table, call the `addmargins()` function to show the margin sums:
+```{r}
+
+```
+
+
+
+Create a bar plot with showing the counts.  Try setting `beside` and `legend.text` to True,
+and set `col` to a list of colors (the `RColorBrewer` package is great for making nice color
+palettes).
+
+(Tip: set the legend to be where you want with `barplot(args.legend = list(x = "topright", inset = c(- 0.15, 0)))`) https://statisticsglobe.com/move-position-of-barplot-legend-in-r
+
+```{r}
+# install.packages("RColorBrewer")
+library("RColorBrewer")
+# display.brewer.all()  # Run this to see some named color palettes the package supplies
+colors <- brewer.pal(3, "Spectral")  # Get a vector of colors from the palette name of your choice.
+colors
+```
+
+Make another barplot, this time:
+  1. using color to represent gender and the x-axis to repreesnt the sport.
+     (Tip: transposing the table is one way to do this.).
+
+  2. instead of using `RColorBrewer` colors, let's choose our own colors from a palette
+     that looks nice to us: https://coolors.co/palettes/trending.  
+     You can give these hex values as a vector of strings (e.g. `c("#219ebc", "#ffb703")`).
+     
+
+Once you've made the graph, examine it a bit.  What is different about how you understand this data?
+In other words, what message does this graph send in a stronger way than the barplot in the previous section?
+```{r}
+
+```
+
+
+Finally, let's use the `plot()` function to plot the table.  What is being shown here?
+Adding the colors you used before to this plot (also `col =`)
+```{r}
+
+```
+
+
+
+Finally, `plot()` the transposed version of the table.  Did the plot produce what you expected?
+What messages are these two plots each emphasizing?
+```{r}
+
+```
+
+
+At this point, it would be good to go back and compare the bar plots and the area plots with each other.
+Which of these plots:
+  1. Uses screen and paper space efficiently (i.e. less wasted space)
+  2. Is readable from a distance (i.e. can be printed smaller and still be understandable, so long as the text is legible)
+  3. Allows you to get a natural "feel" of the relative proportions of each group?
+  4. Allows you to accurately measure the counts of each group?
+  5. Do you think you'll use most often when showing categorical frequency data?
+  
+
+## Joint Probability vs Conditional Probability
+
+
+  - **Joint Proportion Tables** calculate proportions so that all bins add up to 100%
+  - **Conditional Proportion Tables** calculate proportions so that either the rows or columns add to 100%
+
+
+
+**Exercises**
+
+Use the `prop.table()` function, and show the margin sums.  Does this create a:
+  - joint proportion table (all the proportions add up to 1)
+  - conditional proportion table (only the columns or rows add up to 1)?
+```{r}
+
+```
+
+
+
+Use the `margins` option in the `prop.table()` function, 
+setting it to either 1, 2, "sport" or "gender".  Add the margin sums to see.  
+Does this create a:
+  - joint proportion table (all the proportions add up to 1)
+  - conditional proportion table (only the columns or rows add up to 1)?
+```{r}
+
+```
+
+
+Use R to directly compare the proportion of men in football to the proportion of men in Rugby.
+Which is greater?
+**Tip**: To subset a two-dimensional table in R, you need to specify the rows first, then the columns.
+(e.g. `myTable['Other', 'F']`)
+```{r}
+
+```
+
+
+Compare the relative proportion of Football to Rugby for Women and men.
+Which gender is more involved in Football?
+```{r}
+
+```
+
+
+Plot the bar graph showing the joint proportions of everyone's involvement in sports
+```{r}
+
+```
+
+
+Compare the sexes: Plot the bar graph showing the proportions of everyone's involvement in sports,
+conditioned on their gender
+```{r}
+
+```
+
+
+Compare the sports: Plot the bar graph showing the proportions of everyone's involvement in sports,
+conditioned on their sport
+```{r}
+
+```
+
+
+
+## Mtcars dataset
+
+Compare the gears vs cylinders: Show the contingency table, including margin sums.
+```{r}
+head(mtcars)
+```
+
+
+Compare the gears vs cylinders: Plot the bar graph showing the proportions different 
+numbers of gears, conditioned on the number of cylinders in the engine.
+```{r}
+head(mtcars)
+```
+
+
+## Iris Dataset
+
+Compare the species in the built-in `iris` dataset: Show a bar plot comparing which species tend to have more sepal lengths
+greater than average.
+```{r}
+
+```
+

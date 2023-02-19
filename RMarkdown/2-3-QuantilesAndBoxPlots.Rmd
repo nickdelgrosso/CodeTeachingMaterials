@@ -1,0 +1,318 @@
+
+
+# Nonparametric Statistics: Calculating Proportions and Percentages
+
+Dataset: The number of bacteria in a sample of water samples
+```{r}
+bacteria_count <- c(161, 136, 109, 124, 164, 123, 147, 135, 139, 169, 148, 115, 155, 110)
+```
+
+
+### A
+What proportion of the water samples had less than 120 bacteria?
+```{r}
+
+```
+
+### B
+What proportion of the water samples had less than 180 bacteria?
+```{r}
+
+```
+
+
+### C
+What percent of the water samples had less than 300 bacteria?
+```{r}
+
+```
+
+### D
+What is the value of the dataset that reaches the 100% mark? (i.e. what is the maximum of the data)?
+```{r}
+
+```
+
+
+### E
+What is the value of the dataset, just below which would contain 0% of the data? (i.e. what is the maximum of the data)?
+```{r}
+
+```
+
+
+# Calculating proportions visually
+
+## Estimating from a distribution of data points
+### F
+`plot()` Reading from the graph below, answer the following
+questions:
+  a) What proportion of the data does 147 bacteria samples lie at?
+  b) What proportion of the data does 110 bacteria samples lie at?
+  c) How many samples below which does 50% of the bacteria samples lie at?
+```{r}
+# plot(bacteria_count)
+```
+
+How easy was this to do?  How accurately did you feel you answered the question?
+
+## Measuring from a sorted distribution of data points
+### G
+Let's try this again, but this time first `sort()`ing the data so that the lowest value
+comes first and the highest value comes last:
+  a) What proportion of the data does 147 bacteria samples lie at?
+  b) What proportion of the data does 110 bacteria samples lie at?
+  c) How many samples below which does 50% of the bacteria samples lie at?
+```{r}
+
+```
+
+
+Simpler and more accurate, right?  A lot of *nonparametric* statistics is based around the numbers that come out of sorting data and looking at the order they come in.  Below,
+we'll use these values to calculate percentages, percentiles, and generate
+emperical cumulative distribution functions (ECDFs) and box plots.
+
+
+# `sort()` and `order()` Calculating all the percentages!
+
+### H
+Use the `order()` function on the dataset to calculate the order of the values, for
+each sample in the dataset.  Which value is the first-highest?  Which is the fifth-highest?
+```{r}
+rbind(
+  bacteria_count, 
+  order(bacteria_count),
+  rank(bacteria_count),
+  bacteria_count[order(bacteria_count)]
+  
+)
+
+bacteria_count[order(bacteria_count) == 1]
+bacteria_count[rank(bacteria_count) == 1]
+
+
+```
+
+### I
+What is the order of the values if you `sort()` them first? What if you sort them
+in descending order?
+```{r}
+
+```
+
+### J
+Convert the orders to percentages, by dividing them from the length of the dataset
+(or the maximum order value):
+```{r}
+
+```
+
+
+# Percentiles
+
+The *"percentile"* is like the percentage, but its unit is the same as the dataset.
+To understand the difference:
+  - *"Percentage"*: "What percentage of the data is less than 150 bacteria?"
+  - *"Percentile"*: "How many bacteria are at the 40% mark?"
+  
+We've probably thought about percentile most when talking about class performance:
+  - *Percentage*: "I answered 90% of the questions correctly!"
+  - *Percentile*: "My exam score was the same or better thn 90% of my class!"
+  
+Percentiles are very helpful for cutting up your data into equal-sized pieces,
+called *"quantiles"*. If you want to divide your students into 2 quantiles, you could
+find the 50th percentile value (a.k.a. the *"median"*), and put all the students into one group if their score is above that point, and the rest in the other group.  You'd
+have (roughly) the same number of students in each group!
+  - Want 3 quantiles?  Divide the data at the 33%, 66%, and 100% points.
+  - Want 5 quantiles?  Divide the data at the 20%, 40%, 60%, 80%, and 100% points.
+  
+The main takeaway is that percentiles help you find the cutoff values so you can 
+cut your dataset into fixed-sized sub-datasets.
+
+## Estimating Percentiles Visually: data on x, percentages on y
+First, let's do the visual estimation exercise again, but this time with the
+values inversed, to show a more traditional graph (labels on the x-axis, calculation on the y-axis).  This will be the bases for the ECDFs we'll be making, and getting a feel for
+interpreting them will be helpful.d
+
+### K
+`plot()` the sorted bacteria sample values, so that the x-axis are the bacteria
+values and the y-axis is the percentage of the data they lie at.  Just looking
+at this graph, answer the following questions:
+  a) What proportion of the data does 140 bacteria samples lie at?
+  b) What proportion of the data does 200 bacteria samples lie at?
+  c) How many samples below which does 50% of the bacteria samples lie at?
+```{r}
+
+```
+
+## Using R to calculate percentiles
+
+R's `quantile()` function makes it easier to calculate percentiles.  Let's try it out!
+
+### L
+Example: What value would lie at the 30th percentile mark?
+```{r}
+quantile(bacteria_count, .3)
+```
+
+### M
+What value would lie at the 50th percentile mark?  Is this the same value that the
+`median()` function gives you?
+```{r}
+
+```
+
+### N
+Calculate multiple percentilces at once by providing multiple probability values
+to the quantile function.  Let's find the quantiles at the 20%, 50%, and 80% marks:
+```{r}
+
+```
+
+### O
+Use the `ecdf()` function to calculate the ECDF.  This will make a special object 
+that when given to the `plot()` function wil make the ECDF plot.  Try it out here:
+```{r}
+
+```
+
+### P
+Use the `quantile()` function to make the ECDF plot yourself, generating a point for every
+percentile value (i.e. 1%, 2%, 3%, ... 99%, 100%) and plotting it.  the data should look the same as what the `ecdf()` function creates.
+```{r}
+
+```
+
+
+# Using Percentiles to Model Data
+
+From this activity, we have found a tool that we can use to describe any dataset
+statistically:
+  - A Central Measure (the "Best Guess" for a value):  the 50% point (a.k.a. the *"median"*)
+  
+  
+What's needed still is a way of estimating the amount of variation in the dataset.  
+Luckily, we can get this by also using percentiles, this time two percentiles!
+We can, for example, say that the middle 50% of the data is between the 25 percentile
+and the 75th percentile.  That doesn't tell us about the other half of the data,
+of course, but maybe that's okay for our purposes.  Want to be more complete?
+We could talk about all 100% of the data, and report the values between the 0th percentile
+and 100th percentile.  Some common ranges used are:
+  - middle 50% (25 - 75)
+  - middle 95% (2.5 - 97.5)
+  - middle 99% (0.5 - 99.5)
+Some other odd numbers commonly used are:
+  - middle 68% (16 - 84)
+  - middle 99.7% (.15- 99.85)
+  
+
+
+## Reporting Percentiles
+  
+We can represent this spread in two different ways:
+  a. *with two percentiles*: (i.e. "80% of the data falls between 13.7 and 54.9.")
+  b. *with a median and difference (Inter-Quantile-Range, IQR)* (i.e. "the median of the data is 35.8, and the 80% IQI of 41.2)
+    - Note: the standard IQI is the middle 50% of the data., called the "Middle Quartile Range"
+  
+In R, you can paste together different text and numbers into a single string with the `paste()` function,
+making it useful for quickly writing report text.  For example:
+```{r}
+paste("The mean of my data is", round(mean(bacteria_count), 1))
+```
+
+
+Let's try it out!
+
+### Q
+Using the quantile(), diff(), and paste() functions, Report the Median and 95% inter-quantile-range of the data.
+```{r}
+
+```
+
+
+### R
+Using the median, IQR() and paste() functions, report the Median and 50% IQR of the data.
+```{r}
+
+```
+
+
+### S
+Using the quantile() and paste() functions, Report the Middle 80th Percentile of the data.
+```{r}
+
+```
+
+### T
+Using the quantile() function, report the 0th, 25th, 50th, 75th, and 100th percentiles of the data.
+```{r}
+
+```
+
+
+## Summarizing Data Visually with Percentiles: the Box Plot
+
+Box plots are a great, simple way to represent IQRs.  In a standard box plot:
+  - A line is drawn at the median (50th percentile)
+  - A light box is drawn with the edges extending from the 25th percentile to the 75th percentile (the IQR)
+  - "Whiskers" are drawn out from the box to the 0th and 100th percentiles...
+    - ...except when the range of the data is ridculous and the whiskers are huge.  In that case, usually people will limit
+      the length of the whiskers to 1.5 times the distance from the boxes, and (sometimes) just draw the data points that fall outside that range.
+  - Sometimes, people will also draw the actual data points as well on top of it, for completeness.
+Let's make some box plots using the `boxplot()` function!
+
+### U
+
+Draw a default boxplot for the bacteria count data.
+```{r}
+
+```
+
+
+### V
+
+Draw a horizontal boxplot for the bacteria count data.
+```{r}
+
+```
+
+
+### X
+
+Make the whiskers only extend out to 0.6 times the IQR.  Do "outlier points" appear?
+```{r}
+
+```
+
+
+### Y
+Using the `points()` function, draw the data points on top of the data.  For extra credit,
+jitter the data points along the non-informative axis
+so they don't overlap each other using the `jitter()` function.
+```{r}
+
+```
+
+
+### Z
+Here are five data sets. Use a boxplot to show all five datasets and summarize their
+ranges.  Combine them together with `list()` to make it all happen in one function call.
+```{r}
+january <- c(5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
+february <- c(15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24)
+march <- c(25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34)
+april <- c(20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)
+may <- c(35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44)
+```
+
+
+
+
+
+## Reference
+```{r}
+boxplot(bacteria_count, horizontal = T)
+points(bacteria_count, jitter(rep(1, length(bacteria_count)), 5), )
+```
+
+

@@ -1,0 +1,391 @@
+---
+title: "Basic Operations in R"
+subtitle: "Getting Comfortable with the RStudio Interface"
+output: html_notebook
+---
+
+## Basic Operators in R
+
+Note: everything inside the backticks represents code. For example: `3 + 2`.\
+When writing the code in R, don't include the backticks.
+
+-   Add: `+`
+-   Subtract: `-`
+-   Multiply: `*`
+-   Divide: `/`
+-   Power: `^`
+-   Integer Divide: `%/%`
+-   Remainder after Integer Division: `%%`
+
+**Exercises**: Inside the R code blocks, insert the code that represents the requested calculation. Check that the code is correct by having R run the block by pressing the green play button or typing Ctrl-Shift-Enter.\
+The expected answer should appear below the block.
+
+Example: What is 3 plus 2?
+
+```{r}
+3 + 2
+```
+
+What is 6 plus 4?
+
+```{r}
+6 + 4
+```
+
+What is 4 minus 7?
+
+```{r}
+
+```
+
+What is 2 times 3?
+
+```{r}
+
+```
+
+*Tip*: The Ctrl-PageDown keyboard shortcut moves your curse directly to the next code block.
+
+What is two to the third power?
+
+```{r}
+2 ^ 3
+```
+
+What is ten plus negative 3?
+
+```{r}
+
+```
+
+### True division vs. Integer Division
+
+Sometimes you want to divide numbers and get the results as a decimal number (e.g. 5 divided by 2 is 2.5), and sometimes you just want to know the whole number (i.e. the integer) part of the result (e.g. 5 divided by 2 is 2, with 1 left over as a "remainder").
+
+What is 100 divided by 7 (i.e. How many times does 7 go into 100, including the decimal part)?
+
+```{r}
+100 %/% 7
+100 %% 7
+'Nick' %in%  c('Nick', 'Adam', 'Terry')
+```
+
+How many (whole) times does 7 go into 100? (Hint: integer division)
+
+```{r}
+
+```
+
+What is the whole-number remainder after dividing 100 by 7?
+
+```{r}
+
+```
+
+What is 15 divided by 2?
+
+```{r}
+
+```
+
+How many whole times does 2 go into 15?
+
+```{r}
+
+```
+
+What is the whole-number remainder after dividing 15 by 2?
+
+```{r}
+
+```
+
+
+## Variable Assignment
+
+Want to use the same data over and over again, in different calculations? No problem! Just assign the data a variable name, and R will keep it around in memory!
+
+-   Left Assignment: `<-` or `=` (e.g `x <- 3` or `x = 3`)
+-   Right Assignment: `->` (e.g. `3 -> x`)
+
+*Tip*: Left Assignment is done in almost every program you'll see.
+
+*Tip*: Which should you use, `<-` (the "arrow") or `=` (the "equals sign")?\
+In most cases, it doesn't really matter. Here's a short post discussing it if you're interested: <https://blog.revolutionanalytics.com/2008/12/use-equals-or-arrow-for-assignment.html>
+
+**Exercises** Practice variable assignment and printing in R, training your motor
+skills by assigning the requested variable names to the values listed. 
+Confirm that it worked by by putting the variable on its own line at the end of the block.
+
+*Tip*: Don't use copy-and-paste during this course! These exercises are here to help you practice your motor skills, learn keyboard shortcuts, and encounter simple errors early on, so you can be comfortable with the basics before we start doing more advanced things.\
+Take your time and absorb each skill before moving to the next one, there is no rush!
+
+Example: Assign "x" to the value 3.
+
+```{r}
+x <- 3
+x
+```
+
+Assign "y" to the value 5.
+
+```{r}
+5 -> y
+y
+```
+
+Assign "z" to 3 plus 5
+
+```{r}
+z = 3 + 5
+z
+```
+
+Assign "a" to 10 times 3
+
+```{r}
+
+```
+
+Assign "xy" to "x" times "y".
+
+```{r}
+`2abcde1f` <- 3
+`2abcde1f`
+```
+
+Assign "x" to 100. What has happened to the value of "xy"?
+
+```{r}
+
+```
+
+Assign "c" to "x" times "a"
+
+```{r}
+
+```
+
+*Optional Advanced Question*: Assign "d" to "c" plus "xy". If you replace all the variable names with the values they represent, what equation does "d" stand for?
+
+```{r}
+
+```
+
+## Making Your Code Easier to Interpret: Assigning with Full-Word Variables
+
+You can use full words with numbers to assign variables, no need to always use single letters!
+
+*Tip*: You'll get an error if your variable name: starts with a number, contains spaces, or contains special characters.
+
+Assign "data" to 300 divided by 50
+
+```{r}
+
+```
+
+Assign "experiment1" to 2
+
+```{r}
+
+```
+
+Assign your entire name (first and last) to the number 1. (You're number one! Get it?)
+
+```{r}
+
+```
+
+Add together the last three variables, and assign it to "result"
+
+*Tip*: Typos are a common source of errors. Try typing just the first two letters, then wait a second to let RStudio suggest the variable name it thinks you want to type. Use your arrow keys and the Tab key to let RStudio autocomplete the variable name. No more typos!
+
+```{r}
+
+```
+
+Assign 5 to the variable "7seven". Does it work?
+If not, What error message do you see? What is it trying to tell you?
+
+```{r}
+
+```
+
+Assign 5 to the variable "seven7". Does it work?
+If not, What error message do you see? What is it trying to tell you?
+
+```{r}
+
+```
+
+Assign 42 to the variable "the answer". Does it work?
+If not, What error message do you see? What is it trying to tell you?
+
+```{r}
+
+```
+
+Assign 42 to the variable "the_answer". Does it work?
+If not, What error message do you see? What is it trying to tell you?
+
+```{r}
+
+```
+
+Assign 42 to the variable "the-answer". Does it work?
+If not, What error message do you see? What is it trying to tell you?
+
+```{r}
+
+```
+
+Assign 42 to the variable "theAnswer". Does it work?
+If not, What error message do you see? What is it trying to tell you?
+
+```{r}
+
+```
+
+
+## Logical
+
+  - **Values**:
+    - True: `TRUE` or `T`
+    - False: `FALSE` or `F`
+  - **Operators**:
+    - "Is equal to": `==`
+    - "Is not equal to": `!=`
+    - "Is greater than": `>`
+    - "Is less than" : `<`
+    - "Is greater than or equal to": `>=`
+    - "Is less than or equal to":  `<=`
+    - "and" (both are true):  `&`   
+    - "or" (one is true):   `|`
+    
+    **Note**: To check if two values are equal, use the double-equal sign `==`.  To assign a value to a variable name, use the single equal sign `=` or arrow `<-`.
+
+
+**Exercises**
+
+Convert the following assertions into R code for R to evaluate for truth:
+
+
+"Three is not equal to four"
+```{r}
+3 != 4
+```
+
+"Five is greater than six"
+```{r}
+5 < 6
+```
+
+"Six times two is less than or equal to eleven"
+```{r}
+
+```
+
+
+"Five to the power of three is equal to three to the power of five"
+```{r}
+# 5 ^ 3 == 3 ^ 5
+var <- (1 + 2) * 3
+```
+
+
+Assign "x" to "10 is equal to five plus five"
+```{r}
+x <- 10 == 5 + 5
+x
+```
+
+Assign "var" to "nine is not equal to eight"
+```{r}
+
+```
+
+
+Assign "data" to "five minus four is less than zero"
+```{r}
+
+```
+
+Assign "data2" to "ten times eight is greater or equal to pi times ten" 
+(Note: pi is already a variable)
+```{r}
+
+```
+
+Assign "var2" to "negative five times negative two is equal to negative negative ten"
+```{r}
+
+```
+
+
+Assign "a" to five.
+Assign "b" to seven.
+"a is greater than b"
+```{r}
+x <- c(1, 2, 3, 4, 5)
+sum(x)
+mean(x)
+t.test(x, mu=3)
+# help(t.test)
+?t.test
+```
+
+
+Assign "a" to "five is greater than three"
+Assign "b" to "two is greater than zero"
+"Both a and b are true"
+```{r}
+
+```
+
+
+Assign "a" to "three is greater than two times four"
+Assign "b" to "three is greater than zero"
+"Both a and b are true"
+```{r}
+
+```
+
+
+Assign "a" to "four is greater than two times four"
+Assign "b" to "three is greater than negative five"
+"Either a or b is true"
+```{r}
+
+```
+
+## Advanced Assignment (Optional): Breaking the Rules
+
+The variable naming rules are there to help R not get confused.\
+But if you *really* want to make variable names that aren't normally allowed, you can put backticks \`\` around the variable name. This tells R that everything inside is a variable, not code.
+
+Example:
+
+```{r}
+`1 flew over the cuckoo's nest` <- 5
+`1 flew over the cuckoo's nest`
+```
+
+**Exercises**
+
+Assign 5 to the variable "5five", without getting an error.
+
+```{r}
+
+```
+
+Assign 42 to the variable "the answer", without getting an error.
+
+```{r}
+
+```
+
+Assign 42 to the variable "the-answer", without getting an error.
+
+```{r}
+
+```
